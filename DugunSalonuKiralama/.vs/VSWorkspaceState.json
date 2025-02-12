@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Core",
+    "\\Core\\DugunSalonuKiralama.Application",
+    "\\Core\\DugunSalonuKiralama.Application\\Features",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS",
+    "\\Core\\DugunSalonuKiralama.Application\\Interfaces",
+    "\\Core\\DugunSalonuKiralama.Application\\Services",
+    "\\Core\\DugunSalonuKiralama.Domain",
+    "\\Core\\DugunSalonuKiralama.Domain\\Entities"
+  ],
+  "SelectedNode": "\\Core\\DugunSalonuKiralama.Application\\Interfaces\\IWeddingRepository.cs",
+  "PreviewInSolutionExplorer": false
+}

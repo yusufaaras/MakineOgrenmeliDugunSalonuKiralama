@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e2iAiP5g8i1MtvHXqYSipkhXW9FB9ZE5byQBgJxcik6oBVYexRSIuRR88vLzr1JcNsAWe3+bXWxeGVZfREXA6w==",
+  "dgSpecHash": "n9Vc6Up0JHZsZ2XgxK06Pi3LQatZGy8JLX1EanrsLPeDRthYevp2GEQBVXKrcXj1bgR4/a+2jJqCLTTtkXmfgA==",
   "success": true,
-  "projectFilePath": "C:\\DotNetProject\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj",
+  "projectFilePath": "C:\\Users\\Yusuf ARAS\\OneDrive\\Belgeler\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

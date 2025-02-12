@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DotNetProject\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj": {}
+    "C:\\Users\\Yusuf ARAS\\OneDrive\\Belgeler\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj": {}
   },
   "projects": {
-    "C:\\DotNetProject\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj": {
+    "C:\\Users\\Yusuf ARAS\\OneDrive\\Belgeler\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DotNetProject\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj",
+        "projectUniqueName": "C:\\Users\\Yusuf ARAS\\OneDrive\\Belgeler\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj",
         "projectName": "DugunSalonuKiralama.API",
-        "projectPath": "C:\\DotNetProject\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj",
+        "projectPath": "C:\\Users\\Yusuf ARAS\\OneDrive\\Belgeler\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj",
         "packagesPath": "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\",
-        "outputPath": "C:\\DotNetProject\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\obj\\",
+        "outputPath": "C:\\Users\\Yusuf ARAS\\OneDrive\\Belgeler\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
