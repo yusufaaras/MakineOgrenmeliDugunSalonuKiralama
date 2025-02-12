@@ -1,0 +1,6 @@
+@DugunSalonuKiralama.API_HostAddress = http://localhost:5053
+
+GET {{DugunSalonuKiralama.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
