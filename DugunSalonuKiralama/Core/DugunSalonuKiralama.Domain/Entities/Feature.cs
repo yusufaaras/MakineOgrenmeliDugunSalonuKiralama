@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DugunSalonuKiralama.Domain.Entities
 {
-    internal class Feature
+    public class Feature
     {
+        public int Id { get; set; }
+        public string Name { get; set; } // Klima, Otopark vs.
+        public ICollection<WeddingFeature> WeddingFeatures { get; set; }
     }
+
 }

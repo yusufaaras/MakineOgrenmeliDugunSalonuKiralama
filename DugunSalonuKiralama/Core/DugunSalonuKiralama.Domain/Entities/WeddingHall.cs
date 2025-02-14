@@ -7,7 +7,14 @@ using System.Threading.Tasks;
 
 namespace DugunSalonuKiralama.Domain.Entities
 {
-    internal class WeddingHall
+    public class WeddingHall
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Capacity { get; set; }
+        public int LocationId { get; set; }
+        public Location Location { get; set; }
+        public ICollection<Wedding> Weddings { get; set; }
     }
+
 }

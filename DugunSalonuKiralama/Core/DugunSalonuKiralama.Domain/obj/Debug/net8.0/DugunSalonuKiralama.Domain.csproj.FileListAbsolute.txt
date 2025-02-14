@@ -1,0 +1,13 @@
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\bin\Debug\net8.0\DugunSalonuKiralama.Domain.deps.json
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\bin\Debug\net8.0\DugunSalonuKiralama.Domain.dll
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\bin\Debug\net8.0\DugunSalonuKiralama.Domain.pdb
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\obj\Debug\net8.0\DugunSalonuKiralama.Domain.csproj.AssemblyReference.cache
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\obj\Debug\net8.0\DugunSalonuKiralama.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\obj\Debug\net8.0\DugunSalonuKiralama.Domain.AssemblyInfoInputs.cache
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\obj\Debug\net8.0\DugunSalonuKiralama.Domain.AssemblyInfo.cs
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\obj\Debug\net8.0\DugunSalonuKiralama.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\obj\Debug\net8.0\DugunSalonuKiralama.Domain.sourcelink.json
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\obj\Debug\net8.0\DugunSalonuKiralama.Domain.dll
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\obj\Debug\net8.0\refint\DugunSalonuKiralama.Domain.dll
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\obj\Debug\net8.0\DugunSalonuKiralama.Domain.pdb
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Domain\obj\Debug\net8.0\ref\DugunSalonuKiralama.Domain.dll

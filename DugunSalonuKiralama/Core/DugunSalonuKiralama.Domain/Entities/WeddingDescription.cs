@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DugunSalonuKiralama.Domain.Entities
 {
-    internal class WeddingDescription
+    public class WeddingDescription
     {
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public int WeddingId { get; set; }
+        public Wedding Wedding { get; set; }
     }
+
 }

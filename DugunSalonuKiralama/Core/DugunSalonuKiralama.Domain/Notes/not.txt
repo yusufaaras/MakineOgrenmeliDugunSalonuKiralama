@@ -1,0 +1,20 @@
+﻿WeddingHall,wedding, Schedule ve Booking → Çizelgeleme ve rezervasyon yönetimi için kritik.
+Category, Feature ve WeddingFeature → Salon çeşitleri ve özellik yönetimi için gerekli.
+Location ve WeddingPricing → Konum ve fiyatlandırma yönetimi.
+Testimonial ve User → Geri bildirim ve kullanıcı yönetimi için kullanışlı.
+
+
+		~~Entity özellikleri~~
+Availability.cs: Salonların müsaitlik durumunu tutmak için.
+Booking.cs: Rezervasyon detaylarını tutmak için.
+Category.cs: Kategorileri (örneğin, düğün tipi) tutmak için.
+Feature.cs: Salon özelliklerini tutmak için (örneğin, klima, otopark).
+Location.cs: Salonların lokasyon bilgilerini tutmak için.
+Schedule.cs: Takvim ve zamanlamaları tutmak için.
+Testimonial.cs: Müşteri yorumlarını tutmak için.
+User.cs: Kullanıcı bilgilerini tutmak için.
+Wedding.cs: Düğün ana entity'si olarak düğün bilgilerini tutmak için.
+WeddingDescription.cs: Düğün açıklamalarını tutmak için.
+WeddingFeature.cs: Düğün ile ilişkilendirilmiş özellikleri tutmak için.
+WeddingHall.cs: Düğün salonlarının ana entity'si.
+WeddingPricing.cs: Fiyatlandırma detaylarını tutmak için.
