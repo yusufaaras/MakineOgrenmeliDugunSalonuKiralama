@@ -15,7 +15,6 @@ namespace DugunSalonuKiralama.Persistence.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // PostgreSQL bağlantı dizesi
             optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=WeddingHall;Username=postgres;Password=yusuf123;");
         }
 

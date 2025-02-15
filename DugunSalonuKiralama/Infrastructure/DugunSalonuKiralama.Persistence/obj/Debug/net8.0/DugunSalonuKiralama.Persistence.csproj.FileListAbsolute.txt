@@ -16,3 +16,5 @@ C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Infrastructure\DugunSalonuKiralama.Persistence\obj\Debug\net8.0\DugunSalonuKiralama.Persistence.pdb
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Infrastructure\DugunSalonuKiralama.Persistence\obj\Debug\net8.0\DugunSalonuKiralama.Persistence.genruntimeconfig.cache
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Infrastructure\DugunSalonuKiralama.Persistence\obj\Debug\net8.0\ref\DugunSalonuKiralama.Persistence.dll
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Infrastructure\DugunSalonuKiralama.Persistence\bin\Debug\net8.0\DugunSalonuKiralama.Application.dll
+C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Infrastructure\DugunSalonuKiralama.Persistence\bin\Debug\net8.0\DugunSalonuKiralama.Application.pdb
