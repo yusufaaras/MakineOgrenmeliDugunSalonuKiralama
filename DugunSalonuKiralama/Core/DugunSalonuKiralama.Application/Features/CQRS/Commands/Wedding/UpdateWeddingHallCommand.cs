@@ -12,6 +12,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Commands.Wedding
         public int Id { get; set; }
         public string Name { get; set; }
         public int Capacity { get; set; }
+        public int CategoryId { get; set; }
         public int LocationId { get; set; }
         public string HomeImageUrl { get; set; }
         public string? DetailImageUrl1 { get; set; }

@@ -28,6 +28,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Wedding
                 Name = x.Name,
                 Capacity = x.Capacity,
                 LocationId = x.LocationId,
+                CategoryId = x.CategoryId,
                 HomeImageUrl = x.HomeImageUrl,
                 DetailImageUrl1 = x.DetailImageUrl1,
                 DetailImageUrl2 = x.DetailImageUrl2,

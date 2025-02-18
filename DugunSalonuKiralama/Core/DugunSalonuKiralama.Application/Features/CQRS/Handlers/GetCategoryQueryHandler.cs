@@ -22,7 +22,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers
             var values = await _repository.GetAllAsync();
             return values.Select(x => new GetCategoryQueryResult
             {
-                CategoryId = x.CategoryId,
+                CategoryId = x.Id,
                 Name = x.Name
             }).ToList();
         }
