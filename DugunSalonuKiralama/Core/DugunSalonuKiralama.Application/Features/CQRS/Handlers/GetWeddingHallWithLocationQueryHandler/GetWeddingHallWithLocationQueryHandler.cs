@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.GetWeddingHallWithLocationQueryHandler
 {
@@ -22,10 +23,16 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.GetWeddingHallW
             return values.Select(x => new GetWeddingHallWithLocationQueryResult
             {
                 Id = x.Id,
-                Location = x.Location.Address,
-                LocationId = x.LocationId,
                 Name = x.Name,
-                Capacity= x.Capacity,
+                Capacity = x.Capacity,
+                LocationId = x.LocationId,
+                HomeImageUrl = x.HomeImageUrl,
+                DetailImageUrl1 = x.DetailImageUrl1,
+                DetailImageUrl2 = x.DetailImageUrl2,
+                DetailImageUrl3 = x.DetailImageUrl3,
+                DetailImageUrl4 = x.DetailImageUrl4,
+                ShortDescription = x.ShortDescription,
+                LongDescription = x.LongDescription,
             }).ToList();
         }
     }

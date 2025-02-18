@@ -39,11 +39,6 @@ namespace DugunSalonuKiralama.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetWeddingHall(int id)
         {
-            if (id == null)
-            {
-                throw new Exception("Wedding hall not found");
-            }
-
             var value = await _getWeddingHallByIdQueryHandler.Handle(new GetWeddingHallByIdQuery(id));
             return Ok(value);
         }

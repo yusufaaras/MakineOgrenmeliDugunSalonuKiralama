@@ -19,14 +19,20 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Weddings
         {
             _repository = repository;
         }
-
         public async Task Handle(CreateWeddingHallCommand command)
         {
             await _repository.CreateAsync(new WeddingHall
             {
                 Name = command.Name,
                 Capacity = command.Capacity,
-                LocationId = command.LocationId
+                LocationId = command.LocationId,
+                HomeImageUrl = command.HomeImageUrl,
+                DetailImageUrl1 = command.DetailImageUrl1,
+                DetailImageUrl2 = command.DetailImageUrl2,
+                DetailImageUrl3 = command.DetailImageUrl3,
+                DetailImageUrl4 = command.DetailImageUrl4,
+                ShortDescription = command.ShortDescription,
+                LongDescription = command.LongDescription,
             });
         }
     }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Wedding
 {
@@ -27,6 +28,13 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Wedding
                 Name = values.Name,
                 Capacity = values.Capacity,
                 LocationId = values.LocationId,
+                HomeImageUrl = values.HomeImageUrl,
+                DetailImageUrl1 = values.DetailImageUrl1,
+                DetailImageUrl2 = values.DetailImageUrl2,
+                DetailImageUrl3 = values.DetailImageUrl3,
+                DetailImageUrl4 = values.DetailImageUrl4,
+                ShortDescription = values.ShortDescription,
+                LongDescription = values.LongDescription,
             };
         }
     }

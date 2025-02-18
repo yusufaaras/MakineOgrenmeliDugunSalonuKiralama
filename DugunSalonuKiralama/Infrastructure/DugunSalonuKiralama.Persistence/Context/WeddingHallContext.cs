@@ -25,7 +25,6 @@ namespace DugunSalonuKiralama.Persistence.Context
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Wedding> Weddings { get; set; }
-        public DbSet<WeddingDescription> WeddingDescriptions { get; set; }
         public DbSet<WeddingFeature> WeddingFeatures { get; set; }
         public DbSet<WeddingHall> WeddingHalls { get; set; }
         public DbSet<WeddingPricing> WeddingPricings { get; set; }
