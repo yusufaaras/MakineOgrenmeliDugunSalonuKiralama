@@ -14,7 +14,6 @@ C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.AssemblyInfoInputs.cache
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.AssemblyInfo.cs
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.csproj.CoreCompileInputs.cache
-C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.sourcelink.json
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\staticwebassets.build.json

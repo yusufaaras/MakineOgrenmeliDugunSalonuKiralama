@@ -1,6 +1,5 @@
 ﻿using DugunSalonuKiralama.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using OnionCarBook.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

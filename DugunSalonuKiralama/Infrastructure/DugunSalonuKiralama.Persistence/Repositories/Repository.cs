@@ -12,42 +12,42 @@ namespace DugunSalonuKiralama.Persistence.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly WeddingHallContext _carBookContext;
+        private readonly WeddingHallContext _weddingHallContext;
         public Repository(WeddingHallContext WeddingHallContext)
         {
-            _carBookContext = WeddingHallContext;
+            _weddingHallContext = WeddingHallContext;
         }
         public async Task CreateAsync(T entity)
         {
-            _carBookContext.Set<T>().Add(entity);
-            await _carBookContext.SaveChangesAsync();
+            _weddingHallContext.Set<T>().Add(entity);
+            await _weddingHallContext.SaveChangesAsync();
         }
 
         public async Task<List<T>> GetAllAsync()
         {
-            return await _carBookContext.Set<T>().ToListAsync();
+            return await _weddingHallContext.Set<T>().ToListAsync();
         }
 
         public async Task<T?> GetByFilterAsync(Expression<Func<T, bool>> filter)
         {
-            return await _carBookContext.Set<T>().SingleOrDefaultAsync(filter);
+            return await _weddingHallContext.Set<T>().SingleOrDefaultAsync(filter);
         }
 
         public async Task<T> GetByIdAsync(int id)
         {
-            return await _carBookContext.Set<T>().FindAsync(id);
+            return await _weddingHallContext.Set<T>().FindAsync(id);
         }
 
         public async Task RemoveAsync(T entity)
         {
-            _carBookContext.Set<T>().Remove(entity);
-            await _carBookContext.SaveChangesAsync();
+            _weddingHallContext.Set<T>().Remove(entity);
+            await _weddingHallContext.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(T entity)
         {
-            _carBookContext.Set<T>().Update(entity);
-            await _carBookContext.SaveChangesAsync();
+            _weddingHallContext.Set<T>().Update(entity);
+            await _weddingHallContext.SaveChangesAsync();
         }
     }
 }

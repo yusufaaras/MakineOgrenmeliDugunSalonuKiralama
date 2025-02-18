@@ -3,6 +3,9 @@ using DugunSalonuKiralama.Application.Interfaces;
 using DugunSalonuKiralama.Persistence.Context;
 using DugunSalonuKiralama.Application.Services;
 using DugunSalonuKiralama.Persistence.Repositories;
+using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Wedding;
+using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Weddings;
+using DugunSalonuKiralama.Application.Features.CQRS.Handlers.GetWeddingHallWithLocationQueryHandler;
 
 namespace DugunSalonuKiralama.API
 {
@@ -27,13 +30,22 @@ namespace DugunSalonuKiralama.API
 
             builder.Services.AddScoped<WeddingHallContext>();
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            builder.Services.AddScoped(typeof(IWeddingRepository), typeof(WeddingHallRepository));
 
-            // Categories için gerekli olan Handler'ları ekleyelim
+            //Category
             builder.Services.AddScoped<GetCategoryQueryHandler>();
             builder.Services.AddScoped<GetCategoryByIdQueryHandler>();
             builder.Services.AddScoped<CreateCategoryCommandHandler>();
             builder.Services.AddScoped<UpdateCategoryCommandHandler>();
             builder.Services.AddScoped<RemoveCategoryCommandHandler>();
+
+            //WeddingHall
+            builder.Services.AddScoped<GetWeddingHallQueryHandler>();
+            builder.Services.AddScoped<GetWeddingHallByIdQueryHandler>();
+            builder.Services.AddScoped<CreateWeddingHallCommandHandler>();
+            builder.Services.AddScoped<UpdateWeddingHallCommandHandler>();
+            builder.Services.AddScoped<RemoveWeddingHallCommandHandler>();
+            builder.Services.AddScoped<GetWeddingHallWithLocationQueryHandler>();
 
             builder.Services.AddApplicationService(builder.Configuration);
 

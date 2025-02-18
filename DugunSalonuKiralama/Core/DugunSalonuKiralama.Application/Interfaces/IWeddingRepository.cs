@@ -10,8 +10,8 @@ namespace DugunSalonuKiralama.Application.Interfaces
 {
     public interface IWeddingRepository
     {
-        Task<List<Wedding>> GetCarsListWithBrands();
-        List<Wedding> GetLast5CarsWithBrands();
-        int GetCarCount();
+        Task<List<WeddingHall>> GetWeddingHallsListWithLocation();
+        List<WeddingHall> GetLast5WeddingHallsWithLocation();
+        int GetWeddingHallCount();
     }
 }
