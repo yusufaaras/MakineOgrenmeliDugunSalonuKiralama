@@ -1,12 +1,5 @@
 ﻿using DugunSalonuKiralama.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DugunSalonuKiralama.Persistence.Context
 {
@@ -14,10 +7,8 @@ namespace DugunSalonuKiralama.Persistence.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=WeddingHall;Username=postgres;Password=yusuf123;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-S1QPNRR;Database=WeddingHall;User Id=sa;Password=1;TrustServerCertificate=True;");
         }
-
-        public DbSet<Availability> Availabilities { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Feature> Features { get; set; }
