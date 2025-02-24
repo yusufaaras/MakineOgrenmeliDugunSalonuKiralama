@@ -703,7 +703,10 @@
           "MediatR": "12.4.1"
         },
         "runtime": {
-          "DugunSalonuKiralama.Application.dll": {}
+          "DugunSalonuKiralama.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "DugunSalonuKiralama.Domain/1.0.0": {
@@ -712,7 +715,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.2"
         },
         "runtime": {
-          "DugunSalonuKiralama.Domain.dll": {}
+          "DugunSalonuKiralama.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "DugunSalonuKiralama.Persistence/1.0.0": {
@@ -723,7 +729,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.2"
         },
         "runtime": {
-          "DugunSalonuKiralama.Persistence.dll": {}
+          "DugunSalonuKiralama.Persistence.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
