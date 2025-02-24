@@ -12,7 +12,7 @@ namespace DugunSalonuKiralama.Domain.Entities
         public decimal Price { get; set; }
         public string Currency { get; set; }
         public int WeddingId { get; set; }
-        public Wedding Wedding { get; set; }
+        public WeddingHall WeddingHall { get; set; }
     }
 
 }

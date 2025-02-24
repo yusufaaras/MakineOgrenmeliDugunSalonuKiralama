@@ -13,7 +13,7 @@ namespace DugunSalonuKiralama.Domain.Entities
         public string Comment { get; set; }
         public int Rating { get; set; } 
         public int WeddingId { get; set; }
-        public Wedding Wedding { get; set; }
+        public WeddingHall WeddingHall { get; set; }
     }
 
 }

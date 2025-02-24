@@ -46,12 +46,15 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
+                    b.Property<int>("WeddingHallId")
+                        .HasColumnType("int");
+
                     b.Property<int>("WeddingId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("WeddingId");
+                    b.HasIndex("WeddingHallId");
 
                     b.ToTable("Bookings");
                 });
@@ -164,44 +167,17 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("WeddingHallId")
+                        .HasColumnType("int");
+
                     b.Property<int>("WeddingId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("WeddingId");
+                    b.HasIndex("WeddingHallId");
 
                     b.ToTable("Testimonials");
-                });
-
-            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Wedding", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("LocationId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("LocationId");
-
-                    b.ToTable("Weddings");
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.WeddingFeature", b =>
@@ -215,6 +191,9 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.Property<int>("FeatureId")
                         .HasColumnType("int");
 
+                    b.Property<int>("WeddingHallId")
+                        .HasColumnType("int");
+
                     b.Property<int>("WeddingId")
                         .HasColumnType("int");
 
@@ -222,7 +201,7 @@ namespace DugunSalonuKiralama.Persistence.Migrations
 
                     b.HasIndex("FeatureId");
 
-                    b.HasIndex("WeddingId");
+                    b.HasIndex("WeddingHallId");
 
                     b.ToTable("WeddingFeatures");
                 });
@@ -296,25 +275,28 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("WeddingHallId")
+                        .HasColumnType("int");
+
                     b.Property<int>("WeddingId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("WeddingId");
+                    b.HasIndex("WeddingHallId");
 
                     b.ToTable("WeddingPricings");
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Booking", b =>
                 {
-                    b.HasOne("DugunSalonuKiralama.Domain.Entities.Wedding", "Wedding")
+                    b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
                         .WithMany()
-                        .HasForeignKey("WeddingId")
+                        .HasForeignKey("WeddingHallId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Wedding");
+                    b.Navigation("WeddingHall");
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Schedule", b =>
@@ -330,32 +312,13 @@ namespace DugunSalonuKiralama.Persistence.Migrations
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Testimonial", b =>
                 {
-                    b.HasOne("DugunSalonuKiralama.Domain.Entities.Wedding", "Wedding")
-                        .WithMany("Testimonials")
-                        .HasForeignKey("WeddingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Wedding");
-                });
-
-            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Wedding", b =>
-                {
-                    b.HasOne("DugunSalonuKiralama.Domain.Entities.Category", "Category")
+                    b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
                         .WithMany()
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("WeddingHallId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DugunSalonuKiralama.Domain.Entities.Location", "Location")
-                        .WithMany("Weddings")
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-
-                    b.Navigation("Location");
+                    b.Navigation("WeddingHall");
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.WeddingFeature", b =>
@@ -366,15 +329,15 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DugunSalonuKiralama.Domain.Entities.Wedding", "Wedding")
-                        .WithMany("WeddingFeatures")
-                        .HasForeignKey("WeddingId")
+                    b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
+                        .WithMany()
+                        .HasForeignKey("WeddingHallId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Feature");
 
-                    b.Navigation("Wedding");
+                    b.Navigation("WeddingHall");
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.WeddingHall", b =>
@@ -386,7 +349,7 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("DugunSalonuKiralama.Domain.Entities.Location", "Location")
-                        .WithMany()
+                        .WithMany("WeddingHalls")
                         .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -398,13 +361,13 @@ namespace DugunSalonuKiralama.Persistence.Migrations
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.WeddingPricing", b =>
                 {
-                    b.HasOne("DugunSalonuKiralama.Domain.Entities.Wedding", "Wedding")
-                        .WithMany("WeddingPricings")
-                        .HasForeignKey("WeddingId")
+                    b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
+                        .WithMany()
+                        .HasForeignKey("WeddingHallId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Wedding");
+                    b.Navigation("WeddingHall");
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Feature", b =>
@@ -414,16 +377,7 @@ namespace DugunSalonuKiralama.Persistence.Migrations
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Location", b =>
                 {
-                    b.Navigation("Weddings");
-                });
-
-            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Wedding", b =>
-                {
-                    b.Navigation("Testimonials");
-
-                    b.Navigation("WeddingFeatures");
-
-                    b.Navigation("WeddingPricings");
+                    b.Navigation("WeddingHalls");
                 });
 #pragma warning restore 612, 618
         }

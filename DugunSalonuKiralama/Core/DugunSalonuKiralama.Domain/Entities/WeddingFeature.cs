@@ -10,7 +10,7 @@ namespace DugunSalonuKiralama.Domain.Entities
     {
         public int Id { get; set; }
         public int WeddingId { get; set; }
-        public Wedding Wedding { get; set; }
+        public WeddingHall WeddingHall { get; set; }
         public int FeatureId { get; set; }
         public Feature Feature { get; set; }
     }
