@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YKgStSDaFThzEnbQ+kEZFA923qCsVE12D+dYs9HcAhwgifEPH28FAJKxg4udTW4bceTc26ny7rKTyQ5871/Ifg==",
+  "dgSpecHash": "dQsHcgotUxiLoIzLK1fUv435f7n+3VafRaiefmRR/SvhPSNexvPgxVYNqnOIgR9hQDrjkHBLDVpSMOxadDJwtg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Yusuf ARAS\\OneDrive\\Belgeler\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj",
   "expectedPackageFiles": [
@@ -51,8 +51,6 @@
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
-    "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\npgsql\\9.0.2\\npgsql.9.0.2.nupkg.sha512",
-    "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.3\\npgsql.entityframeworkcore.postgresql.9.0.3.nupkg.sha512",
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",

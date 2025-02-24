@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9KGHru76W4dEVq/LuS2d+iBoQkU+nqfq49/4S5ZxHZTKJYylixeNE++PODUNfjGsYJn2uWDablYsScfBsNo20g==",
+  "dgSpecHash": "mzaj3eIcO/Tz4Anm/9wzubAaOZjrNU4wQdf6TnuV9gIRoPmEKbN5in7iLRM9K7b9oYbokyCfUV/JSK5EnvqYGQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Yusuf ARAS\\OneDrive\\Belgeler\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj",
   "expectedPackageFiles": [
@@ -41,8 +41,6 @@
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\npgsql\\9.0.2\\npgsql.9.0.2.nupkg.sha512",
-    "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.3\\npgsql.entityframeworkcore.postgresql.9.0.3.nupkg.sha512",
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Yusuf ARAS\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

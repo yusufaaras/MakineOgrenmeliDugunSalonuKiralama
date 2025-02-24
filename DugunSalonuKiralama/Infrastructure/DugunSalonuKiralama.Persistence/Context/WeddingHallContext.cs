@@ -7,7 +7,7 @@ namespace DugunSalonuKiralama.Persistence.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-S1QPNRR;Database=WeddingHall;User Id=sa;Password=1;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-S1QPNRR;Database=WeddingHall;Integrated Security=True;TrustServerCertificate=True");
         }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Category> Categories { get; set; }

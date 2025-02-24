@@ -6,6 +6,7 @@ using DugunSalonuKiralama.Persistence.Repositories;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Wedding;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Weddings;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.GetWeddingHallWithLocationQueryHandler;
+using System.Globalization;
 
 namespace DugunSalonuKiralama.API
 {
@@ -16,6 +17,11 @@ namespace DugunSalonuKiralama.API
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddHttpClient();
+
+            
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+            CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
+
 
             builder.Services.AddCors(opt =>
             {
