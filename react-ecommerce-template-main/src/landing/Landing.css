@@ -1,0 +1,42 @@
+/* Genel container genişliği */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  /* Kartları hizala ve genişlet */
+  .feature-products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 200px;
+  }
+  
+  /* Kart genişliğini düzelt */
+  .feature-products-container > div {
+    flex: 1 1 3000px; /* Minimum 300px, genişlemeye açık */
+    max-width: 4000px;
+  }
+  
+  /* Başlık stilleri */
+  h2.text-muted {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  /* Sosyal medya ikonları */
+  .social-icons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .social-link {
+    color: #555;
+    transition: color 0.3s;
+  }
+  
+  .social-link:hover {
+    color: #007bff;
+  }
+  
