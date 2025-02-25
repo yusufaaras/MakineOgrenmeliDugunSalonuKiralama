@@ -12,7 +12,7 @@ namespace DugunSalonuKiralama.Domain.Entities
         public string Address { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-        public ICollection<Wedding> Weddings { get; set; }
+        public ICollection<WeddingHall> WeddingHalls { get; set; }
     }
 
 }
