@@ -16,7 +16,7 @@ const categories = [
 
 const Capacity = ["1000", "500", "250", "100"];
 
-const city = ["İstanbul", "İzmir", "Bursa", "Ankara","Eskişehir"];
+const city = ["İstanbul", "İzmir", "Bursa", "Ankara", "Eskişehir"];
 
 function FilterMenuLeft() {
   return (
@@ -218,24 +218,17 @@ function ProductList() {
             </div>
             <div
               className={
-                "row row-cols-1 row-cols-md-2 row-cols-lg-2 g-3 mb-4 flex-shrink-0 " +
-                (viewType.grid ? "row-cols-xl-3" : "row-cols-xl-2")
+                "row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 g-3 mb-4 flex-shrink-0"
               }
             >
-              {Array.from({ length: 10 }, (_, i) => {
-                if (viewType.grid) {
-                  return (
-                    <Product key={i} percentOff={i % 2 === 0 ? 15 : null} />
-                  );
-                }
-                return (
-                  <ProductH key={i} percentOff={i % 4 === 0 ? 15 : null} />
-                );
+              {Array.from({ length: 3 }, (_, i) => {
+                return viewType.grid ? <Product /> : <ProductH />;
               })}
             </div>
+
             <div className="d-flex align-items-center mt-auto">
               <span className="text-muted small d-none d-md-inline">
-                
+
               </span>
               <nav aria-label="Page navigation example" className="ms-auto">
                 <ul className="pagination my-0">

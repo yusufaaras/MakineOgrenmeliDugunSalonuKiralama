@@ -1,54 +1,51 @@
-//ikinci sayfadaki cardlar
-
-import Image from "../landing/foto-1.jpg";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Product(props) {
-  const price = 10000;
-  let percentOff;
-  let offPrice = `${price}TL`;
+function Product() {
+  const [weddingHalls, setWeddingHalls] = useState([]);
 
-  if (props.percentOff && props.percentOff > 0) {
-    percentOff = (
-      <div
-        className="badge bg-dim py-2 text-white position-absolute"
-        style={{ top: "0.5rem", right: "0.5rem" }}
-      >
-        {props.percentOff}% İndirim
-      </div>
-    );
-
-    offPrice = (
-      <>
-        <del>{price}TL</del> {price - (props.percentOff * price) / 100}TL
-      </>
-    );
-  }
+  useEffect(() => {
+    fetch("https://localhost:7072/api/WeddingHall")
+      .then((res) => res.json())
+      .then((data) => setWeddingHalls(data))
+      .catch((err) => console.error("Hata:", err));
+  }, []);
 
   return (
     <div className="col">
       <div className="card shadow-sm">
-        <Link to="/products/1" href="!#" replace>
-          {percentOff}
-          <img
-            className="card-img-top bg-dark cover"
-            height="200"
-            alt=""
-            src={Image}
-          />
-        </Link>
-        <div className="card-body">
-          <h5 className="card-title text-center text-dark text-truncate">
-            Düğün Salonu İsmi
-          </h5>
-          <p className="card-text text-center text-muted mb-0">{offPrice}</p>
-          <div className="d-grid d-block">
-            <button className="btn btn-outline-dark mt-3">
-              <FontAwesomeIcon icon={["fas", "cart-plus"]} /> Detay
-            </button>
-          </div>
-        </div>
+      {weddingHalls.length > 0 ? (
+          weddingHalls.map((hall) => (
+            <div className="card-body" key={hall.id}>
+              <div className="card shadow-sm h-100"> 
+                <Link to={`/products/${hall.id}`} replace>
+                  <img
+                    className="card-img-top"
+                    style={{ height: "200px", objectFit: "cover" }}
+                    alt={hall.name}
+                    src={hall.homeImageUrl || "default-image.jpg"} 
+                  />
+                </Link>
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title text-center text-dark text-truncate">
+                    {hall.name}
+                  </h5>
+                  <p className="card-text text-center text-muted">
+                    Kapasite: {hall.capacity}
+                  </p>
+                  <div className="mt-auto d-grid"> 
+                    <button className="btn btn-outline-dark">
+                      <FontAwesomeIcon icon={["fas", "cart-plus"]} /> Detay
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>Yükleniyor...</p>
+        )}
       </div>
     </div>
   );
