@@ -4,18 +4,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Product() {
   const [weddingHalls, setWeddingHalls] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     fetch("https://localhost:7072/api/WeddingHall")
       .then((res) => res.json())
       .then((data) => setWeddingHalls(data))
       .catch((err) => console.error("Hata:", err));
+
+    fetch("https://localhost:7072/api/Categories")
+      .then((res) => res.json())
+      .then((data) => setCategories(data))
+      .catch((err) => console.error("Hata:", err));
   }, []);
+
+  // Kategori ID'sine göre isim bulma fonksiyonu
+  const getCategoryName = (categoryId) => {
+    const category = categories.find((cat) => cat.categoryId === categoryId);
+    return category ? category.name : "Bilinmiyor";
+  };
 
   return (
     <div className="col">
       <div className="card shadow-sm">
-      {weddingHalls.length > 0 ? (
+        {weddingHalls.length > 0 ? (
           weddingHalls.map((hall) => (
             <div className="card-body" key={hall.id}>
               <div className="card shadow-sm h-100"> 
@@ -33,6 +45,12 @@ function Product() {
                   </h5>
                   <p className="card-text text-center text-muted">
                     Kapasite: {hall.capacity}
+                  </p>
+                  <p className="card-text text-center text-muted">
+                    Kategori: {getCategoryName(hall.categoryId)}
+                  </p>
+                  <p className="card-text text-center text-muted">
+                    Açıklama: {hall.shortDescription}
                   </p>
                   <div className="mt-auto d-grid"> 
                     <button className="btn btn-outline-dark">
