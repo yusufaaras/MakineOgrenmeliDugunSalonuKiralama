@@ -19,7 +19,6 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Locations
         public async Task Handle(UpdateLocationCommand command)
         {
             var values = await _repository.GetByIdAsync(command.Id);
-            values.Id = command.Id;
             values.Address = command.Address;
             values.Country = command.Country;
             values.City = command.City;

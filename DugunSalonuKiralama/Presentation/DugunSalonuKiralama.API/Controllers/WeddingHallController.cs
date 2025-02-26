@@ -69,5 +69,6 @@ namespace DugunSalonuKiralama.API.Controllers
             var values = await _getWeddingHallWithLocationQueryHandler.Handle();
             return Ok(values);
         }
+
     }
 }
