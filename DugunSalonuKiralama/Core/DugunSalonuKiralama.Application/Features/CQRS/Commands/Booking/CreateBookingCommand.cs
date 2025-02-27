@@ -9,7 +9,6 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Commands.Booking
 {
     public class CreateBookingCommand
     {
-        public int Id { get; set; }
         public int WeddingId { get; set; }
         public WeddingHall WeddingHall { get; set; }
         public int UserId { get; set; }
