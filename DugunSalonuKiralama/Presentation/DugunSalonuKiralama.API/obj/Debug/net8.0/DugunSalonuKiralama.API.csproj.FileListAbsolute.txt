@@ -199,7 +199,6 @@ C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\Du
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.pdb
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.genruntimeconfig.cache
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\ref\DugunSalonuKiralama.API.dll
-<<<<<<< Updated upstream
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -364,5 +363,3 @@ C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-=======
->>>>>>> Stashed changes
