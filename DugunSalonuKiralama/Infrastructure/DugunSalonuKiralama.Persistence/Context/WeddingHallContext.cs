@@ -14,8 +14,11 @@ namespace DugunSalonuKiralama.Persistence.Context
 
 
 
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-K3V8TSN\\SQLEXPRESS;Initial Catalog=WeddingHall;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+           // optionsBuilder.UseSqlServer("Data Source=DESKTOP-K3V8TSN\\SQLEXPRESS;Initial Catalog=WeddingHall;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
+
+
+            //NOT: !!!! KENDİ BAĞLANTIN OLANI YORUM SATIRINDAN ÇIKART VE BENİM BAĞLANTIMI YORUM SATIRINA AL DİĞERLERİNİ SİL BOŞ DURANLARI
         }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Category> Categories { get; set; }

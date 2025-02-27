@@ -52,10 +52,10 @@ function Product() {
                   <p className="card-text text-center text-muted">
                     Açıklama: {hall.shortDescription}
                   </p>
-                  <div className="mt-auto d-grid"> 
-                    <button className="btn btn-outline-dark">
-                      <FontAwesomeIcon icon={["fas", "cart-plus"]} /> Detay
-                    </button>
+                  <div className="d-grid gap-2">
+                    <Link to={`/products/${hall.id}`} className="btn btn-outline-dark" replace>
+                      Detay
+                    </Link>
                   </div>
                 </div>
               </div>
