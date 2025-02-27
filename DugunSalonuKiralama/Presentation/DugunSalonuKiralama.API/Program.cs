@@ -61,6 +61,13 @@ namespace DugunSalonuKiralama.API
             builder.Services.AddScoped<RemoveWeddingHallCommandHandler>();
             builder.Services.AddScoped<GetWeddingHallWithLocationQueryHandler>();
 
+            //Location
+            builder.Services.AddScoped<GetLocationQueryHandler>();
+            builder.Services.AddScoped<GetWeddingHallByIdQueryHandler>();
+            builder.Services.AddScoped<CreateLocationCommandHandler>();
+            builder.Services.AddScoped<UpdateLocationCommandHandler>();
+            builder.Services.AddScoped<RemoveLocationCommandHandler>();
+
             builder.Services.AddApplicationService(builder.Configuration);
 
             builder.Services.AddControllers();
