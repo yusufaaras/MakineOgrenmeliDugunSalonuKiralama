@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DugunSalonuKiralama.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eac9e6e3fbdc5733259fbc51c52f1a537afe12db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e007d85cb76cad903697353bb16948f7a45a337e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DugunSalonuKiralama.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DugunSalonuKiralama.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
