@@ -20,6 +20,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Locations
         {
             await _repository.CreateAsync(new Location
             {
+                Id= command.Id,
                 Address = command.Address,
                 City = command.City,
                 Country = command.Country
