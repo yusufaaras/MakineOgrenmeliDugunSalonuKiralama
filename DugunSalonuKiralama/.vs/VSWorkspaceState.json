@@ -9,7 +9,8 @@
     "\\Core\\DugunSalonuKiralama.Domain\\Notes",
     "\\Infrastructure",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context"
+    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context",
+    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations"
   ],
   "SelectedNode": "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
   "PreviewInSolutionExplorer": false

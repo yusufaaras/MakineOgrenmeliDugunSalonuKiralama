@@ -22,6 +22,86 @@ namespace DugunSalonuKiralama.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.AppRole", b =>
+                {
+                    b.Property<int>("AppRoleID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AppRoleID"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AppRoleID");
+
+                    b.ToTable("AppRoles");
+                });
+
+            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.AppUser", b =>
+                {
+                    b.Property<int>("AppUserID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AppUserID"));
+
+                    b.Property<int>("AppRoleID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AppUserID");
+
+                    b.HasIndex("AppRoleID");
+
+                    b.ToTable("AppUsers");
+                });
+
+            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Author", b =>
+                {
+                    b.Property<int>("AuthorID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AuthorID"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AuthorID");
+
+                    b.ToTable("Authors");
+                });
+
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Booking", b =>
                 {
                     b.Property<int>("Id")
@@ -288,6 +368,17 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.ToTable("WeddingPricings");
                 });
 
+            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.AppUser", b =>
+                {
+                    b.HasOne("DugunSalonuKiralama.Domain.Entities.AppRole", "AppRole")
+                        .WithMany("AppUsers")
+                        .HasForeignKey("AppRoleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppRole");
+                });
+
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Booking", b =>
                 {
                     b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
@@ -368,6 +459,11 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("WeddingHall");
+                });
+
+            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.AppRole", b =>
+                {
+                    b.Navigation("AppUsers");
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Feature", b =>
