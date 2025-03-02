@@ -13,7 +13,6 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Results.Booking
     {
         public int Id { get; set; }
         public int WeddingId { get; set; }
-        public GetWeddingHallQueryResult WeddingHall { get; set; } 
         public int UserId { get; set; }
         public DateTime BookingDate { get; set; }
         public int GuestCount { get; set; }

@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DugunSalonuKiralama.API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+        [Route("api/[controller]")]
+        [ApiController]
     public class LocationController : ControllerBase
     {
         private readonly GetLocationByIdQueryHandler _getLocationByIdQueryHandler;

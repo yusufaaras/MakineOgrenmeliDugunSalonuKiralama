@@ -8,6 +8,7 @@ using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Weddings;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.GetWeddingHallWithLocationQueryHandler;
 using System.Globalization;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Locations;
+using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings;
 
 namespace DugunSalonuKiralama.API
 {
@@ -60,6 +61,13 @@ namespace DugunSalonuKiralama.API
             builder.Services.AddScoped<UpdateWeddingHallCommandHandler>();
             builder.Services.AddScoped<RemoveWeddingHallCommandHandler>();
             builder.Services.AddScoped<GetWeddingHallWithLocationQueryHandler>();
+
+            //Booking
+            builder.Services.AddScoped<CreateBookingCommandHandler>();
+            builder.Services.AddScoped<UpdateBookingCommandHandler>();
+            builder.Services.AddScoped<RemoveBookingCommandHandler>();
+            builder.Services.AddScoped<GetBookingByIdQueryHandler>();
+            builder.Services.AddScoped<GetBookingQueryHandler>();
 
             builder.Services.AddApplicationService(builder.Configuration);
 

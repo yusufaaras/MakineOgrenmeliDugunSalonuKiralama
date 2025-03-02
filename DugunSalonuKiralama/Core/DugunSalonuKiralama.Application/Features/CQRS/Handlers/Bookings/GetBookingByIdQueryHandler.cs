@@ -25,7 +25,6 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
             return new GetBookingByIdQueryResult
             {
                 WeddingId = values.WeddingId,
-                WeddingHall = values.WeddingHall,
                 UserId = values.UserId,
                 BookingDate = values.BookingDate,
                 GuestCount = values.GuestCount,

@@ -3,36 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\bookings\\getbookingqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\bookings\\getbookingqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\cqrs\\results\\bookings\\getbookingqueryresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\cqrs\\results\\bookings\\getbookingqueryresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\bookings\\getbookingbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\bookings\\getbookingbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\presentation\\dugunsalonukiralama.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|solutionrelative:presentation\\dugunsalonukiralama.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\presentation\\dugunsalonukiralama.api\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|solutionrelative:presentation\\dugunsalonukiralama.api\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\cqrs\\results\\bookings\\getbookingbyidqueryresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\cqrs\\results\\bookings\\getbookingbyidqueryresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\locations\\getlocationbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\locations\\getlocationbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\cqrs\\commands\\bookings\\updatebookingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\cqrs\\commands\\bookings\\updatebookingcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\presentation\\dugunsalonukiralama.api\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|solutionrelative:presentation\\dugunsalonukiralama.api\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\locations\\getlocationqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\locations\\getlocationqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\bookings\\getbookingqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\bookings\\getbookingqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,8 +30,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Program.cs",
+              "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Program.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Program.cs",
+              "RelativeToolTip": "Presentation\\DugunSalonuKiralama.API\\Program.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAQwEUAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:27:48.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UpdateBookingCommand.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
+              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
+              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:27:09.814Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
@@ -90,106 +104,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetBookingByIdQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingByIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingByIdQueryHandler.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingByIdQueryHandler.cs*",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingByIdQueryHandler.cs*",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAgwBsAAAAeAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "GetBookingQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs",
+              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs",
+              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T16:19:48.937Z",
+              "WhenOpened": "2025-03-02T17:19:09.802Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "BookingController.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs*",
-              "RelativeToolTip": "Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs*",
-              "ViewState": "AgIAABEAAAAAAAAAAAAowCYAAAALAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwDgAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-02T16:02:06.601Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GetBookingQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs*",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAgwBIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T15:48:27.225Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GetBookingQueryResult.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Bookings\\GetBookingQueryResult.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Bookings\\GetBookingQueryResult.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Bookings\\GetBookingQueryResult.cs",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Bookings\\GetBookingQueryResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T15:51:25.303Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GetBookingByIdQueryResult.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Bookings\\GetBookingByIdQueryResult.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Bookings\\GetBookingByIdQueryResult.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Bookings\\GetBookingByIdQueryResult.cs",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Bookings\\GetBookingByIdQueryResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T16:28:12.431Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GetLocationByIdQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Locations\\GetLocationByIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Locations\\GetLocationByIdQueryHandler.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Locations\\GetLocationByIdQueryHandler.cs",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Locations\\GetLocationByIdQueryHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T16:42:05.013Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "LocationController.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\LocationController.cs",
               "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Controllers\\LocationController.cs",
               "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\LocationController.cs",
               "RelativeToolTip": "Presentation\\DugunSalonuKiralama.API\\Controllers\\LocationController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwCcAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwAoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-02T16:03:20.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GetLocationQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Locations\\GetLocationQueryHandler.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Locations\\GetLocationQueryHandler.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Locations\\GetLocationQueryHandler.cs",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Locations\\GetLocationQueryHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T15:49:21.794Z",
               "EditorCaption": ""
             }
           ]
