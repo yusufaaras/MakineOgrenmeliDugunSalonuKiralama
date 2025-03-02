@@ -19,10 +19,10 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Locations
             _repository = repository;
         }
 
-        public async Task<GetLocationQueryResult> Handle(GetLocationByIdQuery query)
+        public async Task<GetLocationByIdQueryResult> Handle(GetLocationByIdQuery query)
         {
             var values = await _repository.GetByIdAsync(query.Id);
-            return new GetLocationQueryResult
+            return new GetLocationByIdQueryResult
             {
                 Id = values.Id,
                 Address = values.Address,

@@ -9,9 +9,8 @@
     "\\Core\\DugunSalonuKiralama.Domain\\Notes",
     "\\Infrastructure",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations"
   ],
-  "SelectedNode": "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
+  "SelectedNode": "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations\\20250302093057_mig-DbSetAdded.cs",
   "PreviewInSolutionExplorer": false
 }

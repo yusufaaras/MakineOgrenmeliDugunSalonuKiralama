@@ -176,3 +176,10 @@ C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.pdb
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.genruntimeconfig.cache
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\ref\DugunSalonuKiralama.API.dll
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.csproj.AssemblyReference.cache
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.AssemblyInfoInputs.cache
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.AssemblyInfo.cs
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.csproj.CoreCompileInputs.cache
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.sourcelink.json

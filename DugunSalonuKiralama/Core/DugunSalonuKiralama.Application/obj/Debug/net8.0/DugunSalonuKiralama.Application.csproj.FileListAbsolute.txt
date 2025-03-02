@@ -14,3 +14,9 @@ C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Application\obj\Debug\net8.0\refint\DugunSalonuKiralama.Application.dll
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Application\obj\Debug\net8.0\DugunSalonuKiralama.Application.pdb
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Application\obj\Debug\net8.0\ref\DugunSalonuKiralama.Application.dll
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Application\obj\Debug\net8.0\DugunSalonuKiralama.Application.csproj.AssemblyReference.cache
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Application\obj\Debug\net8.0\DugunSalonuKiralama.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Application\obj\Debug\net8.0\DugunSalonuKiralama.Application.AssemblyInfoInputs.cache
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Application\obj\Debug\net8.0\DugunSalonuKiralama.Application.AssemblyInfo.cs
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Application\obj\Debug\net8.0\DugunSalonuKiralama.Application.csproj.CoreCompileInputs.cache
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Core\DugunSalonuKiralama.Application\obj\Debug\net8.0\DugunSalonuKiralama.Application.sourcelink.json
