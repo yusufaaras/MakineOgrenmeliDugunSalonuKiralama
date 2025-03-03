@@ -9,6 +9,10 @@ using DugunSalonuKiralama.Application.Features.CQRS.Handlers.GetWeddingHallWithL
 using System.Globalization;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Locations;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings;
+using DugunSalonuKiralama.Application.Interfaces.AppRoleInterfaces;
+using DugunSalonuKiralama.Application.Interfaces.AppUserInterfaces;
+using DugunSalonuKiralama.Persistence.Repositories.AppRoleRepositories;
+using DugunSalonuKiralama.Persistence.Repositories.AppUserRepositories;
 
 namespace DugunSalonuKiralama.API
 {
@@ -36,9 +40,12 @@ namespace DugunSalonuKiralama.API
                 });
             });
 
+            //Repos
             builder.Services.AddScoped<WeddingHallContext>();
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder.Services.AddScoped(typeof(IWeddingRepository), typeof(WeddingHallRepository));
+            builder.Services.AddScoped(typeof(IAppUserRepository), typeof(AppUserRepository));
+            builder.Services.AddScoped(typeof(IAppRoleRepository), typeof(AppRoleRepository));
 
             //Category
             builder.Services.AddScoped<GetCategoryQueryHandler>();

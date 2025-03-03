@@ -24,8 +24,4 @@
     <ProjectReference Include="..\..\Core\DugunSalonuKiralama.Domain\DugunSalonuKiralama.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>
