@@ -19,8 +19,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
         public async Task Handle(UpdateBookingCommand command)
         {
             var values = await _repository.GetByIdAsync(command.Id);
-            values.WeddingId = command.WeddingId;
-            values.WeddingHall= command.WeddingHall;
+            values.WeddingHallId = command.WeddingHallId;
             values.UserId = command.UserId;
             values.BookingDate = command.BookingDate;
             values.GuestCount = command.GuestCount;

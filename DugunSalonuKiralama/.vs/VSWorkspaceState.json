@@ -3,14 +3,14 @@
     "",
     "\\Core",
     "\\Core\\DugunSalonuKiralama.Application",
-    "\\Core\\DugunSalonuKiralama.Application\\Services",
-    "\\Core\\DugunSalonuKiralama.Domain",
-    "\\Core\\DugunSalonuKiralama.Domain\\Entities",
-    "\\Core\\DugunSalonuKiralama.Domain\\Notes",
+    "\\Core\\DugunSalonuKiralama.Application\\Features",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Bookings",
     "\\Infrastructure",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations"
+    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context"
   ],
-  "SelectedNode": "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations\\20250302093057_mig-DbSetAdded.cs",
+  "SelectedNode": "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\CreateBookingCommandHandler.cs",
   "PreviewInSolutionExplorer": false
 }

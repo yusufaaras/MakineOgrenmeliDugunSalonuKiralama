@@ -129,12 +129,12 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.Property<int>("WeddingHallId")
                         .HasColumnType("int");
 
-                    b.Property<int>("WeddingId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("WeddingHallId");
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("WeddingHallId")
+                        .IsUnique();
 
                     b.ToTable("Bookings");
                 });
@@ -381,11 +381,19 @@ namespace DugunSalonuKiralama.Persistence.Migrations
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Booking", b =>
                 {
-                    b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
+                    b.HasOne("DugunSalonuKiralama.Domain.Entities.AppUser", "User")
                         .WithMany()
-                        .HasForeignKey("WeddingHallId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
+                        .WithOne("Booking")
+                        .HasForeignKey("DugunSalonuKiralama.Domain.Entities.Booking", "WeddingHallId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
 
                     b.Navigation("WeddingHall");
                 });
@@ -474,6 +482,12 @@ namespace DugunSalonuKiralama.Persistence.Migrations
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Location", b =>
                 {
                     b.Navigation("WeddingHalls");
+                });
+
+            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.WeddingHall", b =>
+                {
+                    b.Navigation("Booking")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

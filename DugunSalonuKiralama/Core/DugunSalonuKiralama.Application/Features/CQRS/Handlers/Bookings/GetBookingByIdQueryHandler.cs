@@ -24,7 +24,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
             var values = await _repository.GetByIdAsync(query.Id);
             return new GetBookingByIdQueryResult
             {
-                WeddingId = values.WeddingId,
+                WeddingHallId = values.WeddingHallId,
                 UserId = values.UserId,
                 BookingDate = values.BookingDate,
                 GuestCount = values.GuestCount,

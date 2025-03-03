@@ -21,8 +21,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
         {
             await _repository.CreateAsync(new Booking
             {
-                WeddingId = command.WeddingId,
-                WeddingHall = command.WeddingHall,
+                WeddingHallId = command.WeddingHallId,
                 UserId = command.UserId,
                 BookingDate = command.BookingDate,
                 GuestCount = command.GuestCount,

@@ -24,6 +24,7 @@ namespace DugunSalonuKiralama.Domain.Entities
         public Location Location { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+        public Booking Booking { get; set; }
     }
 
 }

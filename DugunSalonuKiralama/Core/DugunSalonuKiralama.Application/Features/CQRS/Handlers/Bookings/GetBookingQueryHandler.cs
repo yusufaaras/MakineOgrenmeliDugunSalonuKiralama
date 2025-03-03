@@ -22,7 +22,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
             var values = await _repository.GetAllAsync();
             return values.Select(x => new GetBookingQueryResult
             {
-                WeddingId = x.WeddingId,
+                WeddingId = x.WeddingHallId,
                 UserId = x.UserId,
                 BookingDate = x.BookingDate,
                 GuestCount = x.GuestCount,
