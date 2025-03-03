@@ -62,7 +62,7 @@ function Header() {
                   aria-labelledby="userDropdown"
                 >
                   <li>
-                    <Link to="/" className="dropdown-item" onClick={changeNav}>
+                    <Link to="/AuthPage" className="dropdown-item" onClick={changeNav}>
                       Giriş Yap
                     </Link>
                   </li>

@@ -1,17 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Core",
-    "\\Core\\DugunSalonuKiralama.Application",
-    "\\Core\\DugunSalonuKiralama.Application\\Tools",
     "\\Infrastructure",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Repositories",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Repositories\\AppRoleRepositories",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Repositories\\AppUserRepositories"
+    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Repositories\\AppUserRepositories",
+    "\\Presentation",
+    "\\Presentation\\DugunSalonuKiralama.API",
+    "\\Presentation\\DugunSalonuKiralama.API\\Controllers"
   ],
-  "SelectedNode": "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
+  "SelectedNode": "\\Presentation\\DugunSalonuKiralama.API\\Controllers\\AuthorsController.cs",
   "PreviewInSolutionExplorer": false
 }
