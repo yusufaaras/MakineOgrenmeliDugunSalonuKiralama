@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Düğün Salonu Fiyat Tahmini</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+            <h2 class="text-center mb-4">Düğün Salonu Fiyat Tahmini</h2>
+            <form id="predictionForm">
+                <div class="mb-3">
+                    <label class="form-label">Kapasite</label>
+                    <input type="number" class="form-control" id="capacity" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Lokasyon (1-10)</label>
+                    <input type="number" class="form-control" id="location_index" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Sezon</label>
+                    <select class="form-select" id="season">
+                        <option value="0">Düşük Sezon</option>
+                        <option value="1">Yüksek Sezon</option>
+                    </select>
+                </div>
+                <div class="mb-3 form-check">
+                    <input class="form-check-input" type="checkbox" id="food_service">
+                    <label class="form-check-label">Yemek Hizmeti Var</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input class="form-check-input" type="checkbox" id="music_service">
+                    <label class="form-check-label">Müzik Hizmeti Var</label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ekstra Hizmet Sayısı</label>
+                    <input type="number" class="form-control" id="extra_services" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Tahmin Et</button>
+            </form>
+            <div class="alert alert-info mt-3 d-none" id="resultBox"></div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("predictionForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            
+            const data = {
+                capacity: parseInt(document.getElementById("capacity").value),
+                location_index: parseInt(document.getElementById("location_index").value),
+                season: parseInt(document.getElementById("season").value),
+                food_service: document.getElementById("food_service").checked ? 1 : 0,
+                music_service: document.getElementById("music_service").checked ? 1 : 0,
+                extra_services: parseInt(document.getElementById("extra_services").value)
+            };
+            
+            try {
+                const response = await fetch("/predict", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                const resultBox = document.getElementById("resultBox");
+                
+                if (result.predicted_price) {
+                    resultBox.textContent = `Tahmini Fiyat: ${result.predicted_price} $`;
+                    resultBox.classList.remove("d-none", "alert-danger");
+                    resultBox.classList.add("alert-success");
+                } else {
+                    resultBox.textContent = "Hata oluştu!";
+                    resultBox.classList.remove("d-none", "alert-success");
+                    resultBox.classList.add("alert-danger");
+                }
+            } catch (error) {
+                const resultBox = document.getElementById("resultBox");
+                resultBox.textContent = "Bağlantı hatası!";
+                resultBox.classList.remove("d-none", "alert-success");
+                resultBox.classList.add("alert-danger");
+            }
+        });
+    </script>
+</body>
+</html>

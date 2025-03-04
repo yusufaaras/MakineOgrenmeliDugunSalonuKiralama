@@ -39,6 +39,11 @@ function Header() {
                   Keşfet
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="http://127.0.0.1:5000/" className="nav-link" replace onClick={changeNav}>
+                  Makine Öğrenmesi ile Hesapla
+                </Link>
+              </li>
             </ul>
             <button type="button" className="btn btn-outline-dark me-3 d-none d-lg-inline">
               <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
