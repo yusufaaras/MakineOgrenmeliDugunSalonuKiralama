@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Core",
+    "\\Core\\DugunSalonuKiralama.Application",
+    "\\Core\\DugunSalonuKiralama.Application\\Features",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\User",
     "\\Infrastructure",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Repositories",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Repositories\\AppRoleRepositories",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Repositories\\AppUserRepositories",
-    "\\Presentation",
-    "\\Presentation\\DugunSalonuKiralama.API",
-    "\\Presentation\\DugunSalonuKiralama.API\\Controllers"
+    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context"
   ],
-  "SelectedNode": "\\Presentation\\DugunSalonuKiralama.API\\Controllers\\AuthorsController.cs",
+  "SelectedNode": "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\User\\UpdateUserCommand.cs",
   "PreviewInSolutionExplorer": false
 }

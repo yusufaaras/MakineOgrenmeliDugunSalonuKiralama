@@ -13,6 +13,8 @@ using DugunSalonuKiralama.Application.Interfaces.AppRoleInterfaces;
 using DugunSalonuKiralama.Application.Interfaces.AppUserInterfaces;
 using DugunSalonuKiralama.Persistence.Repositories.AppRoleRepositories;
 using DugunSalonuKiralama.Persistence.Repositories.AppUserRepositories;
+using DugunSalonuKiralama.Application.Features.CQRS.Handlers.BrandHandlers;
+using DugunSalonuKiralama.Application.Features.CQRS.Handlers.User;
 
 namespace DugunSalonuKiralama.API
 {
@@ -75,6 +77,13 @@ namespace DugunSalonuKiralama.API
             builder.Services.AddScoped<RemoveBookingCommandHandler>();
             builder.Services.AddScoped<GetBookingByIdQueryHandler>();
             builder.Services.AddScoped<GetBookingQueryHandler>();
+
+            //User
+            builder.Services.AddScoped<GetUserQueryHandler>();
+            builder.Services.AddScoped<GetUserByIdQueryHandler>();
+            builder.Services.AddScoped<UpdateUserCommandHandler>();
+            builder.Services.AddScoped<RemoveUserCommandHandler>();
+
 
             builder.Services.AddApplicationService(builder.Configuration);
 
