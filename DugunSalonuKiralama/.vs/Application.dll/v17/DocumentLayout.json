@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\presentation\\dugunsalonukiralama.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|solutionrelative:presentation\\dugunsalonukiralama.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.domain\\entities\\approle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|solutionrelative:core\\dugunsalonukiralama.domain\\entities\\approle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.domain\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|solutionrelative:core\\dugunsalonukiralama.domain\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\presentation\\dugunsalonukiralama.api\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,27 +39,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Program.cs",
-              "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Program.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Program.cs",
-              "RelativeToolTip": "Presentation\\DugunSalonuKiralama.API\\Program.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAQwEUAAAA9AAAAAAAAAA==",
+              "Title": "AppRole.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\AppRole.cs",
+              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Domain\\Entities\\AppRole.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\AppRole.cs",
+              "RelativeToolTip": "Core\\DugunSalonuKiralama.Domain\\Entities\\AppRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T17:27:48.065Z",
+              "WhenOpened": "2025-03-04T18:14:15.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UpdateBookingCommand.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
+              "DocumentIndex": 1,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\AppUser.cs",
+              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Domain\\Entities\\AppUser.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\AppUser.cs",
+              "RelativeToolTip": "Core\\DugunSalonuKiralama.Domain\\Entities\\AppUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T17:27:09.814Z",
+              "WhenOpened": "2025-03-04T18:13:57.113Z",
               "EditorCaption": ""
             },
             {
@@ -104,7 +108,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "UpdateBookingCommand.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
+              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
+              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:27:09.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "GetBookingQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs",
               "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs",
@@ -112,25 +128,24 @@
               "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T17:19:09.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T17:19:09.802Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BookingController.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs",
               "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs",
               "RelativeToolTip": "Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwDgAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADgAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-02T16:02:06.601Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "LocationController.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\LocationController.cs",
               "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Controllers\\LocationController.cs",
@@ -138,8 +153,7 @@
               "RelativeToolTip": "Presentation\\DugunSalonuKiralama.API\\Controllers\\LocationController.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAQwAoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T16:03:20.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-02T16:03:20.559Z"
             }
           ]
         },
