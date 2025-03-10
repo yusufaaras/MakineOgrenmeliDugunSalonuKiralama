@@ -5,12 +5,14 @@
     "\\Core\\DugunSalonuKiralama.Application",
     "\\Core\\DugunSalonuKiralama.Application\\Features",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\User",
-    "\\Infrastructure",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context"
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings",
+    "\\Core\\DugunSalonuKiralama.Domain",
+    "\\Core\\DugunSalonuKiralama.Domain\\Entities",
+    "\\Presentation",
+    "\\Presentation\\DugunSalonuKiralama.API",
+    "\\Presentation\\DugunSalonuKiralama.API\\Controllers"
   ],
-  "SelectedNode": "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\User\\UpdateUserCommand.cs",
+  "SelectedNode": "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
   "PreviewInSolutionExplorer": false
 }

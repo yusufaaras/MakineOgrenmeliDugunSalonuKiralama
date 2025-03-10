@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory, Link } from "react-router-dom"; // Link bileşenini ekledik
+import { useHistory, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const AuthPage = () => {
@@ -22,16 +22,34 @@ const AuthPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = isLogin ? "https://localhost:7072/api/Logins" : "https://localhost:7072/api/Registers";
-    
+
     try {
       const response = await axios.post(url, formData);
-      
-      // Başarılı giriş/kayıt sonrası yönlendirme
-      alert(`Success: ${response.data.message || "Operation Successful"}`);
-      history.push("/profile");
-      
+      const userData = response.data;
+
+      // Token'ı localStorage'a kaydet
+      localStorage.setItem("token", userData.token);
+
+      // Token'ı Authorization header'ında göndermek için istek yap
+      const token = userData.token;
+      const userResponse = await axios.get("https://localhost:7072/api/User", {
+        headers: {
+          Authorization: `Bearer ${token}`, // Token'ı header'a ekleyin
+        },
+      });
+
+      const user = userResponse.data[0];  // Assuming response is an array, get the first user
+
+      console.log('Alınan appRoleId:', user.appRoleID);  // Make sure to use 'appRoleID' here
+      // appRoleId'yi kontrol et
+      if (user.appRoleID === 2) {  // Check if appRoleID is 2
+        alert("Giriş başarılı!");
+        history.push("/profile");
+      } else {
+        alert("Yetkisiz giriş! Profile erişiminiz yok.");
+      }
     } catch (error) {
-      alert("Error: " + (error.response?.data?.message || "Something went wrong"));
+      alert("Hata: " + (error.response?.data?.message || "Bir şeyler yanlış gitti"));
     }
   };
 
@@ -75,7 +93,6 @@ const AuthPage = () => {
               </button>
             </p>
 
-            {/* Profile sayfasına geçiş için alternatif buton */}
             <p className="text-center mt-3">
               <Link to="/profile" className="btn btn-success">Go to Profile</Link>
             </p>
