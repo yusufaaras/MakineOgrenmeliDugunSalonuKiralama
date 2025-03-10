@@ -5,7 +5,10 @@ import Landing from "./landing/Landing";
 import ProductList from "./products/ProductList";
 import AuthPage from "./Login/AuthPage";
 import ProfilePage from "./Profile/ProfilePage";
-import BookingList from "./Booking/BookingList";
+import BookingButton from "./Booking/BookingButton";
+import BookingForm from "./Booking/BookingForm";
+
+
 function App() {
   return (
     <Template>
@@ -25,9 +28,8 @@ function App() {
         <Route path="/Profile" exact>
           <ProfilePage />
         </Route>
-        <Route path="/booking">
-        <BookingList />
-        </Route>
+        <Route exact path="/" component={BookingButton} />
+        <Route path="/booking-form" component={BookingForm} />
       </Switch>
     </Template>
   );
