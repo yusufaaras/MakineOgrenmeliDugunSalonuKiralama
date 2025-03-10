@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { jwtDecode } from "jwt-decode";
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -30,23 +31,29 @@ const AuthPage = () => {
       // Token'ı localStorage'a kaydet
       localStorage.setItem("token", userData.token);
 
-      // Token'ı Authorization header'ında göndermek için istek yap
+      // Token'dan giriş yapan kullanıcı bilgilerini al
       const token = userData.token;
-      const userResponse = await axios.get("https://localhost:7072/api/User", {
+      const decodedToken = jwtDecode(token);  // Token'ı decode et
+      const userId = decodedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
+
+      // Kullanıcı bilgilerini al
+      const userResponse = await axios.get(`https://localhost:7072/api/User/${userId}`, {
         headers: {
-          Authorization: `Bearer ${token}`, // Token'ı header'a ekleyin
+          Authorization: `Bearer ${token}`, // Token'ı header olarak ekle
         },
       });
 
-      const user = userResponse.data[0];  // Assuming response is an array, get the first user
+      const user = userResponse.data;  // Kullanıcı verilerini al
 
-      console.log('Alınan appRoleId:', user.appRoleID);  // Make sure to use 'appRoleID' here
+      console.log('Alınan appRoleId:', user.appRoleID);  
+
       // appRoleId'yi kontrol et
-      if (user.appRoleID === 2) {  // Check if appRoleID is 2
+      if (user.appRoleID === 2) {  
         alert("Giriş başarılı!");
         history.push("/profile");
       } else {
         alert("Yetkisiz giriş! Profile erişiminiz yok.");
+        localStorage.removeItem("token"); // Token'ı sil
       }
     } catch (error) {
       alert("Hata: " + (error.response?.data?.message || "Bir şeyler yanlış gitti"));
