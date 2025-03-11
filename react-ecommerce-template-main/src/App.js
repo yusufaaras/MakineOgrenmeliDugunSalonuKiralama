@@ -28,8 +28,9 @@ function App() {
         <Route path="/Profile" exact>
           <ProfilePage />
         </Route>
-        <Route exact path="/" component={BookingButton} />
-        <Route path="/booking-form" component={BookingForm} />
+        <Route path="/bookingForm">
+        <BookingForm/>
+        </Route>
       </Switch>
     </Template>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ScrollToTopOnMount from "../../template/ScrollToTopOnMount";
@@ -27,6 +27,11 @@ function ProductDetail() {
         setError("Ürün detayları yüklenirken bir hata oluştu.");
       });
   }, [slug]);
+  let history = useHistory();
+
+  const handleClick = () => {
+    history.push("/bookingform"); // Sayfayı yönlendirir
+  };
 
   if (error) {
     return <p className="text-center text-danger">{error}</p>;
@@ -83,7 +88,7 @@ function ProductDetail() {
 
           <div className="row g-3 mb-4">
             <div className="col">
-              <button className="btn btn-outline-dark py-2 w-100">Sepete Ekle</button>
+              <button onClick={handleClick} className="btn btn-outline-dark py-2 w-100">Rezervasyon Yap</button>
             </div>
             <div className="col">
               <button className="btn btn-dark py-2 w-100">Satın Al</button>

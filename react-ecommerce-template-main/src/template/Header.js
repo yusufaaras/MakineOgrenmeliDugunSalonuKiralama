@@ -40,7 +40,7 @@ function Header() {
                 </Link>
               </li>
               <li>
-                  <Link to="/BookingForm" className="nav-link">Rezervasyon</Link>
+                  <Link to="/bookingForm" className="nav-link">Rezervasyon</Link>
                 </li>
               <li className="nav-item">
                 <a href="http://127.0.0.1:5000/" className="nav-link">

@@ -1,97 +1,74 @@
 import React, { useState } from "react";
+import Modal from "react-modal";
 
-const BookingForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    date: "",
-    email: "",
-  });
+Modal.setAppElement("#root"); // Modal'ın dışına tıklayınca hata almamak için
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch("https://localhost:7072/api/booking", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Booking failed!");
-      }
-
-      alert("Booking successful!");
-      setFormData({ name: "", date: "", email: "" }); // Formu sıfırla
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Booking failed!");
-    }
-  };
+function BookingButton() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   return (
-    <form onSubmit={handleSubmit} style={styles.form}>
-      <label>
-        Name:
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-      </label>
+    <div>
+      {/* Buton */}
+      <button onClick={() => setModalIsOpen(true)} className="btn btn-primary">
+        Rezervasyon Yap
+      </button>
 
-      <label>
-        Date:
-        <input
-          type="date"
-          name="date"
-          value={formData.date}
-          onChange={handleChange}
-          required
-        />
-      </label>
+      {/* Modal */}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        style={{
+          content: {
+            width: "400px",
+            height: "350px",
+            margin: "auto",
+            padding: "20px",
+            borderRadius: "10px",
+            boxShadow: "0px 4px 6px rgba(0,0,0,0.1)",
+          },
+        }}
+      >
+        <h2>Rezervasyon Formu</h2>
 
-      <label>
-        Email:
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      </label>
+        {/* Form */}
+        <form>
+          <div className="form-group">
+            <label>Katılımcı Sayısı:</label>
+            <input type="number" className="form-control" />
+          </div>
 
-      <button type="submit" style={styles.button}>Submit Booking</button>
-    </form>
+          <div className="form-group">
+            <label>Toplam Ücret:</label>
+            <input type="text" className="form-control" />
+          </div>
+
+          <div className="form-group">
+            <label>Durum:</label>
+            <select className="form-control">
+              <option>Beklemede</option>
+              <option>Onaylandı</option>
+              <option>İptal Edildi</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Rezervasyon Tarihi:</label>
+            <input type="date" className="form-control" />
+          </div>
+
+          {/* Kaydet ve Kapat Butonları */}
+          <div className="mt-3">
+            <button type="submit" className="btn btn-success">
+              Kaydet
+            </button>
+            <button onClick={() => setModalIsOpen(false)} className="btn btn-danger ml-2">
+              Kapat
+            </button>
+          </div>
+        </form>
+      </Modal>
+    </div>
   );
-};
+}
 
-const styles = {
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "10px",
-    maxWidth: "300px",
-    margin: "auto",
-  },
-  button: {
-    padding: "10px 20px",
-    backgroundColor: "#28a745",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    fontSize: "16px",
-  },
-};
-
-export default BookingForm;
+export default BookingButton;
