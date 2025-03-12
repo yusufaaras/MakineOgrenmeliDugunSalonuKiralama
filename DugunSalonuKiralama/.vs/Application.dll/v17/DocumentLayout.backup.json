@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\mediator\\commands\\appusercommands\\createappusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\mediator\\commands\\appusercommands\\createappusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\mediator\\commands\\authorcommands\\createauthorcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\mediator\\commands\\authorcommands\\createauthorcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\presentation\\dugunsalonukiralama.api\\controllers\\weddinghallcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|solutionrelative:presentation\\dugunsalonukiralama.api\\controllers\\weddinghallcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -46,8 +54,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateAppUserCommand.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\Mediator\\Commands\\AppUserCommands\\CreateAppUserCommand.cs",
+              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\Mediator\\Commands\\AppUserCommands\\CreateAppUserCommand.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\Mediator\\Commands\\AppUserCommands\\CreateAppUserCommand.cs",
+              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\Mediator\\Commands\\AppUserCommands\\CreateAppUserCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T14:05:14.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateAuthorCommand.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\Mediator\\Commands\\AuthorCommands\\CreateAuthorCommand.cs",
+              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\Mediator\\Commands\\AuthorCommands\\CreateAuthorCommand.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\Mediator\\Commands\\AuthorCommands\\CreateAuthorCommand.cs",
+              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\Mediator\\Commands\\AuthorCommands\\CreateAuthorCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T14:05:07.255Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
@@ -94,20 +128,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "WeddingHallController.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\WeddingHallController.cs",
               "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Controllers\\WeddingHallController.cs",
               "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\WeddingHallController.cs",
               "RelativeToolTip": "Presentation\\DugunSalonuKiralama.API\\Controllers\\WeddingHallController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwCoAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAACoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-11T14:36:28.145Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "WeddingHallContext.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
@@ -119,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "CreateBookingCommand.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\CreateBookingCommand.cs",
               "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\CreateBookingCommand.cs",
@@ -131,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "AppRole.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\AppRole.cs",
               "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Domain\\Entities\\AppRole.cs",
@@ -143,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "AppUser.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\AppUser.cs",
               "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Domain\\Entities\\AppUser.cs",
@@ -155,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "UpdateBookingCommand.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
               "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings\\UpdateBookingCommand.cs",
@@ -167,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "GetBookingQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs",
               "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\GetBookingQueryHandler.cs",
@@ -179,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "BookingController.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs",
@@ -191,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "LocationController.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\LocationController.cs",
               "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Controllers\\LocationController.cs",

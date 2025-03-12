@@ -5,8 +5,6 @@ import Landing from "./landing/Landing";
 import ProductList from "./products/ProductList";
 import AuthPage from "./Login/AuthPage";
 import ProfilePage from "./Profile/ProfilePage";
-import BookingButton from "./Booking/BookingButton";
-import BookingForm from "./Booking/BookingForm";
 
 
 function App() {
@@ -28,9 +26,7 @@ function App() {
         <Route path="/Profile" exact>
           <ProfilePage />
         </Route>
-        <Route path="/bookingForm">
-        <BookingForm/>
-        </Route>
+
       </Switch>
     </Template>
   );
