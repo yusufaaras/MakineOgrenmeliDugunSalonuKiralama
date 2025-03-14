@@ -5,8 +5,13 @@ import Landing from "./landing/Landing";
 import ProductList from "./products/ProductList";
 import AuthPage from "./Login/AuthPage";
 import ProfilePage from "./Profile/ProfilePage";
+<<<<<<< Updated upstream
 
 
+=======
+import BookingList from "./Booking/BookingList";
+import BookingButton from "./Booking/BookingButton";
+>>>>>>> Stashed changes
 function App() {
   return (
     <Template>
@@ -19,6 +24,9 @@ function App() {
         </Route>
         <Route path="/" exact>
           <Landing />
+        </Route >
+        <Route path="/BookingButton">
+        <BookingButton />
         </Route>
         <Route path="/AuthPage" exact>
           <AuthPage />
@@ -26,7 +34,12 @@ function App() {
         <Route path="/Profile" exact>
           <ProfilePage />
         </Route>
+<<<<<<< Updated upstream
 
+=======
+    
+        
+>>>>>>> Stashed changes
       </Switch>
     </Template>
   );
