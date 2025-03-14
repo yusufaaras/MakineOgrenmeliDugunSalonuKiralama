@@ -47,8 +47,11 @@ const AuthPage = () => {
 
       console.log('Alınan appRoleId:', user.appRoleID);  
 
+      if(user.appRoleID === 1){
+        history.push("/admin")
+      }
       // appRoleId'yi kontrol et
-      if (user.appRoleID === 2) {  
+      else if (user.appRoleID === 2) {  
         alert("Giriş başarılı!");
         history.push("/profile");
       } else {

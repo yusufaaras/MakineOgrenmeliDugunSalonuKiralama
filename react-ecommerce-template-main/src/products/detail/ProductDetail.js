@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import { Link, Route } from "react-router-dom";
 import ScrollToTopOnMount from "../../template/ScrollToTopOnMount";
-import Calender from "../../calendar-07/js/Calender"
+
 
 
 
@@ -95,14 +95,6 @@ function ProductDetail() {
             <div className="col">
               <button onClick={handleClick} className="btn btn-outline-dark py-2 w-100">Rezervasyon Yap</button>
             </div>
-            {showCalendar && (
-              <div className="calendar-container">
-
-                <Calender />
-
-
-              </div>
-            )}
             <div className="col">
               <button className="btn btn-dark py-2 w-100">Satın Al</button>
             </div>
