@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DugunSalonuKiralama.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< Updated upstream
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cfce75d054b7435f53293c9894c9e31a5846af4f")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ea54ab8af326747da0f9bad68431df4d84e7abf")]
->>>>>>> Stashed changes
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a049cdefd88a25ec18f31d89f86a2c2dc956c611")]
 [assembly: System.Reflection.AssemblyProductAttribute("DugunSalonuKiralama.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DugunSalonuKiralama.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

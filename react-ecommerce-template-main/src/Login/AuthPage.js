@@ -47,16 +47,16 @@ const AuthPage = () => {
 
       console.log('Alınan appRoleId:', user.appRoleID);  
 
-      if(user.appRoleID === 1){
-        history.push("/admin")
-      }
-      // appRoleId'yi kontrol et
-      else if (user.appRoleID === 2) {  
+      if (user.appRoleID === 1) {  
+        alert("Admin girişi başarılı!");
+        history.push("/aadmin");
+      
+      } else if (user.appRoleID === 2) {  
         alert("Giriş başarılı!");
         history.push("/profile");
       } else {
         alert("Yetkisiz giriş! Profile erişiminiz yok.");
-        localStorage.removeItem("token"); // Token'ı sil
+        localStorage.removeItem("token"); 
       }
     } catch (error) {
       alert("Hata: " + (error.response?.data?.message || "Bir şeyler yanlış gitti"));
