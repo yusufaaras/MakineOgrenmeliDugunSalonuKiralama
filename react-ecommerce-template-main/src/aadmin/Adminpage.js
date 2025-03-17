@@ -3,6 +3,8 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { jwtDecode } from "jwt-decode";
+import AdminTemplade from "./admintemplade"
+
 
 const AdminPage = () => {
   const [userData, setUserData] = useState(null);
@@ -21,11 +23,11 @@ const AdminPage = () => {
           headers: {
             Authorization: `Bearer ${token}`,
 
-        },
+          },
         });
 
         setUserData(response.data);
-        
+
         // Kullanıcı admin değilse ana sayfaya yönlendir
         if (response.data.appRoleID !== 1) {
           alert("Bu sayfaya erişim yetkiniz yok!");
@@ -50,12 +52,13 @@ const AdminPage = () => {
           headers: err.response?.headers,
           config: err.config
         });
-      setError("Veri yüklenirken bir hata oluştu.");
+        setError("Veri yüklenirken bir hata oluştu.");
         setLoading(false);
-    };
+      };
 
-    fetchData();
-  }}, [history]);
+      fetchData();
+    }
+  }, [history]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -71,7 +74,7 @@ const AdminPage = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-        
+
         // Kullanıcı listesini güncelle
         setUsers(users.filter(user => user.id !== userId));
         alert("Kullanıcı başarıyla silindi!");
@@ -100,81 +103,8 @@ const AdminPage = () => {
   }
 
   return (
-    <div className="container mt-4">
-      <div className="row">
-        <div className="col-md-12">
-          <div className="card shadow mb-4">
-            <div className="card-header d-flex justify-content-between align-items-center">
-              <h3>Admin Paneli</h3>
-              <button className="btn btn-danger" onClick={handleLogout}>
-                Çıkış Yap
-              </button>
-            </div>
-            <div className="card-body">
-              {userData && (
-                <div className="row mb-4">
-                  <div className="col-md-6">
-                    <h4>Hoş Geldiniz, {userData.name} {userData.surname}</h4>
-                    <p>Email: {userData.email}</p>
-                    <p>Kullanıcı Adı: {userData.username}</p>
-                  </div>
-                </div>
-              )}
-              
-              <hr />
-              
-              <h4 className="mb-3">Kullanıcı Yönetimi</h4>
-              <div className="table-responsive">
-                <table className="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Kullanıcı Adı</th>
-                      <th>İsim</th>
-                      <th>Soyisim</th>
-                      <th>Email</th>
-                      <th>Rol</th>
-                      <th>İşlemler</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {users.map((user) => (
-                      <tr key={user.id}>
-                        <td>{user.id}</td>
-                        <td>{user.username}</td>
-                        <td>{user.name}</td>
-                        <td>{user.surname}</td>
-                        <td>{user.email}</td>
-                        <td>
-                          {user.appRoleID === 1 ? (
-                            <span className="badge bg-danger">Admin</span>
-                          ) : (
-                            <span className="badge bg-success">Kullanıcı</span>
-                          )}
-                        </td>
-                        <td>
-                          <button
-                            className="btn btn-sm btn-primary me-2"
-                            onClick={() => history.push(`/edit-user/${user.id}`)}
-                          >
-                            Düzenle
-                          </button>
-                          <button
-                            className="btn btn-sm btn-danger"
-                            onClick={() => handleDeleteUser(user.id)}
-                          >
-                            Sil
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div>
+      <AdminTemplade />
     </div>
   );
 };
