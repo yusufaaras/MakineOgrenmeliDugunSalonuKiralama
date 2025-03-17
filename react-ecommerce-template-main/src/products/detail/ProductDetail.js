@@ -1,41 +1,72 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ScrollToTopOnMount from "../../template/ScrollToTopOnMount";
-
-
-
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 function ProductDetail() {
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
-  const [categoryName, setCategoryName] = useState(""); // Kategori adını saklamak için state
+  const [categoryName, setCategoryName] = useState("");
+  const [locationDetails, setLocationDetails] = useState(null);
   const [error, setError] = useState(null);
-  const [showCalendar, setShowCalendar] = useState(false);
+  const [availableDates, setAvailableDates] = useState([]); // Müsait tarihler
+  const calendarRef = useRef(null); // Takvim referansı
+  let history = useHistory();
 
   useEffect(() => {
     axios
       .get(`https://localhost:7072/api/WeddingHall/${slug}`)
       .then((response) => {
         setProduct(response.data);
-
-        // Eğer ürün bilgisi geldiyse, kategori ID'yi kullanarak kategori adını getir
         return axios.get(`https://localhost:7072/api/Categories/${response.data.categoryId}`);
       })
       .then((response) => {
-        setCategoryName(response.data.name); // Gelen kategori adını kaydet
+        setCategoryName(response.data.name);
       })
       .catch((error) => {
         console.error("Detay yüklenirken hata oluştu:", error);
         setError("Ürün detayları yüklenirken bir hata oluştu.");
       });
   }, [slug]);
-  let history = useHistory();
+
+  useEffect(() => {
+    if (product?.locationId) {
+      axios
+        .get(`https://localhost:7072/api/Location/${product.locationId}`)
+        .then((response) => {
+          setLocationDetails(response.data);
+        })
+        .catch((error) => {
+          console.error("Konum bilgisi alınırken hata oluştu:", error);
+        });
+    }
+  }, [product?.locationId]);
+
+  useEffect(() => {
+    if (product?.id) {
+      axios
+        .get(`https://localhost:7072/api/WeddingHall/availableDates/${product.id}`)
+        .then((response) => {
+          setAvailableDates(response.data);
+        })
+        .catch((error) => {
+          console.error("Müsait tarihler alınırken hata oluştu:", error);
+        });
+    }
+  }, [product?.id]);
 
   const handleClick = () => {
-    setShowCalendar(!showCalendar);
+    if (calendarRef.current) {
+      calendarRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
+  const tileDisabled = ({ date }) => {
+    const formattedDate = date.toISOString().split("T")[0];
+    return !availableDates.includes(formattedDate);
   };
 
   if (error) {
@@ -88,8 +119,8 @@ function ProductDetail() {
           <h2 className="mb-1">{product.name}</h2>
           <p className="text-muted">{product.shortDescription}</p>
           <p><strong>Kapasite:</strong> {product.capacity} kişi</p>
-          <p><strong>Kategori:</strong> {categoryName || "Bilinmiyor"}</p> {/* Kategori ID yerine ismini yazdır */}
-          <p><strong>Konum ID:</strong> {product.locationId}</p>
+          <p><strong>Kategori:</strong> {categoryName || "Bilinmiyor"}</p>
+          <p><strong>Konum:</strong> {locationDetails ? `${locationDetails.address}, ${locationDetails.city}, ${locationDetails.country}` : "Bilgi alınamadı"}</p>
 
           <div className="row g-3 mb-4">
             <div className="col">
@@ -103,6 +134,38 @@ function ProductDetail() {
           <h4 className="mb-0">Açıklama</h4>
           <hr />
           <p className="lead flex-shrink-0">{product.longDescription}</p>
+        </div>
+      </div>
+
+      {/* Takvim ve Form Alanı */}
+      <div ref={calendarRef} className="row mt-5">
+        <div className="col-lg-12">
+          <div className="border rounded p-4 d-flex align-items-center" style={{ backgroundColor: "#f8f9fa" }}>
+            {/* Takvim */}
+            <div className="me-4">
+              <Calendar
+                tileDisabled={tileDisabled}
+                tileClassName={({ date }) =>
+                  availableDates.includes(date.toISOString().split("T")[0]) ? "bg-success text-white" : ""
+                }
+              />
+            </div>
+            {/* Form Alanı */}
+            <div className="flex-grow-1">
+              <h4>Rezervasyon Bilgileri</h4>
+              <form>
+                <div className="mb-3">
+                  <label className="form-label">İsim</label>
+                  <input type="text" className="form-control" placeholder="Adınızı girin" />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Soyisim</label>
+                  <input type="text" className="form-control" placeholder="Soyadınızı girin" />
+                </div>
+                <button type="submit" className="btn btn-primary">Rezervasyon Yap</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
