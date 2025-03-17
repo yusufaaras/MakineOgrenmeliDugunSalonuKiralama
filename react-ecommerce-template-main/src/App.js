@@ -1,4 +1,4 @@
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Template from "./template/Template";
 import AdminTemplate from "./AdminTemplate/AdminTemplate";
 import ProductDetail from "./products/detail/ProductDetail";
@@ -17,7 +17,7 @@ function App() {
       {isAdminRoute ? (
         // Eğer admin sayfasındaysak AdminTemplate kullan
         <AdminTemplate>
-          <Switch>
+          <Routes>
             <Route path="/admin/dashboard" exact>
               <h1>Admin Dashboard</h1>
             </Route>
@@ -25,12 +25,12 @@ function App() {
               <h1>Admin User Management</h1>
             </Route>
             {/* Buraya başka admin sayfaları eklenebilir */}
-          </Switch>
+          </Routes>
         </AdminTemplate>
       ) : (
         // Eğer normal kullanıcı sayfasındaysak Template kullan
         <Template>
-          <Switch>
+          <Routes>
             <Route path="/products" exact>
               <ProductList />
             </Route>
@@ -46,7 +46,7 @@ function App() {
             <Route path="/Profile" exact>
               <ProfilePage />
             </Route>
-          </Switch>
+          </Routes>
         </Template>
       )}
     </>

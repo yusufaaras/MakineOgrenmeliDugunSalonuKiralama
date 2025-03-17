@@ -49,7 +49,7 @@ const AuthPage = () => {
 
       if (user.appRoleID === 1) {  
         alert("Admin girişi başarılı!");
-        history.push("/aadmin");
+        history.push("/AdminTemplate");
       
       } else if (user.appRoleID === 2) {  
         alert("Giriş başarılı!");
