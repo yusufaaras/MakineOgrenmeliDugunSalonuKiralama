@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faUser, faTachometerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faUser, faTachometerAlt, faHome } from "@fortawesome/free-solid-svg-icons";
 import { Link, useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Sidebar.css";
@@ -26,9 +26,9 @@ function Header({ isOpen, setIsOpen }) {
             </button>
           </li>
           <li>
-            <Link to="/users" className="btn btn-link text-white">
-              <FontAwesomeIcon icon={faUser} className="me-2" />
-              <span className={isOpen ? "" : "d-none"}>Keşfet</span>
+            <Link to="/admin" className="btn btn-link text-white">
+              <FontAwesomeIcon icon={faHome} className="me-2" />
+              <span className={isOpen ? "" : "d-none"}>Salon Ekle</span>
             </Link>
           </li>
         </ul>
