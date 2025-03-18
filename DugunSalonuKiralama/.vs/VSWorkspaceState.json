@@ -3,10 +3,7 @@
     "",
     "\\Core",
     "\\Core\\DugunSalonuKiralama.Application",
-    "\\Core\\DugunSalonuKiralama.Application\\Features",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\Mediator",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\Mediator\\Commands",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\Mediator\\Commands\\AppUserCommands",
+    "\\Core\\DugunSalonuKiralama.Application\\Enums",
     "\\Infrastructure",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context",
@@ -14,6 +11,6 @@
     "\\Presentation\\DugunSalonuKiralama.API",
     "\\Presentation\\DugunSalonuKiralama.API\\Controllers"
   ],
-  "SelectedNode": "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
+  "SelectedNode": "\\Core\\DugunSalonuKiralama.Application\\Enums\\RolesType.cs",
   "PreviewInSolutionExplorer": false
 }

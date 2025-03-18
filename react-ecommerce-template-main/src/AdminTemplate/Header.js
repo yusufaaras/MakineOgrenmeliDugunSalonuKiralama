@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faUser, faTachometerAlt, faHome } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faCalendarAlt, faTachometerAlt, faHome } from "@fortawesome/free-solid-svg-icons";
 import { Link, useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Sidebar.css";
@@ -26,9 +26,16 @@ function Header({ isOpen, setIsOpen }) {
             </button>
           </li>
           <li>
-            <Link to="/admin" className="btn btn-link text-white">
+            <Link to="/admin/Hall" className="btn btn-link text-white">
               <FontAwesomeIcon icon={faHome} className="me-2" />
-              <span className={isOpen ? "" : "d-none"}>Salon Ekle</span>
+              <span className={isOpen ? "" : "d-none"}>Salonlar</span>
+            </Link>
+          </li>
+          
+          <li>
+            <Link to="/admin/Reservation" className="btn btn-link text-white">
+              <FontAwesomeIcon icon={faCalendarAlt} className="me-2" />
+              <span className={isOpen ? "" : "d-none"}>Rezervasyonlar</span>
             </Link>
           </li>
         </ul>

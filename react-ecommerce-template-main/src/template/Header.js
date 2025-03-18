@@ -49,6 +49,10 @@ function Header() {
               <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
               <span className="ms-3 badge rounded-pill bg-dark">0</span>
             </button>
+            <Link to="/profile" className="nav-link" replace onClick={changeNav}>
+                  Profil
+                </Link>
+
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item dropdown">
                 <a
