@@ -1,14 +1,16 @@
+import { useState } from "react";
 import Header from "./Header";
-import Footer from "./Footer"
-import Dashboard from "./Dashboard";
+import Footer from "./Footer";
 
-function AdminTemplate({children}) {
+function AdminTemplate({ children }) {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
   return (
-    <>
-      <Header />
-      <Footer/>
-      
-    </>
+    <div className="admin-layout">
+      <Header isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+      <div className={`admin-content ${isSidebarOpen ? "open" : "closed"}`}>{children}</div>
+      <Footer />
+    </div>
   );
 }
 
