@@ -7,10 +7,11 @@ import ProductList from "./products/ProductList";
 import AuthPage from "./Login/AuthPage";
 import ProfilePage from "./Profile/ProfilePage";
 import Dashboard from "./Admin/Dashboard/Dashboard";
-import HallList from "./Admin/Hall/HallList"
-import AddHall from "./Admin/Hall/AddHall"
-import Reservation from "./Admin/Reservation/Reservation"
-import AddReservation from "./Admin/Reservation/AddReservation"
+import HallList from "./Admin/Hall/HallList";
+import AddHall from "./Admin/Hall/AddHall";
+import Reservation from "./Admin/Reservation/Reservation";
+import AddReservation from "./Admin/Reservation/AddReservation";
+import ProtectedAdminRoute from "./routes/ProtectedAdminRoute";
 
 function RoutesWithTemplate() {
   const location = useLocation();
@@ -18,17 +19,15 @@ function RoutesWithTemplate() {
 
   return isAdminRoute ? (
     <AdminTemplate>
-      <Switch>        
-        <Route exact path="/admin" component={Dashboard} />
-        <Route exact path="/admin/dashboard" component={Dashboard} />
+      <Switch>
+        <ProtectedAdminRoute exact path="/admin" component={Dashboard} />
+        <ProtectedAdminRoute exact path="/admin/dashboard" component={Dashboard} />
+        <ProtectedAdminRoute exact path="/admin/Hall" component={HallList} />
+        <ProtectedAdminRoute exact path="/admin/Hall/AddHall" component={AddHall} />
+        <ProtectedAdminRoute exact path="/admin/Reservation" component={Reservation} />
+        <ProtectedAdminRoute exact path="/admin/Reservation/AddReservation" component={AddReservation} />
+        <ProtectedAdminRoute exact path="/admin/users" render={() => <h1>Admin User Management</h1>} />
 
-        <Route exact path="/admin/Hall" component={HallList} />        
-        <Route exact path="/admin/Hall/AddHall" component={AddHall} />
-
-        <Route exact path="/admin/Reservation" component={Reservation} />
-        <Route exact path="/admin/Reservation/AddReservation" component={AddReservation} />
-
-        <Route exact path="/admin/users" render={() => <h1>Admin User Management</h1>} />
       </Switch>
     </AdminTemplate>
   ) : (

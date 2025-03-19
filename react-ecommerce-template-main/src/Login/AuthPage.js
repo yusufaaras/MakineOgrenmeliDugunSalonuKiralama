@@ -14,6 +14,9 @@ const AuthPage = () => {
     email: "",
   });
 
+  const [alertMessage, setAlertMessage] = useState(null);
+  const [alertType, setAlertType] = useState(""); // "success" veya "danger"
+
   const history = useHistory();
 
   const handleChange = (e) => {
@@ -22,7 +25,9 @@ const AuthPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = isLogin ? "https://localhost:7072/api/Logins" : "https://localhost:7072/api/Registers";
+    const url = isLogin
+      ? "https://localhost:7072/api/Logins"
+      : "https://localhost:7072/api/Registers";
 
     try {
       const response = await axios.post(url, formData);
@@ -33,33 +38,42 @@ const AuthPage = () => {
 
       // Token'dan giriş yapan kullanıcı bilgilerini al
       const token = userData.token;
-      const decodedToken = jwtDecode(token);  // Token'ı decode et
-      const userId = decodedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
+      const decodedToken = jwtDecode(token); // Token'ı decode et
+      const userId =
+        decodedToken[
+          "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
+        ];
 
       // Kullanıcı bilgilerini al
-      const userResponse = await axios.get(`https://localhost:7072/api/User/${userId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`, // Token'ı header olarak ekle
-        },
-      });
+      const userResponse = await axios.get(
+        `https://localhost:7072/api/User/${userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
-      const user = userResponse.data;  // Kullanıcı verilerini al
+      const user = userResponse.data;
 
-      console.log('Alınan appRoleId:', user.appRoleID);  
-
-      if (user.appRoleID === 1) {  
-        alert("Admin girişi başarılı!");
-        history.push("/admin");
-      
-      } else if (user.appRoleID === 2) {  
-        alert("Giriş başarılı!");
-        history.push("/profile");
+      if (user.appRoleID === 1) {
+        setAlertMessage("Admin girişi başarılı!");
+        setAlertType("success");
+        setTimeout(() => history.push("/admin"), 2000);
+      } else if (user.appRoleID === 2) {
+        setAlertMessage("Giriş başarılı!");
+        setAlertType("success");
+        setTimeout(() => history.push("/profile"), 2000);
       } else {
-        alert("Yetkisiz giriş! Profile erişiminiz yok.");
-        localStorage.removeItem("token"); 
+        setAlertMessage("Yetkisiz giriş! Profile erişiminiz yok.");
+        setAlertType("danger");
+        localStorage.removeItem("token");
       }
     } catch (error) {
-      alert("Hata: " + (error.response?.data?.message || "Bir şeyler yanlış gitti"));
+      setAlertMessage(
+        "Hata: " + (error.response?.data?.message || "Bir şeyler yanlış gitti")
+      );
+      setAlertType("danger");
     }
   };
 
@@ -69,42 +83,87 @@ const AuthPage = () => {
         <div className="col-md-6">
           <div className="card shadow p-4">
             <h3 className="text-center">{isLogin ? "Login" : "Register"}</h3>
+
+            {/* Alert mesajı */}
+            {alertMessage && (
+              <div className={`alert alert-${alertType} text-center`} role="alert">
+                {alertMessage}
+              </div>
+            )}
+
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label className="form-label">Username</label>
-                <input type="text" name="username" className="form-control" onChange={handleChange} required />
+                <input
+                  type="text"
+                  name="username"
+                  className="form-control"
+                  onChange={handleChange}
+                  required
+                />
               </div>
               <div className="mb-3">
                 <label className="form-label">Password</label>
-                <input type="password" name="password" className="form-control" onChange={handleChange} required />
+                <input
+                  type="password"
+                  name="password"
+                  className="form-control"
+                  onChange={handleChange}
+                  required
+                />
               </div>
               {!isLogin && (
                 <>
                   <div className="mb-3">
                     <label className="form-label">Name</label>
-                    <input type="text" name="name" className="form-control" onChange={handleChange} required />
+                    <input
+                      type="text"
+                      name="name"
+                      className="form-control"
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                   <div className="mb-3">
                     <label className="form-label">Surname</label>
-                    <input type="text" name="surname" className="form-control" onChange={handleChange} required />
+                    <input
+                      type="text"
+                      name="surname"
+                      className="form-control"
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                   <div className="mb-3">
                     <label className="form-label">Email</label>
-                    <input type="email" name="email" className="form-control" onChange={handleChange} required />
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-control"
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                 </>
               )}
-              <button type="submit" className="btn btn-primary w-100">{isLogin ? "Login" : "Register"}</button>
+              <button type="submit" className="btn btn-primary w-100">
+                {isLogin ? "Login" : "Register"}
+              </button>
             </form>
             <p className="text-center mt-3">
               {isLogin ? "Don't have an account? " : "Already have an account? "}
-              <button className="btn btn-link" onClick={() => setIsLogin(!isLogin)}>
+              <button
+                className="btn btn-link"
+                onClick={() => setIsLogin(!isLogin)}
+              >
                 {isLogin ? "Register here" : "Login here"}
               </button>
             </p>
 
             <p className="text-center mt-3">
-              <Link to="/profile" className="btn btn-success">Go to Profile</Link>
+              <Link to="/profile" className="btn btn-success">
+                Go to Profile
+              </Link>
             </p>
           </div>
         </div>

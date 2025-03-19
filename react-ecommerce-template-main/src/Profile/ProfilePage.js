@@ -49,7 +49,7 @@ const ProfilePage = () => {
             <p className="text-muted">{user.email}</p>
             <button className="btn btn-danger mt-3" onClick={() => {
               localStorage.removeItem("token"); // Çıkış yapınca token'ı sil
-              window.location.href = "/login";
+              window.location.href = "/AuthPage";
             }}>
               Çıkış Yap
             </button>
