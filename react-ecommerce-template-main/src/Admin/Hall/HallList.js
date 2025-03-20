@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
+import 'font-awesome/css/font-awesome.min.css';
 
 const HallList = () => {
   const [halls, setHalls] = useState([]);
@@ -84,7 +85,6 @@ const HallList = () => {
             <th>Kapsite</th>
             <th>Konum</th>
             <th>Kategori</th>
-            <th>User ID</th>
             <th>İşlemler</th>
           </tr>
         </thead>
@@ -97,11 +97,18 @@ const HallList = () => {
                 <td>{hall.capacity}</td>
                 <td>{locations[hall.locationId] || "Bilinmiyor"}</td>
                 <td>{categories[hall.categoryId] || "Bilinmiyor"}</td>
-                <td>{hall.userId}</td>
                 <td>
-                  <button className="btn btn-warning btn-sm me-2">Düzenle</button>
-                  <button className="btn btn-danger btn-sm">Sil</button>
+                <button className="btn btn-primary btn-sm me-2">
+                    <i className="fa fa-eye"></i> 
+                  </button>
+                  <button className="btn btn-warning btn-sm me-2">
+                    <i className="fa fa-pencil"></i> 
+                  </button>
+                  <button className="btn btn-danger btn-sm me-2">
+                    <i className="fa fa-trash"></i> 
+                  </button>
                 </td>
+
               </tr>
             ))
           ) : (
