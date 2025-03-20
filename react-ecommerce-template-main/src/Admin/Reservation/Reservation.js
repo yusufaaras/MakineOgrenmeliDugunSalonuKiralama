@@ -33,8 +33,8 @@ const Reservation = () => {
 
   return (
     <div className="container mt-4">
-      <br/>
-      <br/>
+      <br />
+      <br />
       <h2 className="mb-3">Rezervasyon Listesi</h2>
 
       {/* Arama Kutusu */}
@@ -47,12 +47,11 @@ const Reservation = () => {
       />
 
       {/* Tablo */}
-      
+
       <Link to="/admin/Reservation/AddReservation" className="btn btn-primary btn-sm me-2">
-            Yeni Salon Ekle
-        </Link>
-      <br/>
-      <br/>
+        <i className="fa fa-plus"></i> Yeni Rezervasyon Ekle
+      </Link>
+      <br />
       <table className="table table-striped table-hover">
         <thead>
           <tr>
@@ -72,8 +71,15 @@ const Reservation = () => {
                 <td>{user.email}</td>
                 <td>{user.role}</td>
                 <td>
-                  <button className="btn btn-warning btn-sm me-2">Düzenle</button>
-                  <button className="btn btn-danger btn-sm">Sil</button>
+                  <button className="btn btn-primary btn-sm me-2">
+                    <i className="fa fa-eye"></i>
+                  </button>
+                  <button className="btn btn-warning btn-sm me-2">
+                    <i className="fa fa-pencil"></i>
+                  </button>
+                  <button className="btn btn-danger btn-sm me-2">
+                    <i className="fa fa-trash"></i>
+                  </button>
                 </td>
               </tr>
             ))

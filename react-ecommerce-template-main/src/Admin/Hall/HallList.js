@@ -63,6 +63,8 @@ const HallList = () => {
 
   return (
     <div className="container mt-4">
+      <br />
+      <br />
       <h2 className="mb-3">Düğün Salonları Listesi</h2>
 
       <input
@@ -98,14 +100,14 @@ const HallList = () => {
                 <td>{locations[hall.locationId] || "Bilinmiyor"}</td>
                 <td>{categories[hall.categoryId] || "Bilinmiyor"}</td>
                 <td>
-                <button className="btn btn-primary btn-sm me-2">
-                    <i className="fa fa-eye"></i> 
+                  <button className="btn btn-primary btn-sm me-2">
+                    <i className="fa fa-eye"></i>
                   </button>
                   <button className="btn btn-warning btn-sm me-2">
-                    <i className="fa fa-pencil"></i> 
+                    <i className="fa fa-pencil"></i>
                   </button>
                   <button className="btn btn-danger btn-sm me-2">
-                    <i className="fa fa-trash"></i> 
+                    <i className="fa fa-trash"></i>
                   </button>
                 </td>
 
