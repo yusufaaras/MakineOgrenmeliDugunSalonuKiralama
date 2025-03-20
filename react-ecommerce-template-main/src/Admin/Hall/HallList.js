@@ -2,17 +2,18 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 const HallList = () => {
   const [halls, setHalls] = useState([]);
   const [locations, setLocations] = useState({});
   const [categories, setCategories] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortBy, setSortBy] = useState("name");
-  const [sortOrder, setSortOrder] = useState("asc");
+  const [userId, setUserId] = useState(null); // Token'dan alınan kullanıcı ID
 
   useEffect(() => {
     fetchData();
+    decodeToken();
   }, []);
 
   const fetchData = async () => {
@@ -39,32 +40,30 @@ const HallList = () => {
     }
   };
 
-  // Arama işlemi
-  const filteredData = halls.filter(
-    (hall) =>
-      hall.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (locations[hall.locationId] &&
-        locations[hall.locationId].toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (categories[hall.categoryId] &&
-        categories[hall.categoryId].toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+  const decodeToken = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        console.log("Decoded Token:", decoded);
 
-  // Sıralama işlemi
-  const sortedData = [...filteredData].sort((a, b) => {
-    const aValue = a[sortBy] || "";
-    const bValue = b[sortBy] || "";
-    if (sortOrder === "asc") {
-      return aValue > bValue ? 1 : -1;
+        // userId'yi token'dan al ve state'e kaydet
+        setUserId(decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"]);
+      } catch (error) {
+        console.error("Token çözme hatası:", error);
+      }
     } else {
-      return aValue < bValue ? 1 : -1;
+      console.warn("Token bulunamadı!");
     }
-  });
+  };
+
+  // Kullanıcının kendi salonlarını filtrele
+  const filteredHalls = userId ? halls.filter((hall) => hall.userId == userId) : [];
 
   return (
     <div className="container mt-4">
       <h2 className="mb-3">Düğün Salonları Listesi</h2>
 
-      {/* Arama Kutusu */}
       <input
         type="text"
         className="form-control mb-3"
@@ -73,32 +72,32 @@ const HallList = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
-      {/* Yeni Salon Ekle Butonu */}
       <Link to="/admin/Hall/AddHall" className="btn btn-primary btn-sm mb-3">
         Yeni Salon Ekle
       </Link>
 
-      {/* Tablo */}
       <table className="table table-striped table-hover">
         <thead>
           <tr>
-            <th onClick={() => setSortBy("id")} style={{ cursor: "pointer" }}>#</th>
-            <th onClick={() => setSortBy("name")} style={{ cursor: "pointer" }}>Salon Adı</th>
+            <th>#</th>
+            <th>Salon Adı</th>
             <th>Kapsite</th>
             <th>Konum</th>
             <th>Kategori</th>
+            <th>User ID</th>
             <th>İşlemler</th>
           </tr>
         </thead>
         <tbody>
-          {sortedData.length > 0 ? (
-            sortedData.map((hall) => (
+          {filteredHalls.length > 0 ? (
+            filteredHalls.map((hall) => (
               <tr key={hall.id}>
                 <td>{hall.id}</td>
                 <td>{hall.name}</td>
                 <td>{hall.capacity}</td>
                 <td>{locations[hall.locationId] || "Bilinmiyor"}</td>
                 <td>{categories[hall.categoryId] || "Bilinmiyor"}</td>
+                <td>{hall.userId}</td>
                 <td>
                   <button className="btn btn-warning btn-sm me-2">Düzenle</button>
                   <button className="btn btn-danger btn-sm">Sil</button>
@@ -107,7 +106,7 @@ const HallList = () => {
             ))
           ) : (
             <tr>
-              <td colSpan="6" className="text-center">Sonuç bulunamadı</td>
+              <td colSpan="7" className="text-center">Sonuç bulunamadı</td>
             </tr>
           )}
         </tbody>
