@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-
+import useSearch from '../Search/useSearch';
 const Reservation = () => {
   // Örnek tablo verileri
   const [data, setData] = useState([
@@ -49,7 +49,7 @@ const Reservation = () => {
       {/* Tablo */}
 
       <Link to="/admin/Reservation/AddReservation" className="btn btn-primary btn-sm me-2">
-        <i className="fa fa-plus"></i> Yeni Rezervasyon Ekle
+        <i className="fa fa-plus"></i> Yeni Ekle
       </Link>
       <br />
       <table className="table table-striped table-hover">

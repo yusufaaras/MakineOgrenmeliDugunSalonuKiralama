@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import 'font-awesome/css/font-awesome.min.css';
+import useSearch from "../Search/useSearch";
 
 const HallList = () => {
   const [halls, setHalls] = useState([]);
   const [locations, setLocations] = useState({});
   const [categories, setCategories] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
-  const [userId, setUserId] = useState(null); // Token'dan alınan kullanıcı ID
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     fetchData();
@@ -47,8 +48,6 @@ const HallList = () => {
       try {
         const decoded = jwtDecode(token);
         console.log("Decoded Token:", decoded);
-
-        // userId'yi token'dan al ve state'e kaydet
         setUserId(decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"]);
       } catch (error) {
         console.error("Token çözme hatası:", error);
@@ -61,6 +60,9 @@ const HallList = () => {
   // Kullanıcının kendi salonlarını filtrele
   const filteredHalls = userId ? halls.filter((hall) => hall.userId == userId) : [];
 
+  // Arama işlemi
+  const searchHalls = useSearch(filteredHalls, locations, categories, searchTerm);
+
   return (
     <div className="container mt-4">
       <br />
@@ -72,7 +74,10 @@ const HallList = () => {
         className="form-control mb-3"
         placeholder="Salon adı, konum veya kategori ara..."
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={(e) => {
+          setSearchTerm(e.target.value);
+          console.log("Search Term Updated:", e.target.value); // Log search term
+        }}
       />
 
       <Link to="/admin/Hall/AddHall" className="btn btn-primary btn-sm mb-3">
@@ -91,8 +96,8 @@ const HallList = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredHalls.length > 0 ? (
-            filteredHalls.map((hall) => (
+          {searchHalls.length > 0 ? (
+            searchHalls.map((hall) => (
               <tr key={hall.id}>
                 <td>{hall.id}</td>
                 <td>{hall.name}</td>
@@ -110,7 +115,6 @@ const HallList = () => {
                     <i className="fa fa-trash"></i>
                   </button>
                 </td>
-
               </tr>
             ))
           ) : (
