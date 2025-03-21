@@ -856,6 +856,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "homeImageUrl": {
             "type": "string",
             "nullable": true
