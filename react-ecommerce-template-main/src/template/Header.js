@@ -25,6 +25,7 @@ function Header() {
     <header>
       <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-white border-bottom">
         <div className="container-fluid">
+          
           <Link className="navbar-brand text-danger" to="/" onClick={changeNav}>
             <FontAwesomeIcon icon={["fab", "bootstrap"]} className="ms-1" size="lg" />
             <span className="ms-2 h5">Salon</span>

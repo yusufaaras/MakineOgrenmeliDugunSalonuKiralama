@@ -13,6 +13,7 @@ import UpdateHall from "./Admin/Hall/UpdateHall";
 import Reservation from "./Admin/Reservation/Reservation";
 import AddReservation from "./Admin/Reservation/AddReservation";
 import ProtectedAdminRoute from "./routes/ProtectedAdminRoute";
+import AdminProfile from './Admin/Profile/AdminProfile';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function RoutesWithTemplate() {
@@ -29,7 +30,7 @@ function RoutesWithTemplate() {
         <ProtectedAdminRoute exact path="/admin/Hall/UpdateHall/:id" component={UpdateHall} />
         <ProtectedAdminRoute exact path="/admin/Reservation" component={Reservation} />
         <ProtectedAdminRoute exact path="/admin/Reservation/AddReservation" component={AddReservation} />
-        <ProtectedAdminRoute exact path="/admin/users" render={() => <h1>Admin User Management</h1>} />
+        <ProtectedAdminRoute exact path="/admin/AdminProfile" component={AdminProfile} />
 
       </Switch>
     </AdminTemplate>
