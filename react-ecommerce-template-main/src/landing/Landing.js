@@ -15,7 +15,7 @@ function Landing() {
           Düğün salonları bir tık uzağınızda. Hemen alttaki butona tıklayın ve seçiminizi yapın.
         </p>
         <div className="d-flex justify-content-center">
-          <Link to="/products" className="btn btn-primary" replace>
+          <Link to="/products" className="btn btn-danger" replace>
             Düğün Salonlarını Keşfet
           </Link>
         </div>

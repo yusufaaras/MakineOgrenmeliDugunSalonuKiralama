@@ -45,9 +45,15 @@ function FeatureProduct({ maxItems = 6 }) {
                     {categories[hall.categoryId] || "Fiyat Bilgisi Yok"}
                   </p>
                   <div className="d-grid gap-2">
-                    <Link to={`/products/${hall.id}`} className="btn btn-outline-dark" replace>
+                    <Link
+                      to={`/products/${hall.id}`}
+                      className="btn btn-outline-danger text-dark fw-bold"
+                      style={{ fontFamily: "cursive" }}
+                      replace
+                    >
                       Detay
                     </Link>
+
                   </div>
                 </div>
               </div>

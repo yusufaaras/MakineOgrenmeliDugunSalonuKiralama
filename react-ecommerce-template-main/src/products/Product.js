@@ -53,7 +53,12 @@ function Product() {
                     Açıklama: {hall.shortDescription}
                   </p>
                   <div className="d-grid gap-2">
-                    <Link to={`/products/${hall.id}`} className="btn btn-outline-dark" replace>
+                    <Link
+                      to={`/products/${hall.id}`}
+                      className="btn btn-outline-danger text-dark fw-bold"
+                      style={{ fontFamily: "cursive" }}
+                      replace
+                    >
                       Detay
                     </Link>
                   </div>
