@@ -11,6 +11,6 @@
     "\\Presentation\\DugunSalonuKiralama.API",
     "\\Presentation\\DugunSalonuKiralama.API\\Controllers"
   ],
-  "SelectedNode": "\\Core\\DugunSalonuKiralama.Domain\\Entities\\Location.cs",
+  "SelectedNode": "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
   "PreviewInSolutionExplorer": false
 }
