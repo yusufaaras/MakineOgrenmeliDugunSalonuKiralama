@@ -105,12 +105,12 @@ const HallList = () => {
                 <td>{locations[hall.locationId] || "Bilinmiyor"}</td>
                 <td>{categories[hall.categoryId] || "Bilinmiyor"}</td>
                 <td>
-                  <button className="btn btn-primary btn-sm me-2">
+                <Link to={`/products/${hall.id}`} className="btn btn-primary btn-sm me-2">
                     <i className="fa fa-eye"></i>
-                  </button>
-                  <button className="btn btn-warning btn-sm me-2">
+                  </Link>
+                  <Link to={`/admin/Hall/UpdateHall/${hall.id}`} className="btn btn-warning btn-sm me-2">
                     <i className="fa fa-pencil"></i>
-                  </button>
+                  </Link>
                   <button className="btn btn-danger btn-sm me-2">
                     <i className="fa fa-trash"></i>
                   </button>
