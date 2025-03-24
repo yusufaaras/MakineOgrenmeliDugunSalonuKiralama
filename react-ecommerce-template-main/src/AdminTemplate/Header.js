@@ -31,12 +31,23 @@ function Header({ isOpen, setIsOpen }) {
               <span className={isOpen ? "" : "d-none"}>Salonlar</span>
             </Link>
           </li>
-          
+
           <li>
             <Link to="/admin/Reservation" className="btn btn-link text-white">
               <FontAwesomeIcon icon={faCalendarAlt} className="me-2" />
               <span className={isOpen ? "" : "d-none"}>Rezervasyonlar</span>
             </Link>
+          </li>
+          <li>
+            <button
+              className="btn btn-link text-danger fw-bold"
+              onClick={() => {
+                localStorage.removeItem("token");
+                window.location.href = "/AuthPage";
+              }}
+            >
+              <i className="fa fa-sign-out me-2"></i> Çıkış Yap
+            </button>
           </li>
         </ul>
       </div>

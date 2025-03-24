@@ -13,6 +13,7 @@ import UpdateHall from "./Admin/Hall/UpdateHall";
 import Reservation from "./Admin/Reservation/Reservation";
 import AddReservation from "./Admin/Reservation/AddReservation";
 import ProtectedAdminRoute from "./routes/ProtectedAdminRoute";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function RoutesWithTemplate() {
   const location = useLocation();

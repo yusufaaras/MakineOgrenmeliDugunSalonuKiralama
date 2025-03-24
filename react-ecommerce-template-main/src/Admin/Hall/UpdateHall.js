@@ -51,6 +51,8 @@ const UpdateHall = () => {
 
   return (
     <div className="container mt-4">
+      <br />
+      <br />
       <h2>Salon Güncelle</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
