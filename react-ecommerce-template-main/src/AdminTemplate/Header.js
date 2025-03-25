@@ -25,6 +25,13 @@ function Header({ isOpen, setIsOpen }) {
               <span className={isOpen ? "" : "d-none"}>Dashboard</span>
             </button>
           </li>
+          
+          <li>
+            <Link to="/admin/AdminProfile" className="btn btn-link text-white">
+              <FontAwesomeIcon icon={faUser} className="me-2" />
+              <span className={isOpen ? "" : "d-none"}>Profilim</span>
+            </Link>
+          </li>
           <li>
             <Link to="/admin/Hall" className="btn btn-link text-white">
               <FontAwesomeIcon icon={faHome} className="me-2" />
@@ -37,14 +44,7 @@ function Header({ isOpen, setIsOpen }) {
               <FontAwesomeIcon icon={faCalendarAlt} className="me-2" />
               <span className={isOpen ? "" : "d-none"}>Rezervasyonlar</span>
             </Link>
-          </li>
-          <li>
-            <Link to="/admin/AdminProfile" className="btn btn-link text-white">
-              <FontAwesomeIcon icon={faUser} className="me-2" />
-              <span className={isOpen ? "" : "d-none"}>Profilim</span>
-            </Link>
-          </li>
-          
+          </li>          
           <li>
             <Link to="/" className="btn btn-link text-white">
               <FontAwesomeIcon icon={faEye} className="me-2" />

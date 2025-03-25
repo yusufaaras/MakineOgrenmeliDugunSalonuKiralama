@@ -161,8 +161,8 @@ const AuthPage = () => {
             </p>
 
             <p className="text-center mt-3">
-              <Link to="/profile" className="btn btn-success">
-                Go to Profile
+              <Link to="/" className="btn btn-primary">
+                Geri Dön
               </Link>
             </p>
           </div>

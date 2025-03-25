@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Core",
-    "\\Core\\DugunSalonuKiralama.Domain",
-    "\\Core\\DugunSalonuKiralama.Domain\\Entities",
+    "\\Core\\DugunSalonuKiralama.Application",
+    "\\Core\\DugunSalonuKiralama.Application\\Features",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Locations",
     "\\Infrastructure",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context",
-    "\\Presentation",
-    "\\Presentation\\DugunSalonuKiralama.API",
-    "\\Presentation\\DugunSalonuKiralama.API\\Controllers"
+    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations"
   ],
-  "SelectedNode": "\\Presentation\\DugunSalonuKiralama.API\\Controllers\\LoginsController.cs",
+  "SelectedNode": "\\Application.dll.sln",
   "PreviewInSolutionExplorer": false
 }

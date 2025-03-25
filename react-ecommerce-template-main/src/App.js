@@ -19,8 +19,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function RoutesWithTemplate() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
+  const isAuthRoute = location.pathname === "/AuthPage"; // AuthPage için özel kontrol
 
-  return isAdminRoute ? (
+  return isAuthRoute ? (
+    // AuthPage için Template'ı kullanma
+    <Switch>
+      <Route exact path="/AuthPage" component={AuthPage} />
+    </Switch>
+  ) : isAdminRoute ? (
+    // Admin sayfaları için AdminTemplate kullan
     <AdminTemplate>
       <Switch>
         <ProtectedAdminRoute exact path="/admin" component={Dashboard} />
@@ -31,10 +38,10 @@ function RoutesWithTemplate() {
         <ProtectedAdminRoute exact path="/admin/Reservation" component={Reservation} />
         <ProtectedAdminRoute exact path="/admin/Reservation/AddReservation" component={AddReservation} />
         <ProtectedAdminRoute exact path="/admin/AdminProfile" component={AdminProfile} />
-
       </Switch>
     </AdminTemplate>
   ) : (
+    // Diğer sayfalar için Template kullan
     <Template>
       <Switch>
         <Route exact path="/" component={Landing} />
