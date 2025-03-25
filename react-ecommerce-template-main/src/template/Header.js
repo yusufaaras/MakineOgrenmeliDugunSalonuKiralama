@@ -37,7 +37,7 @@ function Header() {
               <li className="nav-item">
                 <Link
                   to="/products"
-                  className="nav-link text-dark fw-bold fs-5 fst-italic px-3 py-1 rounded border border-danger bg-light shadow-sm"
+                  className="nav-link text-dark fs-5 fst-italic px-3 py-1 rounded border border-danger bg-light shadow-sm"
                   style={{ fontFamily: "cursive" }}
                   replace
                   onClick={changeNav}
@@ -48,7 +48,7 @@ function Header() {
               <li className="nav-item">
                 <a
                   href="http://127.0.0.1:5000/"
-                  className="nav-link text-dark fw-bold fs-5 fst-italic px-3 py-1 rounded border border-danger bg-light shadow-sm"
+                  className="nav-link text-dark fs-5 fst-italic px-3 py-1 rounded border border-danger bg-light shadow-sm"
                   style={{ fontFamily: "cursive" }}
                 >
                   Makine Öğrenmesi ile Hesapla
@@ -81,10 +81,6 @@ function Header() {
           </div>
 
           <div className="d-inline-block d-lg-none">
-            <button type="button" className="btn btn-outline-dark">
-              <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
-              <span className="ms-3 badge rounded-pill bg-dark">0</span>
-            </button>
             <button className="navbar-toggler p-0 border-0 ms-3" type="button" onClick={toggleDrawer}>
               <span className="navbar-toggler-icon"></span>
             </button>
