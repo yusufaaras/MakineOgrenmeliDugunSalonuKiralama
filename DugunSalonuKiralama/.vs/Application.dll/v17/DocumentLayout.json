@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{30D51E70-130E-485B-97FD-8CFF8ED5ED50}|Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj|solutionrelative:infrastructure\\dugunsalonukiralama.persistence\\context\\weddinghallcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations\\20250321105733_allMigInOne.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations\\20250321105733_allMigInOne.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.domain\\entities\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|solutionrelative:core\\dugunsalonukiralama.domain\\entities\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.domain\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|solutionrelative:core\\dugunsalonukiralama.domain\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30D51E70-130E-485B-97FD-8CFF8ED5ED50}|Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\infrastructure\\dugunsalonukiralama.persistence\\migrations\\20250321105733_allmiginone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30D51E70-130E-485B-97FD-8CFF8ED5ED50}|Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj|solutionrelative:infrastructure\\dugunsalonukiralama.persistence\\migrations\\20250321105733_allmiginone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,32 +28,6 @@
           "DockedWidth": 200,
           "SelectedChildIndex": 14,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Location.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\Location.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Domain\\Entities\\Location.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\Location.cs",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Domain\\Entities\\Location.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T11:33:09.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Booking.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\Booking.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Domain\\Entities\\Booking.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\Booking.cs",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Domain\\Entities\\Booking.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T11:31:22.67Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
@@ -101,6 +75,30 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Location.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\Location.cs",
+              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Domain\\Entities\\Location.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\Location.cs",
+              "RelativeToolTip": "Core\\DugunSalonuKiralama.Domain\\Entities\\Location.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T11:33:09.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\Booking.cs",
+              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Domain\\Entities\\Booking.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\Booking.cs",
+              "RelativeToolTip": "Core\\DugunSalonuKiralama.Domain\\Entities\\Booking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T11:31:22.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "20250321105733_allMigInOne.cs",
               "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations\\20250321105733_allMigInOne.cs",
               "RelativeDocumentMoniker": "Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations\\20250321105733_allMigInOne.cs",
@@ -108,8 +106,7 @@
               "RelativeToolTip": "Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations\\20250321105733_allMigInOne.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T10:57:33.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T10:57:33.475Z"
             },
             {
               "$type": "Document",
@@ -119,7 +116,7 @@
               "RelativeDocumentMoniker": "Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
               "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
               "RelativeToolTip": "Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-20T21:17:43.914Z",
               "EditorCaption": ""
