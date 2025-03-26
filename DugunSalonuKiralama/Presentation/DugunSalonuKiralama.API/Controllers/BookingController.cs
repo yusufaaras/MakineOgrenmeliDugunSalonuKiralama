@@ -29,7 +29,7 @@ namespace DugunSalonuKiralama.API.Controllers
         public async Task<IActionResult> BookingList()
         {
             var values = await _getBookingQueryHandler.Handle();
-            return Ok();
+            return Ok(values);
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetBooking(int id)

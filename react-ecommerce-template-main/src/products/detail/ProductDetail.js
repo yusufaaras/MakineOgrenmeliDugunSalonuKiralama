@@ -17,19 +17,6 @@ function ProductDetail() {
   const [selectedService, setSelectedService] = useState(null);
   const calendarRef = useRef(null);
   const history = useHistory();
-  const [selectedDate,setSelectedDate] = useState(null);
-  const [selectedPrice,setSelectedPrice] = useState(null);
-
- 
-  const makeReservation = async () => {
-    if (!selectedDate || !selectedPrice) { // 🛠️ Buradaki hatayı düzelttik
-      setMessage("Lütfen bir tarih ve hizmet seçiniz.");
-      return;
-    }
-    const reservationData = {
-      date: selectedDate, 
-      price: selectedPrice, // 🛠️ "prive" yerine "price" olmalı
-    };
 
   useEffect(() => {
     axios
@@ -73,25 +60,25 @@ function ProductDetail() {
     }
   }, [product?.id]);
 
-  try {
-    const response = await fetch("https://localhost:7072/api/booking", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(reservationData),
-    });
-
-    if (response.ok) {
-      setMessage("Rezervasyon başarıyla kaydedildi!");
+  const handleReservation = async () => {
+    if (!isAuthenticated) {
+      history.push("/login"); // Kullanıcı giriş yapmadıysa login sayfasına yönlendir
     } else {
-      setMessage("Rezervasyon kaydedilemedi.");
+      try {
+        const token = localStorage.getItem("token");
+        const response = await axios.post(
+          "https://localhost:7072/api/Booking",
+          { productId: product?.id, servicePrice: selectedService },
+          { headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" } }
+        );
+
+        setMessage("Rezervasyon başarıyla oluşturuldu!");
+      } catch (error) {
+        console.error("Rezervasyon yapılırken hata oluştu:", error);
+        setMessage("Rezervasyon oluşturulamadı. Lütfen tekrar deneyin.");
+      }
     }
-  } catch (error) {
-    console.error("Rezervasyon hatası:", error);
-    setMessage("Bir hata oluştu.");
-  }
-};
+  };
 
   return (
     <div className="container mt-5 py-4 px-xl-5">
@@ -103,11 +90,11 @@ function ProductDetail() {
       <div className="row">
         {/* Sol Taraf: Takvim */}
         <div className="col-md-4">
-          <Calendar onChange={setSelectedDate(selectedDate)}/>
+          <Calendar />
         </div>
 
         {/* Sağ Taraf: Rezervasyon Formu */}
-        <div className="col-md-4">
+        <div className="col-md-6">
           <h4>Rezervasyon Bilgileri</h4>
           <form>
             <div className="dropdown mb-5">
@@ -117,7 +104,7 @@ function ProductDetail() {
               <ul className="dropdown-menu">
                 {["80.000", "100.000", "120.000"].map((service, index) => (
                   <li key={index}>
-                    <button className="dropdown-item" type="button" onClick={() => setSelectedPrice(selectedPrice)}>
+                    <button className="dropdown-item" type="button" onClick={() => setSelectedService(service)}>
                       {service}
                     </button>
                   </li>
@@ -136,5 +123,6 @@ function ProductDetail() {
 </div>
 </div>
   );
-  }
- export default ProductDetail;
+}
+
+export default ProductDetail;
