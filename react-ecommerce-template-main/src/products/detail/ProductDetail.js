@@ -15,7 +15,10 @@ function ProductDetail() {
   const [availableDates, setAvailableDates] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [message, setMessage] = useState("");
-  const [selectedService, setSelectedService] = useState(""); // Seçili hizmet
+  const [selectedService, setSelectedService] = useState("");
+  const [selectedImage, setSelectedImage] = useState("");
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [guestCount, setGuestCount] = useState(1);
   const calendarRef = useRef(null);
   const history = useHistory();
 
@@ -42,6 +45,7 @@ function ProductDetail() {
       .get(`https://localhost:7072/api/WeddingHall/${slug}`)
       .then((response) => {
         setProduct(response.data);
+        setSelectedImage(response.data.homeImageUrl);
         return axios.get(`https://localhost:7072/api/Categories/${response.data.categoryId}`);
       })
       .then((response) => {
@@ -87,10 +91,19 @@ function ProductDetail() {
         const token = localStorage.getItem("token");
         await axios.post(
           "https://localhost:7072/api/Booking",
-          { productId: product?.id, service: selectedService }, // Seçili hizmeti ekledim
-          { headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" } }
+          {
+            productId: product?.id,
+            service: selectedService,
+            date: selectedDate?.toISOString().split("T")[0],
+            guestCount,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          }
         );
-
         setMessage("Rezervasyon başarıyla oluşturuldu!");
       } catch (error) {
         console.error("Rezervasyon yapılırken hata oluştu:", error);
@@ -136,7 +149,21 @@ function ProductDetail() {
 
       <div className="row mb-4">
         <div className="col-lg-6">
-          <img className="border rounded w-100" alt={product.name} src={product.homeImageUrl} />
+          <img className="border rounded w-100" alt={product.name} src={selectedImage} />
+          <div className="d-flex justify-content-start mt-3">
+            {[product.homeImageUrl, product.detailImageUrl1, product.detailImageUrl2, product.detailImageUrl3, product.detailImageUrl4].map(
+              (image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Detail Image ${index + 1}`}
+                  className="border rounded me-2"
+                  style={{ width: "80px", height: "80px", cursor: "pointer", objectFit: "cover" }}
+                  onClick={() => setSelectedImage(image)}
+                />
+              )
+            )}
+          </div>
         </div>
 
         <div className="col-lg-6">
@@ -161,14 +188,40 @@ function ProductDetail() {
         </div>
       </div>
 
-      {/* Takvim ve Form Alanı */}
       <div ref={calendarRef} className="row mt-5">
         <div className="col-lg-12">
           <div className="border rounded p-4" style={{ backgroundColor: "#f8f9fa" }}>
-            <Calendar tileDisabled={tileDisabled} />
+            <Calendar
+              //tileDisabled={tileDisabled}
+              onClickDay={(date) => setSelectedDate(date)}
+              value={selectedDate}
+            />
 
-            <h4>Rezervasyon Bilgileri</h4>
-            <div className="dropdown">
+            <h4 className="mt-4">Rezervasyon Bilgileri</h4>
+            <div className="form-group">
+              <label htmlFor="selectedDate">Tarih</label>
+              <input
+                type="text"
+                id="selectedDate"
+                className="form-control"
+                value={selectedDate ? selectedDate.toLocaleDateString("tr-TR") : ""}
+                readOnly
+              />
+            </div>
+
+            <div className="form-group mt-3">
+              <label htmlFor="guestCount">Kişi Sayısı</label>
+              <input
+                type="number"
+                id="guestCount"
+                className="form-control"
+                value={guestCount}
+                onChange={(e) => setGuestCount(e.target.value)}
+                min="1"
+              />
+            </div>
+
+            <div className="dropdown mt-3">
               <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
                 {selectedService || "Hangi hizmeti istersiniz?"}
               </button>
@@ -183,8 +236,7 @@ function ProductDetail() {
               </ul>
             </div>
 
-            <br />
-            <button type="button" className="btn btn-primary" onClick={handleReservation}>
+            <button type="button" className="btn btn-primary mt-3" onClick={handleReservation}>
               Rezervasyon Yap {selectedService && <span className="badge bg-light text-dark ms-2">{selectedService}</span>}
             </button>
             {message && <p className="mt-3 text-success">{message}</p>}

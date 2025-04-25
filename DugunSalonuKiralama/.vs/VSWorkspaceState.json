@@ -6,11 +6,11 @@
     "\\Core\\DugunSalonuKiralama.Application\\Features",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Locations",
-    "\\Infrastructure",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations"
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\User",
+    "\\Presentation",
+    "\\Presentation\\DugunSalonuKiralama.API",
+    "\\Presentation\\DugunSalonuKiralama.API\\Controllers"
   ],
-  "SelectedNode": "\\Application.dll.sln",
+  "SelectedNode": "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\User\\GetUserByIdQueryHandler.cs",
   "PreviewInSolutionExplorer": false
 }
