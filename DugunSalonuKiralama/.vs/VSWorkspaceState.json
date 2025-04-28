@@ -5,13 +5,13 @@
     "\\Core\\DugunSalonuKiralama.Application",
     "\\Core\\DugunSalonuKiralama.Application\\Features",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\User",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Queries",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Queries\\Weddings",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Weddings"
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Weddings",
+    "\\Core\\DugunSalonuKiralama.Domain",
+    "\\Core\\DugunSalonuKiralama.Domain\\Entities",
+    "\\Presentation",
+    "\\Presentation\\DugunSalonuKiralama.API"
   ],
-  "SelectedNode": "\\Presentation\\DugunSalonuKiralama.API\\Controllers\\UserController.cs",
+  "SelectedNode": "\\Core\\DugunSalonuKiralama.Domain\\Entities\\WeddingHall.cs",
   "PreviewInSolutionExplorer": false
 }
