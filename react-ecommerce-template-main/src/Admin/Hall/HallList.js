@@ -4,13 +4,10 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import 'font-awesome/css/font-awesome.min.css';
-import useSearch from "../Search/useSearch";
 import { Modal, Button } from "react-bootstrap";
 
 const HallList = () => {
   const [halls, setHalls] = useState([]);
-  const [locations, setLocations] = useState({});
-  const [categories, setCategories] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
   const [userId, setUserId] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -24,22 +21,7 @@ const HallList = () => {
   const fetchData = async () => {
     try {
       const hallsResponse = await axios.get("https://localhost:7072/api/WeddingHall");
-      const locationsResponse = await axios.get("https://localhost:7072/api/Location");
-      const categoriesResponse = await axios.get("https://localhost:7072/api/Categories");
-
-      const locationsMap = {};
-      locationsResponse.data.forEach((loc) => {
-        locationsMap[loc.id] = `${loc.city}, ${loc.country}`;
-      });
-
-      const categoriesMap = {};
-      categoriesResponse.data.forEach((cat) => {
-        categoriesMap[cat.categoryId] = cat.name;
-      });
-
       setHalls(hallsResponse.data);
-      setLocations(locationsMap);
-      setCategories(categoriesMap);
     } catch (error) {
       console.error("Veri çekme hatası:", error);
     }
@@ -64,7 +46,11 @@ const HallList = () => {
   const filteredHalls = userId ? halls.filter((hall) => hall.userId == userId) : [];
 
   // Arama işlemi
-  const searchHalls = useSearch(filteredHalls, locations, categories, searchTerm);
+  const searchHalls = filteredHalls.filter(
+    (hall) =>
+      hall.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      hall.shortDescription.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   // Modal açma
   const handleShowModal = (hall) => {
@@ -101,7 +87,7 @@ const HallList = () => {
       <input
         type="text"
         className="form-control mb-3"
-        placeholder="Salon adı, konum veya kategori ara..."
+        placeholder="Salon adı veya açıklama ara..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
@@ -116,8 +102,7 @@ const HallList = () => {
             <th>#</th>
             <th>Salon Adı</th>
             <th>Kapsite</th>
-            <th>Konum</th>
-            <th>Kategori</th>
+            <th>Kısa Açıklama</th>
             <th>İşlemler</th>
           </tr>
         </thead>
@@ -128,8 +113,7 @@ const HallList = () => {
                 <td>{hall.id}</td>
                 <td>{hall.name}</td>
                 <td>{hall.capacity}</td>
-                <td>{locations[hall.locationId] || "Bilinmiyor"}</td>
-                <td>{categories[hall.categoryId] || "Bilinmiyor"}</td>
+                <td>{hall.shortDescription}</td>
                 <td>
                   <Link to={`/products/${hall.id}`} className="btn btn-primary btn-sm me-2">
                     <i className="fa fa-eye"></i>
@@ -145,7 +129,7 @@ const HallList = () => {
             ))
           ) : (
             <tr>
-              <td colSpan="7" className="text-center">Sonuç bulunamadı</td>
+              <td colSpan="5" className="text-center">Sonuç bulunamadı</td>
             </tr>
           )}
         </tbody>

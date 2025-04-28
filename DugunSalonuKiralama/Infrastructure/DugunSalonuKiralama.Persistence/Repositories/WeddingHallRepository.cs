@@ -25,16 +25,5 @@ namespace DugunSalonuKiralama.Persistence.Repositories
             var value = _context.WeddingHalls.Count();
             return value;
         }
-
-        public async Task<List<WeddingHall>> GetWeddingHallsListWithLocation()
-        {
-            var values = await _context.WeddingHalls.Include(x => x.Location).ToListAsync();
-            return values;
-        }
-        public List<WeddingHall> GetLast5WeddingHallsWithLocation()
-        {
-            var values = _context.WeddingHalls.Include(x => x.Location).OrderByDescending(x => x.Id).Take(5).ToList();
-            return values;
-        }
     }
 }

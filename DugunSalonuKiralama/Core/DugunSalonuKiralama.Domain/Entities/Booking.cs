@@ -17,7 +17,7 @@ namespace DugunSalonuKiralama.Domain.Entities
         public DateTime BookingDate { get; set; }
         public int GuestCount { get; set; }
         public decimal TotalPrice { get; set; }
-        public string Status { get; set; } // Confirmed, Pending, Cancelled
+        public string Status { get; set; } 
     }
 
 }

@@ -5,9 +5,7 @@ using DugunSalonuKiralama.Application.Services;
 using DugunSalonuKiralama.Persistence.Repositories;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Wedding;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Weddings;
-using DugunSalonuKiralama.Application.Features.CQRS.Handlers.GetWeddingHallWithLocationQueryHandler;
 using System.Globalization;
-using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Locations;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings;
 using DugunSalonuKiralama.Application.Interfaces.AppRoleInterfaces;
 using DugunSalonuKiralama.Application.Interfaces.AppUserInterfaces;
@@ -49,27 +47,12 @@ namespace DugunSalonuKiralama.API
             builder.Services.AddScoped(typeof(IAppUserRepository), typeof(AppUserRepository));
             builder.Services.AddScoped(typeof(IAppRoleRepository), typeof(AppRoleRepository));
 
-            //Category
-            builder.Services.AddScoped<GetCategoryQueryHandler>();
-            builder.Services.AddScoped<GetCategoryByIdQueryHandler>();
-            builder.Services.AddScoped<CreateCategoryCommandHandler>();
-            builder.Services.AddScoped<UpdateCategoryCommandHandler>();
-            builder.Services.AddScoped<RemoveCategoryCommandHandler>();
-
-            //Location
-            builder.Services.AddScoped<GetLocationQueryHandler>();
-            builder.Services.AddScoped<GetLocationByIdQueryHandler>();
-            builder.Services.AddScoped<CreateLocationCommandHandler>();
-            builder.Services.AddScoped<UpdateLocationCommandHandler>();
-            builder.Services.AddScoped<RemoveLocationCommandHandler>();
-
             //WeddingHall
             builder.Services.AddScoped<GetWeddingHallQueryHandler>();
             builder.Services.AddScoped<GetWeddingHallByIdQueryHandler>();
             builder.Services.AddScoped<CreateWeddingHallCommandHandler>();
             builder.Services.AddScoped<UpdateWeddingHallCommandHandler>();
             builder.Services.AddScoped<RemoveWeddingHallCommandHandler>();
-            builder.Services.AddScoped<GetWeddingHallWithLocationQueryHandler>();
 
             //Booking
             builder.Services.AddScoped<CreateBookingCommandHandler>();

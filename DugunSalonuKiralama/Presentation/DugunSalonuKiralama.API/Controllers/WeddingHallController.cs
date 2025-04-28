@@ -1,6 +1,5 @@
 ﻿using DugunSalonuKiralama.Application.Features.CQRS.Commands.Category;
 using DugunSalonuKiralama.Application.Features.CQRS.Commands.Wedding;
-using DugunSalonuKiralama.Application.Features.CQRS.Handlers.GetWeddingHallWithLocationQueryHandler;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Wedding;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Weddings;
 using DugunSalonuKiralama.Application.Features.CQRS.Queries.WeddingHall;
@@ -18,16 +17,14 @@ namespace DugunSalonuKiralama.API.Controllers
         private readonly CreateWeddingHallCommandHandler _createWeddingHallCommandHandler;
         private readonly UpdateWeddingHallCommandHandler _updateWeddingHallCommandHandler;
         private readonly RemoveWeddingHallCommandHandler _removeWeddingHallCommandHandler;
-        private readonly GetWeddingHallWithLocationQueryHandler _getWeddingHallWithLocationQueryHandler;
 
-        public WeddingHallController(GetWeddingHallQueryHandler getWeddingHallQueryHandler, GetWeddingHallByIdQueryHandler getWeddingHallByIdQueryHandler, CreateWeddingHallCommandHandler createWeddingHallCommandHandler, UpdateWeddingHallCommandHandler updateWeddingHallCommandHandler, RemoveWeddingHallCommandHandler removeWeddingHallCommandHandler, GetWeddingHallWithLocationQueryHandler getWeddingHallWithLocationQueryHandler)
+        public WeddingHallController(GetWeddingHallQueryHandler getWeddingHallQueryHandler, GetWeddingHallByIdQueryHandler getWeddingHallByIdQueryHandler, CreateWeddingHallCommandHandler createWeddingHallCommandHandler, UpdateWeddingHallCommandHandler updateWeddingHallCommandHandler, RemoveWeddingHallCommandHandler removeWeddingHallCommandHandler)
         {
             _getWeddingHallQueryHandler = getWeddingHallQueryHandler;
             _getWeddingHallByIdQueryHandler = getWeddingHallByIdQueryHandler;
             _createWeddingHallCommandHandler = createWeddingHallCommandHandler;
             _updateWeddingHallCommandHandler = updateWeddingHallCommandHandler;
             _removeWeddingHallCommandHandler = removeWeddingHallCommandHandler;
-            _getWeddingHallWithLocationQueryHandler = getWeddingHallWithLocationQueryHandler;
         }
         [HttpGet]
         public async Task<IActionResult> WeddingHallList()
@@ -62,12 +59,6 @@ namespace DugunSalonuKiralama.API.Controllers
         {
             await _updateWeddingHallCommandHandler.Handle(command);
             return Ok();
-        }
-        [HttpGet("GetWeddingHallWithLocation")]
-        public async Task<IActionResult> GetWeddingHallWithLocation()
-        {
-            var values = await _getWeddingHallWithLocationQueryHandler.Handle();
-            return Ok(values);
         }
 
     }

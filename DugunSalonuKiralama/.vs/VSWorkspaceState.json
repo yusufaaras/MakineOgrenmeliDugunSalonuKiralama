@@ -7,10 +7,11 @@
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\User",
-    "\\Presentation",
-    "\\Presentation\\DugunSalonuKiralama.API",
-    "\\Presentation\\DugunSalonuKiralama.API\\Controllers"
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Queries",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Queries\\Weddings",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Weddings"
   ],
-  "SelectedNode": "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\User\\GetUserByIdQueryHandler.cs",
+  "SelectedNode": "\\Presentation\\DugunSalonuKiralama.API\\Controllers\\UserController.cs",
   "PreviewInSolutionExplorer": false
 }

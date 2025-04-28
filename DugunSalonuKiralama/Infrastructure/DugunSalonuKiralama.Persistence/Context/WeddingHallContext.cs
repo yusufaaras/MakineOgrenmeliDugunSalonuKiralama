@@ -15,9 +15,7 @@ namespace DugunSalonuKiralama.Persistence.Context
 
         }
         public DbSet<Booking> Bookings { get; set; }
-        public DbSet<Category> Categories { get; set; }
         public DbSet<Feature> Features { get; set; }
-        public DbSet<Location> Locations { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<WeddingFeature> WeddingFeatures { get; set; }

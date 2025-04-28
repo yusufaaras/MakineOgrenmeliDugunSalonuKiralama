@@ -23,8 +23,15 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Wedding
             var values = await _repository.GetByIdAsync(command.Id);
             values.Name = command.Name;
             values.Capacity = command.Capacity;
-            values.LocationId = command.LocationId;
-            values.CategoryId = command.CategoryId;
+            values.Address = command.Address;
+            values.Food = command.Food;
+            values.Alcohol = command.Alcohol;
+            values.CategoryName = command.CategoryName;
+            values.City = command.City;
+            values.Country = command.Country;
+            values.Cookie = command.Cookie;
+            values.PostalCode = command.PostalCode;
+            values.Price=command.Price;
             values.HomeImageUrl = command.HomeImageUrl;
             values.DetailImageUrl1 = command.DetailImageUrl1;
             values.DetailImageUrl2 = command.DetailImageUrl2;

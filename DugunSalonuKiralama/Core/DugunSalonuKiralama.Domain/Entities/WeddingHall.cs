@@ -20,10 +20,15 @@ namespace DugunSalonuKiralama.Domain.Entities
         public string? DetailImageUrl4 { get; set; }
         public string ShortDescription { get; set; }
         public string LongDescription { get; set; }
-        public int LocationId { get; set; }
-        public Location Location { get; set; }
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+        public int PostalCode { get; set; }
+        public string CategoryName { get; set; }
+        public string Alcohol { get; set; }
+        public string Cookie { get; set; }
+        public string Food { get; set; }
+        public string Price { get; set; }
         public Booking Booking { get; set; }
         public AppUser User { get; set; }
         public int UserId { get; set; }

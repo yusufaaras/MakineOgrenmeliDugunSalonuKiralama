@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {jwtDecode} from "jwt-decode";  // jwtDecode doğru import edilmelidir
+import { jwtDecode } from "jwt-decode";  // jwtDecode doğru import edilmelidir
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const AddHall = () => {
   const [formData, setFormData] = useState({
     name: "",
     capacity: "",
-    locationId: "",
-    categoryId: "",
     homeImageUrl: "",
     detailImageUrl1: "",
     detailImageUrl2: "",
@@ -16,6 +14,15 @@ const AddHall = () => {
     detailImageUrl4: "",
     shortDescription: "",
     longDescription: "",
+    PostalCode: "",
+    Address: "",
+    Alcohol: "",
+    CategoryName: "",
+    City: "",
+    Cookie: "",
+    Country: "",
+    Food: "",
+    Price: "",
     userId: null, // Token'dan alınacak
   });
 
@@ -29,7 +36,7 @@ const AddHall = () => {
 
         // Token'dan gelen 'nameidentifier' alanını al ve userId'yi ayarla
         const tokenUserId = decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
-        
+
         if (tokenUserId) {
           // Token'dan gelen ID'yi formData'ya ekle
           setFormData((prev) => ({ ...prev, userId: tokenUserId }));
@@ -85,30 +92,6 @@ const AddHall = () => {
               className="form-control"
               name="capacity"
               value={formData.capacity}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Lokasyon ID</label>
-            <input
-              type="number"
-              className="form-control"
-              name="locationId"
-              value={formData.locationId}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Kategori ID</label>
-            <input
-              type="number"
-              className="form-control"
-              name="categoryId"
-              value={formData.categoryId}
               onChange={handleChange}
               required
             />
@@ -193,6 +176,114 @@ const AddHall = () => {
             />
           </div>
 
+          <div className="mb-3">
+            <label className="form-label">Fiyat</label>
+            <input
+              type="number"
+              className="form-control"
+              name="Price"
+              value={formData.Price}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Posta Kodu</label>
+            <input
+              type="number"
+              className="form-control"
+              name="PostalCode"
+              value={formData.PostalCode}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Alkol Var mı?</label>
+            <input
+              type="text"
+              className="form-control"
+              name="Alcohol"
+              value={formData.Alcohol}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Kategori</label>
+            <input
+              type="text"
+              className="form-control"
+              name="CategoryName"
+              value={formData.CategoryName}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Çerez Var Mı?</label>
+            <input
+              type="text"
+              className="form-control"
+              name="Cookie"
+              value={formData.Cookie}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+
+
+          <div className="mb-3">
+            <label className="form-label">Yemek Var Mı?</label>
+            <input
+              type="text"
+              className="form-control"
+              name="Food"
+              value={formData.Food}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Ülke</label>
+            <input
+              type="text"
+              className="form-control"
+              name="Country"
+              value={formData.Country}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Şehir</label>
+            <input
+              type="text"
+              className="form-control"
+              name="City"
+              value={formData.City}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+
+
+          <div className="mb-3">
+            <label className="form-label">Adres</label>
+            <input
+              type="text"
+              className="form-control"
+              name="Address"
+              value={formData.Address}
+              onChange={handleChange}
+              required
+            />
+          </div>
           <button type="submit" className="btn btn-primary w-100">
             Salon Ekle
           </button>
