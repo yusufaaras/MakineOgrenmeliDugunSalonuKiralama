@@ -10,8 +10,6 @@ const UpdateHall = () => {
     id: id,
     name: "",
     capacity: "",
-    categoryId: "",
-    locationId: "",
     homeImageUrl: "",
     detailImageUrl1: "",
     detailImageUrl2: "",
@@ -19,6 +17,15 @@ const UpdateHall = () => {
     detailImageUrl4: "",
     shortDescription: "",
     longDescription: "",
+    PostalCode: "",
+    Address: "",
+    Alcohol: "",
+    CategoryName: "",
+    City: "",
+    Cookie: "",
+    Country: "",
+    Food: "",
+    Price: "",
   });
 
   useEffect(() => {
@@ -66,40 +73,33 @@ const UpdateHall = () => {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Kategori ID</label>
-          <input type="number" className="form-control" name="categoryId" value={hall.categoryId} onChange={handleChange} required />
-        </div>
-
-        <div className="mb-3">
-          <label className="form-label">Konum ID</label>
-          <input type="number" className="form-control" name="locationId" value={hall.locationId} onChange={handleChange} required />
-        </div>
-
-        <div className="mb-3">
           <label className="form-label">Ana Resim URL</label>
           <input type="text" className="form-control" name="homeImageUrl" value={hall.homeImageUrl} onChange={handleChange} />
         </div>
 
         <div className="mb-3">
           <label className="form-label">Detay Resim1 URL</label>
-          <input type="text" className="form-control" name="homeImageUrl" value={hall.detailImageUrl1} onChange={handleChange} />
+          <input type="text" className="form-control" name="detailImageUrl1" value={hall.detailImageUrl1} onChange={handleChange} />
         </div>
 
         <div className="mb-3">
           <label className="form-label">Detay Resim2 URL</label>
-          <input type="text" className="form-control" name="homeImageUrl" value={hall.detailImageUrl2} onChange={handleChange} />
+          <input type="text" className="form-control" name="detailImageUrl2" value={hall.detailImageUrl2} onChange={handleChange} />
         </div>
 
         <div className="mb-3">
           <label className="form-label">Detay Resim3 URL</label>
-          <input type="text" className="form-control" name="homeImageUrl" value={hall.detailImageUrl3} onChange={handleChange} />
+          <input type="text" className="form-control" name="detailImageUrl3" value={hall.detailImageUrl3} onChange={handleChange} />
         </div>
 
         <div className="mb-3">
           <label className="form-label">Detay Resim4 URL</label>
-          <input type="text" className="form-control" name="homeImageUrl" value={hall.detailImageUrl4} onChange={handleChange} />
+          <input type="text" className="form-control" name="detailImageUrl4" value={hall.detailImageUrl4} onChange={handleChange} />
         </div>
-
+        <div className="mb-3">
+          <label className="form-label">Fiyat</label>
+          <input type="number" className="form-control" name="Price" value={hall.Price} onChange={handleChange} required />
+        </div>
 
         <div className="mb-3">
           <label className="form-label">Kısa Açıklama</label>
@@ -110,7 +110,34 @@ const UpdateHall = () => {
           <label className="form-label">Uzun Açıklama</label>
           <textarea className="form-control" name="longDescription" value={hall.longDescription} onChange={handleChange}></textarea>
         </div>
-
+        <div className="mb-3">
+          <label className="form-label">Posta Kodu</label>
+          <input type="number" className="form-control" name="PostalCode" value={hall.PostalCode} onChange={handleChange} required />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Ülke</label>
+          <textarea className="form-control" name="Country" value={hall.Country} onChange={handleChange}></textarea>
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Şehir</label>
+          <textarea className="form-control" name="City" value={hall.City} onChange={handleChange}></textarea>
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Açık Adres</label>
+          <textarea className="form-control" name="Address" value={hall.Address} onChange={handleChange}></textarea>
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Alkol Var Mı?</label>
+          <textarea className="form-control" name="Alcohol" value={hall.Alcohol} onChange={handleChange}></textarea>
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Çerez Var Mı?</label>
+          <textarea className="form-control" name="Cookie" value={hall.Cookie} onChange={handleChange}></textarea>
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Yemek Var Mı?</label>
+          <textarea className="form-control" name="Food" value={hall.Food} onChange={handleChange}></textarea>
+        </div>
         <button type="submit" className="btn btn-success">Güncelle</button>
         <button type="button" className="btn btn-secondary ms-2" onClick={() => history.push("/admin/Hall")}>İptal</button>
       </form>

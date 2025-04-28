@@ -23,7 +23,7 @@ const AddHall = () => {
     Country: "",
     Food: "",
     Price: "",
-    userId: null, // Token'dan alınacak
+    userId: null, 
   });
 
   // Token'dan userId'yi al
