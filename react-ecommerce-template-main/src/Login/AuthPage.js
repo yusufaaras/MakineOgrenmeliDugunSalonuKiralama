@@ -40,7 +40,7 @@ const AuthPage = () => {
       const token = userData.token;
       const decodedToken = jwtDecode(token); // Token'ı decode et
       const userId =
-        decodedToken[
+        decodedToken[ 
           "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
         ];
 
@@ -56,10 +56,13 @@ const AuthPage = () => {
 
       const user = userResponse.data;
 
+      // Kullanıcının rolünü localStorage'a kaydediyoruz
+      localStorage.setItem("userRole", user.appRoleID);
+
       if (user.appRoleID === 1) {
         setAlertMessage("Admin girişi başarılı!");
         setAlertType("success");
-        setTimeout(() => history.push("/admin"), 2000);
+        setTimeout(() => history.push("/admin/dashboard"), 2000);
       } else if (user.appRoleID === 2) {
         setAlertMessage("Giriş başarılı!");
         setAlertType("success");

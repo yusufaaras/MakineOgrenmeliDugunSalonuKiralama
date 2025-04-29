@@ -5,10 +5,14 @@ import { useState, useEffect } from "react";
 function Header() {
   const [openedDrawer, setOpenedDrawer] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userRole, setUserRole] = useState(null); // Kullanıcı rolünü saklamak için state
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    const storedRole = localStorage.getItem("userRole"); // localStorage'dan rolü al
+
     setIsAuthenticated(!!token); // Token varsa true, yoksa false
+    setUserRole(storedRole); // Rolü state'e aktar
   }, []);
 
   function toggleDrawer() {
@@ -25,12 +29,10 @@ function Header() {
     <header>
       <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-white border-bottom">
         <div className="container-fluid">
-          
           <Link className="navbar-brand text-danger" to="/" onClick={changeNav}>
             <FontAwesomeIcon icon={["fab", "bootstrap"]} className="ms-1" size="lg" />
             <span className="ms-2 h5">Salon</span>
           </Link>
-
 
           <div className={"navbar-collapse offcanvas-collapse " + (openedDrawer ? "open" : "")}>
             <ul className="navbar-nav me-auto mb-lg-0 d-flex gap-3 align-items-center">
@@ -56,35 +58,52 @@ function Header() {
               </li>
             </ul>
 
-
-
             {isAuthenticated ? (
-              <Link
-                to="/profile"
-                className="btn btn-danger btn-sm me-2 fs-4"
-                style={{ fontFamily: "cursive" }}
-                replace
-                onClick={changeNav}
-              >
-                <i className="fa fa-user"></i> Profilim
-              </Link>
+              userRole === "1" ? (
+                <Link
+                  to="/admin/dashboard" // Yönetici paneli için doğru yolu buraya girin
+                  className="btn btn-danger btn-sm me-2 fs-4"
+                  style={{ fontFamily: "cursive" }}
+                  replace
+                  onClick={changeNav}
+                >
+                  <i className="fa fa-user"></i> Admin
+                </Link>
+              ) : (
+                <Link
+                  to="/profile"
+                  className="btn btn-danger btn-sm me-2 fs-4"
+                  style={{ fontFamily: "cursive" }}
+                  replace
+                  onClick={changeNav}
+                >
+                  <i className="fa fa-user"></i> Profilim
+                </Link>
+              )
             ) : (
               <Link
-                to="/AuthPage"
-                className="btn btn-primary btn-sm me-2 fs-4"
+                to="/login"
+                className="btn btn-outline-danger btn-sm me-2 fs-4"
                 style={{ fontFamily: "cursive" }}
+                onClick={changeNav}
               >
                 <i className="fa fa-user"></i> Giriş Yap
               </Link>
             )}
-
           </div>
 
-          <div className="d-inline-block d-lg-none">
-            <button className="navbar-toggler p-0 border-0 ms-3" type="button" onClick={toggleDrawer}>
-              <span className="navbar-toggler-icon"></span>
-            </button>
-          </div>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded={openedDrawer ? "true" : "false"}
+            aria-label="Toggle navigation"
+            onClick={toggleDrawer}
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
         </div>
       </nav>
     </header>
