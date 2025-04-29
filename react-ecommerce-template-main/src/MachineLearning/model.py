@@ -2,7 +2,7 @@ import joblib
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-# Örnek eğitim verisi (Kapasite, Lokasyon, Sezon, Yemek, Müzik, Ekstra Hizmet)
+# Örnek eğitim verisi
 X = np.array([
     [100, 5, 1, 1, 1, 2],
     [200, 7, 1, 1, 0, 3],

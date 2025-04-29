@@ -17,7 +17,10 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        data = request.jsons
+        # JSON verisini al
+        data = request.json
+        
+        # Özellikleri al ve numpy array'e dönüştür
         features = np.array([
             data['capacity'], 
             data['location_index'], 
@@ -27,9 +30,11 @@ def predict():
             data['extra_services']
         ]).reshape(1, -1)
         
+        # Tahmin yap
         prediction = model.predict(features)[0]
+        
+        # Sonucu döndür
         return jsonify({'predicted_price': round(prediction, 2)})
-
     except Exception as e:
         return jsonify({'error': str(e)})
 
