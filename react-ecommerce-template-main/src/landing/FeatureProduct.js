@@ -4,7 +4,6 @@ import axios from "axios";
 
 function FeatureProduct({ maxItems = 6 }) {
   const [weddingHalls, setWeddingHalls] = useState([]);
-  const [categories, setCategories] = useState({});
 
   useEffect(() => {
     axios.get("https://localhost:7072/api/WeddingHall")
@@ -15,15 +14,6 @@ function FeatureProduct({ maxItems = 6 }) {
       })
       .catch(error => console.error("Düğün salonları yüklenirken hata oluştu:", error));
 
-    axios.get("https://localhost:7072/api/Categories")
-      .then(response => {
-        const categoryMap = response.data.reduce((acc, category) => {
-          acc[category.categoryId] = category.name;
-          return acc;
-        }, {});
-        setCategories(categoryMap);
-      })
-      .catch(error => console.error("Kategoriler yüklenirken hata oluştu:", error));
   }, [maxItems]);
 
   return (
@@ -41,9 +31,7 @@ function FeatureProduct({ maxItems = 6 }) {
                 />
                 <div className="card-body">
                   <h5 className="card-title text-center">{hall.name}</h5>
-                  <p className="card-text text-center text-muted">
-                    {categories[hall.categoryId] || "Fiyat Bilgisi Yok"}
-                  </p>
+                  
                   <div className="d-grid gap-2">
                     <Link
                       to={`/products/${hall.id}`}

@@ -61,7 +61,7 @@ function Header() {
             {isAuthenticated ? (
               userRole === "1" ? (
                 <Link
-                  to="/admin/dashboard" // Yönetici paneli için doğru yolu buraya girin
+                  to="/admin/dashboard" 
                   className="btn btn-danger btn-sm me-2 fs-4"
                   style={{ fontFamily: "cursive" }}
                   replace
