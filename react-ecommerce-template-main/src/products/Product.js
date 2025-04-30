@@ -32,10 +32,17 @@ function Product() {
                     {hall.name}
                   </h5>
                   <p className="card-text text-center text-muted">
+                    Açıklama: {hall.shortDescription}
+                  </p>
+                  
+                  <p className="card-text text-center text-muted">
+                    Konum: {hall.city} 
+                  </p>
+                  <p className="card-text text-center text-muted">
                     Kapasite: {hall.capacity}
                   </p>
                   <p className="card-text text-center text-muted">
-                    Açıklama: {hall.shortDescription}
+                    Fiyat: {hall.price} TL
                   </p>
                   <div className="d-grid gap-2">
                     <Link
