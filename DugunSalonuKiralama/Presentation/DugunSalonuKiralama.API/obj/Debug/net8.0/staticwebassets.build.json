@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "gHj0fF77VvRha2tmrYQ4mAHx9LXm6wse8/j4X69QdPQ=",
+  "Hash": "+82NWOwSUjiPA9ZHW7kVK6DDNacr+UM3oFDD26u/8jY=",
   "Source": "DugunSalonuKiralama.API",
   "BasePath": "_content/DugunSalonuKiralama.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

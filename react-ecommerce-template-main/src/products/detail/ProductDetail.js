@@ -11,12 +11,42 @@ function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
   const [availableDates, setAvailableDates] = useState([]); // Müsait tarihler
+  const [showAlcoholInput, setShowAlcoholInput] = useState(false);
+  const [showSnackInput, setShowSnackInput] = useState(false);
+  const [showMealInput, setShowMealInput] = useState(false);
   const calendarRef = useRef(null);
   let history = useHistory();
 
+  // Yeni state'ler
+  const [isim, setIsim] = useState('');
+  const [soyisim, setSoyisim] = useState('');
+  const [alkolDurumu, setAlkolDurumu] = useState('');
+  const [alkolDetay, setAlkolDetay] = useState('');
+  const [cerezDurumu, setCerezDurumu] = useState('');
+  const [cerezDetay, setCerezDetay] = useState('');
+  const [yemekDurumu, setYemekDurumu] = useState('');
+  const [yemekDetay, setYemekDetay] = useState('');
+  const [secilenTarih, setSecilenTarih] = useState(null);
+  const [yukleniyor, setYukleniyor] = useState(false);
+  const [hataMesaji, setHataMesaji] = useState('');
+  const [basariMesaji, setBasariMesaji] = useState('');
+
   useEffect(() => {
+    // Müsait tarihleri getirme (Örnek endpoint, backend'inize göre düzenleyin)
     axios
       .get(`https://localhost:7072/api/WeddingHall/${slug}`)
+      .then((response) => {
+        setAvailableDates(response.data);
+      })
+      .catch((error) => {
+        console.error("Müsait tarihler yüklenirken hata oluştu:", error);
+        // Hata yönetimi yapabilirsiniz
+      });
+
+    // Ürün detaylarını getirme
+    axios
+      .get(`https://localhost:7072/api/WeddingHall/
+        `)
       .then((response) => {
         setProduct(response.data);
       })
@@ -26,8 +56,23 @@ function ProductDetail() {
       });
   }, [slug]);
 
+  const handleAlcoholChange = (e) => {
+    setShowAlcoholInput(e.target.value === "Evet");
+    setAlkolDurumu(e.target.value); // State'i de güncelle
+  };
+
+  const handleSnackChange = (e) => {
+    setShowSnackInput(e.target.value === "Evet");
+    setCerezDurumu(e.target.value); // State'i de güncelle
+  };
+
+  const handleMealChange = (e) => {
+    setShowMealInput(e.target.value === "Evet");
+    setYemekDurumu(e.target.value); // State'i de güncelle
+  };
 
   const handleClick = () => {
+    history.push("Product.js");
     if (calendarRef.current) {
       calendarRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -36,6 +81,64 @@ function ProductDetail() {
   const tileDisabled = ({ date }) => {
     const formattedDate = date.toISOString().split("T")[0];
     return !availableDates.includes(formattedDate);
+  };
+
+  const handleDateChange = (date) => {
+    setSecilenTarih(date);
+    console.log('Seçilen Tarih:', date); // Kontrol için
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setYukleniyor(true);
+    setHataMesaji('');
+    setBasariMesaji('');
+
+    if (!secilenTarih) {
+      setHataMesaji('Lütfen bir rezervasyon tarihi seçiniz.');
+      setYukleniyor(false);
+      return;
+    }
+
+    const rezervasyonBilgileri = {
+      weddingHallSlug: slug,
+      rezervasyonTarihi: secilenTarih.toISOString().split('T')[0],
+      isim: isim,
+      soyisim: soyisim,
+      alkolIsterMi: alkolDurumu === 'Evet',
+      alkolDetay: showAlcoholInput ? alkolDetay : null,
+      cerezIsterMi: cerezDurumu === 'Evet',
+      cerezDetay: showSnackInput ? cerezDetay : null,
+      yemekIsterMi: yemekDurumu === 'Evet',
+      yemekDetay: showMealInput ? yemekDetay : null,
+      // İhtiyaç duyabileceğiniz diğer alanları buraya ekleyebilirsiniz.
+    };
+
+    try {
+      const response = await axios.post('https://localhost:7072/api/Booking', rezervasyonBilgileri);
+      console.log('Rezervasyon Başarılı:', response.data);
+      setBasariMesaji('Rezervasyonunuz başarıyla alınmıştır!');
+      // Formu temizle
+      setIsim('');
+      setSoyisim('');
+      setAlkolDurumu('');
+      setAlkolDetay('');
+      setCerezDurumu('');
+      setCerezDetay('');
+      setYemekDurumu('');
+      setYemekDetay('');
+      setSecilenTarih(null);
+    } catch (error) {
+      console.error('Rezervasyon Hatası:', error);
+      setHataMesaji('Rezervasyon işlemi sırasında bir hata oluştu.');
+      if (error.response && error.response.data) {
+        console.error('Hata Detayları:', error.response.data);
+        // Sunucudan gelen detaylı hata mesajlarını da gösterebilirsiniz.
+        // setHataMesaji(error.response.data.message || 'Rezervasyon işlemi sırasında bir hata oluştu.');
+      }
+    } finally {
+      setYukleniyor(false);
+    }
   };
 
   if (error) {
@@ -115,21 +218,118 @@ function ProductDetail() {
                 tileClassName={({ date }) =>
                   availableDates.includes(date.toISOString().split("T")[0]) ? "bg-success text-white" : ""
                 }
+                onChange={handleDateChange} // Tarih seçimini yönetmek için
               />
             </div>
             {/* Form Alanı */}
             <div className="flex-grow-1">
               <h4>Rezervasyon Bilgileri</h4>
-              <form>
+              <form onSubmit={handleSubmit}>
+                {hataMesaji && <div className="alert alert-danger">{hataMesaji}</div>}
+                {basariMesaji && <div className="alert alert-success">{basariMesaji}</div>}
                 <div className="mb-3">
                   <label className="form-label">İsim</label>
-                  <input type="text" className="form-control" placeholder="Adınızı girin" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Adınızı girin"
+                    value={isim}
+                    onChange={(e) => setIsim(e.target.value)}
+                    required
+                  />
                 </div>
                 <div className="mb-3">
                   <label className="form-label">Soyisim</label>
-                  <input type="text" className="form-control" placeholder="Soyadınızı girin" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Soyadınızı girin"
+                    value={soyisim}
+                    onChange={(e) => setSoyisim(e.target.value)}
+                    required
+                  />
                 </div>
-                <button type="submit" className="btn btn-primary">Rezervasyon Yap</button>
+                <div className="mb-3">
+                  <label className="form-label">Düğünde Alkol olacak mı?</label>
+                  <select className="form-select" onChange={handleAlcoholChange} value={alkolDurumu}>
+                    <option value="">Seçiniz</option>
+                    <option value="Evet">Evet</option>
+                    <option value="Hayır">Hayır</option>
+                  </select>
+                </div>
+                {showAlcoholInput && (
+                  <div className="mb-3">
+                    <label className="form-label">İstediğiniz alkolleri belirtiniz.</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Alkol Türü Giriniz"
+                      value={alkolDetay}
+                      onChange={(e) => setAlkolDetay(e.target.value)}
+                    />
+                  </div>
+                )}
+                <div className="mb-3">
+                  <label className="form-label">Düğünde Çerez olacak mı?</label>
+                  <select className="form-select" onChange={handleSnackChange} value={cerezDurumu}>
+                    <option value="">Seçiniz</option>
+                    <option value="Evet">Evet</option>
+                    <option value="Hayır">Hayır</option>
+                  </select>
+                </div>
+                {showSnackInput && (
+                  <div className="mb-3">
+                    <label className="form-label">İstediğiniz Çerezleri belirtiniz.</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Çerez Türü Giriniz"
+                      value={cerezDetay}
+                      onChange={(e) => setCerezDetay(e.target.value)}
+                    />
+                  </div>
+                )}
+                <div className="mb-3">
+                  <label className="form-label">Düğünde Yemek olacak mı?</label>
+                  <select className="form-select" onChange={handleMealChange} value={yemekDurumu}>
+                    <option value="">Seçiniz</option>
+                    <option value="Evet">Evet</option>
+                    <option value="Hayır">Hayır</option>
+                  </select>
+                </div>
+                {showMealInput && (
+                  <div className="mb-3">
+                    <label className="form-label">İstediğiniz Yemekleri belirtiniz.</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="İstediğiniz yemekleri giriniz"
+                      value={yemekDetay}
+                      onChange={(e) => setYemekDetay(e.target.value)}
+                    />
+                  </div>
+                )}
+                <div className="mb-3">
+                  <label className="form-label">Rezervasyon Tarihi</label>
+                  {secilenTarih ? (
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={secilenTarih.toLocaleDateString()}
+                      readOnly
+                    />
+                  ) : (
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Lütfen takvimden bir tarih seçin"
+                      readOnly
+                    />
+                  )}
+                </div>
+                <button type="submit" className="btn btn-primary" disabled={yukleniyor}>
+                  {yukleniyor ? 'Gönderiliyor...' : 'Rezervasyon Yap'}
+                </button>
               </form>
             </div>
           </div>
