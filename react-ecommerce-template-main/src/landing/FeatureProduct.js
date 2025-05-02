@@ -61,7 +61,7 @@ function FeatureProduct({ maxItems = 6 }) {
           in culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-  
+
       {/* Team Section */}
       <div className="container mb-5">
         <div className="row row-cols-1 row-cols-md-4 g-4 text-center">
@@ -86,11 +86,52 @@ function FeatureProduct({ maxItems = 6 }) {
             </div>
           ))}
         </div>
+
       </div>
-      
+
+      <div className="w3-container w3-padding-64 w3-theme-l5" id="contact">
+  <div className="w3-row">
+    <div className="w3-col m5">
+      <div className="w3-padding-16">
+        <span className="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span>
+      </div>
+      <h3>Address</h3>
+      <p>Swing by for a cup of coffee, or whatever.</p>
+      <p><i className="fa fa-map-marker w3-text-teal w3-xlarge"></i> Chicago, US</p>
+      <p><i className="fa fa-phone w3-text-teal w3-xlarge"></i> +00 1515151515</p>
+      <p><i className="fa fa-envelope-o w3-text-teal w3-xlarge"></i> test@test.com</p>
+    </div>
+
+    <div className="w3-col m7">
+      <form className="w3-card-4 w3-white w3-padding-32 w3-round-large custom-form" action="/action_page.php" target="_blank">
+        <div className="form-group">
+          <label className="form-label">Name</label>
+          <input className="form-control" type="text" name="Name" required />
+        </div>
+        <div className="form-group">
+          <label className="form-label">Email</label>
+          <input className="form-control" type="email" name="Email" required />
+        </div>
+        <div className="form-group">
+          <label className="form-label">Message</label>
+          <textarea className="form-control" name="Message" rows="4" required></textarea>
+        </div>
+        <div className="form-check text-end">
+          <input className="form-check-input" type="checkbox" defaultChecked name="Like" />
+          <label className="form-check-label ms-2">I Like it!</label>
+        </div>
+        <div className="text-end mt-3">
+          <button type="submit" className="btn btn-primary px-4">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
     </>
   );
-  
+
 }
 
 export default FeatureProduct;

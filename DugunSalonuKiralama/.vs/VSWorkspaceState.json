@@ -7,9 +7,13 @@
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Queries",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Queries\\Weddings",
+    "\\Core\\DugunSalonuKiralama.Domain",
+    "\\Core\\DugunSalonuKiralama.Domain\\Entities",
     "\\Infrastructure",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations"
+    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations",
+    "\\Presentation",
+    "\\Presentation\\DugunSalonuKiralama.API"
   ],
   "SelectedNode": "\\Core\\DugunSalonuKiralama.Domain\\Entities\\Booking.cs",
   "PreviewInSolutionExplorer": false
