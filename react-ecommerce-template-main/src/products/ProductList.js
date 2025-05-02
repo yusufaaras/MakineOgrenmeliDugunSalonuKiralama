@@ -329,6 +329,11 @@ function ProductList() {
                                     />
                                 </button>
                             </div>
+                            <div className="d-flex align-items-center mt-auto">
+                            <span className="text-muted small d-none d-md-inline">
+                                {filteredHalls.length} Sonuç Gösteriliyor
+                            </span>
+                        </div>
                         </div>
                         <div
                             className={`row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 g-3 mb-4 flex-shrink-0 ${
@@ -345,31 +350,6 @@ function ProductList() {
                                     <p>Aradığınız kriterlere uygun salon bulunamadı.</p>
                                 </div>
                             )}
-                        </div>
-
-                        <div className="d-flex align-items-center mt-auto">
-                            <span className="text-muted small d-none d-md-inline">
-                                {filteredHalls.length} salon gösteriliyor
-                            </span>
-                            <nav aria-label="Page navigation example" className="ms-auto">
-                                <ul className="pagination my-0">
-                                    <li className="page-item disabled">
-                                        <a className="page-link" href="!#">
-                                            Önceki
-                                        </a>
-                                    </li>
-                                    <li className="page-item active">
-                                        <a className="page-link" href="!#">
-                                            1
-                                        </a>
-                                    </li>
-                                    <li className="page-item disabled">
-                                        <a className="page-link" href="!#">
-                                            Sonraki
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
                         </div>
                     </div>
                 </div>
