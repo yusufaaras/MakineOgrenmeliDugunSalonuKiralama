@@ -24,27 +24,28 @@ function FilterMenuLeft() {
       <li className="list-group-item d-none d-lg-block">
         <h5 className="mt-1 mb-2">Göz At</h5>
         <div className="d-flex flex-wrap my-2">
-          {categories.map((v, i) => (
-            <Link
-              key={`${v}-${i}`} // v + index ile eşsiz key
-              to="/products"
-              className="btn btn-sm btn-outline-dark rounded-pill me-2 mb-2"
-              replace
-            >
-              {v}
-            </Link>
-          ))}
+          {categories.map((v, i) => {
+            return (
+              <Link
+                key={i}
+                to="/products"
+                className="btn btn-sm btn-outline-dark rounded-pill me-2 mb-2"
+                replace
+              >
+                {v}
+              </Link>
+            );
+          })}
         </div>
       </li>
       <li className="list-group-item">
         <h5 className="mt-1 mb-1">Şehirler</h5>
         <div className="d-flex flex-column">
           {city.map((v, i) => {
-            const id = `city-check-${i}`;
             return (
-              <div key={`${v}-${i}`} className="form-check">
-                <input className="form-check-input" type="checkbox" id={id} />
-                <label className="form-check-label" htmlFor={id}>
+              <div key={i} className="form-check">
+                <input className="form-check-input" type="checkbox" />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
                   {v}
                 </label>
               </div>
@@ -56,11 +57,10 @@ function FilterMenuLeft() {
         <h5 className="mt-1 mb-1">Kapasite</h5>
         <div className="d-flex flex-column">
           {Capacity.map((v, i) => {
-            const id = `capacity-check-${i}`;
             return (
-              <div key={`${v}-${i}`} className="form-check">
-                <input className="form-check-input" type="checkbox" id={id} />
-                <label className="form-check-label" htmlFor={id}>
+              <div key={i} className="form-check">
+                <input className="form-check-input" type="checkbox" />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
                   {v}
                 </label>
               </div>
@@ -128,9 +128,8 @@ function ProductList() {
       <div className="h-scroller d-block d-lg-none">
         <nav className="nav h-underline">
           {categories.map((v, i) => {
-            const key = `${v}-${i}`; // her v için benzersiz key
             return (
-              <div key={key} className="h-link me-2">
+              <div key={i} className="h-link me-2">
                 <Link
                   to="/products"
                   className="btn btn-sm btn-outline-dark rounded-pill"
@@ -223,7 +222,7 @@ function ProductList() {
               }
             >
               {Array.from({ length: 3 }, (_, i) => {
-                return viewType.grid ? <Product key={i} /> : <ProductH key={i} />;
+                return viewType.grid ? <Product /> : <ProductH />;
               })}
             </div>
 
