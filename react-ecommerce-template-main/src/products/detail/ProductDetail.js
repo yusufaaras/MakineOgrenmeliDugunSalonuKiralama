@@ -110,17 +110,18 @@ function ProductDetail() {
 
               <div className="d-flex flex-nowrap overflow-auto">
 
-                {[product.detailImageUrl1, product.detailImageUrl2, product.detailImageUrl3, product.detailImageUrl4].map(
-
-                  (image, index) =>
-
-                    image && (
-
-                      <img key={index} className="cover rounded mb-2 me-2" width="70" height="70" alt={product.name} src={image} />
-
-                    )
-
-                )}
+                {[product.detailImageUrl1, product.detailImageUrl2, product.detailImageUrl3, product.detailImageUrl4]
+                  .filter((img) => img && img !== "string") // hem boşları hem de "string" yazanları ayıkla
+                  .map((image) => (
+                    <img
+                      key={image}
+                      className="cover rounded mb-2 me-2"
+                      width="70"
+                      height="70"
+                      alt={product.name}
+                      src={image}
+                    />
+                  ))}
 
               </div>
 
