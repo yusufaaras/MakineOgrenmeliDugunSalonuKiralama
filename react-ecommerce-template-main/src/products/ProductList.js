@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Product from "./Product";
 import ProductH from "./ProductH";
-import { useState } from "react";
+import { useState, useEffect } from "react"; // useEffect'i ekledik
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ScrollToTopOnMount from "../template/ScrollToTopOnMount";
 
@@ -24,48 +24,42 @@ function FilterMenuLeft() {
       <li className="list-group-item d-none d-lg-block">
         <h5 className="mt-1 mb-2">Göz At</h5>
         <div className="d-flex flex-wrap my-2">
-          {categories.map((v, i) => {
-            return (
-              <Link
-                key={i}
-                to="/products"
-                className="btn btn-sm btn-outline-dark rounded-pill me-2 mb-2"
-                replace
-              >
-                {v}
-              </Link>
-            );
-          })}
+          {categories.map((v, i) => (
+            <Link
+              key={i} // key prop'u burada
+              to="/products"
+              className="btn btn-sm btn-outline-dark rounded-pill me-2 mb-2"
+              replace
+            >
+              {v}
+            </Link>
+          ))}
         </div>
       </li>
       <li className="list-group-item">
         <h5 className="mt-1 mb-1">Şehirler</h5>
         <div className="d-flex flex-column">
-          {city.map((v, i) => {
-            return (
-              <div key={i} className="form-check">
-                <input className="form-check-input" type="checkbox" />
-                <label className="form-check-label" htmlFor="flexCheckDefault">
-                  {v}
-                </label>
-              </div>
-            );
-          })}
+          {city.map((v, i) => (
+            <div key={i} className="form-check"> {/* key prop'u burada */}
+              <input className="form-check-input" type="checkbox" />
+              <label className="form-check-label" htmlFor="flexCheckDefault">
+                {v}
+              </label>
+            </div>
+          ))}
         </div>
       </li>
       <li className="list-group-item">
         <h5 className="mt-1 mb-1">Kapasite</h5>
         <div className="d-flex flex-column">
-          {Capacity.map((v, i) => {
-            return (
-              <div key={i} className="form-check">
-                <input className="form-check-input" type="checkbox" />
-                <label className="form-check-label" htmlFor="flexCheckDefault">
-                  {v}
-                </label>
-              </div>
-            );
-          })}
+          {Capacity.map((v, i) => (
+            <div key={i} className="form-check"> {/* key prop'u burada */}
+              <input className="form-check-input" type="checkbox" />
+              <label className="form-check-label" htmlFor="flexCheckDefault">
+                {v}
+              </label>
+            </div>
+          ))}
         </div>
       </li>
       <li className="list-group-item">
@@ -98,11 +92,42 @@ function FilterMenuLeft() {
 
 function ProductList() {
   const [viewType, setViewType] = useState({ grid: true });
+  // Düğün salonları verisini tutacak state
+  const [weddingHalls, setWeddingHalls] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch("https://localhost:7072/api/WeddingHall")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setWeddingHalls(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Düğün salonları yüklenirken hata:", err);
+        setError("Düğün salonları yüklenirken bir hata oluştu.");
+        setLoading(false);
+      });
+  }, []);
 
   function changeViewType() {
     setViewType({
       grid: !viewType.grid,
     });
+  }
+
+  if (loading) {
+    return <p className="text-center">Yükleniyor...</p>;
+  }
+
+  if (error) {
+    return <p className="text-center text-danger">{error}</p>;
   }
 
   return (
@@ -127,19 +152,17 @@ function ProductList() {
 
       <div className="h-scroller d-block d-lg-none">
         <nav className="nav h-underline">
-          {categories.map((v, i) => {
-            return (
-              <div key={i} className="h-link me-2">
-                <Link
-                  to="/products"
-                  className="btn btn-sm btn-outline-dark rounded-pill"
-                  replace
-                >
-                  {v}
-                </Link>
-              </div>
-            );
-          })}
+          {categories.map((v, i) => (
+            <div key={i} className="h-link me-2"> {/* key prop'u burada */}
+              <Link
+                to="/products"
+                className="btn btn-sm btn-outline-dark rounded-pill"
+                replace
+              >
+                {v}
+              </Link>
+            </div>
+          ))}
         </nav>
       </div>
 
@@ -221,9 +244,11 @@ function ProductList() {
                 "row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 g-3 mb-4 flex-shrink-0"
               }
             >
-              {Array.from({ length: 3 }, (_, i) => {
-                return viewType.grid ? <Product /> : <ProductH />;
-              })}
+              {weddingHalls.map((hall) => (
+                <div className="col" key={hall.id}> {/* key prop'u burada */}
+                  <Product hall={hall} />
+                </div>
+              ))}
             </div>
 
             <div className="d-flex align-items-center mt-auto">
