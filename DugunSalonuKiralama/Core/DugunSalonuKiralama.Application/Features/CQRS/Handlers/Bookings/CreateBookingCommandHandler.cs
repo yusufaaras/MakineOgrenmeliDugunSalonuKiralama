@@ -25,7 +25,6 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
                 UserId = command.UserId,
                 BookingDate = command.BookingDate,
                 GuestCount = command.GuestCount,
-                TotalPrice = command.TotalPrice,
                 Status = command.Status,
 
             });

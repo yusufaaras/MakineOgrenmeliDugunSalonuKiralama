@@ -14,7 +14,6 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Commands.Booking
         public int UserId { get; set; }
         public DateTime BookingDate { get; set; }
         public int GuestCount { get; set; }
-        public decimal TotalPrice { get; set; }
         public string Status { get; set; }
     }
 }

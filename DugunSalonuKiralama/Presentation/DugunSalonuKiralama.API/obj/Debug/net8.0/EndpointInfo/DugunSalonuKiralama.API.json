@@ -559,10 +559,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "totalPrice": {
-            "type": "number",
-            "format": "double"
-          },
           "status": {
             "type": "string",
             "nullable": true
@@ -710,10 +706,6 @@
           "guestCount": {
             "type": "integer",
             "format": "int32"
-          },
-          "totalPrice": {
-            "type": "number",
-            "format": "double"
           },
           "status": {
             "type": "string",

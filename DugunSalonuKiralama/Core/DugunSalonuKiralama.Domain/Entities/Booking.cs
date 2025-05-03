@@ -16,7 +16,6 @@ namespace DugunSalonuKiralama.Domain.Entities
         public AppUser User { get; set; }
         public DateTime BookingDate { get; set; }
         public int GuestCount { get; set; }
-        public decimal TotalPrice { get; set; }
         public string Status { get; set; } 
     }
 
