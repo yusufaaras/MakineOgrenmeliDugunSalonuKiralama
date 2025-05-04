@@ -21,9 +21,13 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
             var values = await _repository.GetByIdAsync(command.Id);
             values.UserId = command.UserId;
             values.BookingDate = command.BookingDate;
-            values.GuestCount = command.GuestCount;
-            values.TotalPrice = command.TotalPrice;
-            values.Status = command.Status;
+            values.Price = command.Price;
+            values.Alcohol = command.Alcohol;
+            values.Food = command.Food;
+            values.Capacity = command.Capacity;
+            values.Cookie = command.Cookie;
+            values.Name = command.Name;
+            values.SurName = command.SurName;
             await _repository.UpdateAsync(values);
         }
     }
