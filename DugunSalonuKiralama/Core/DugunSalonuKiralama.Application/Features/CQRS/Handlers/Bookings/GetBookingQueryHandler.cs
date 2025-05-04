@@ -23,12 +23,16 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
             return values.Select(x => new GetBookingQueryResult
             {
                 Id = x.Id,
-                WeddingId = x.WeddingHallId,
+                WeddingHallId = x.WeddingHallId,
                 UserId = x.UserId,
                 BookingDate = x.BookingDate,
-                GuestCount = x.GuestCount,
-                Status = x.Status,
-
+                Alcohol=x.Alcohol,
+                Capacity=x.Capacity,
+                Cookie=x.Cookie,
+                Price=x.Price,
+                Food=x.Food,
+                Name=x.Name,
+                SurName=x.SurName,                
             }).ToList();
         }
     }

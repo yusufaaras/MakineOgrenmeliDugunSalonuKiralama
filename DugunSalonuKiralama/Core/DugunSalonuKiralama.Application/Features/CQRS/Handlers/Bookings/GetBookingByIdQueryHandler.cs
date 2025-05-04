@@ -28,10 +28,13 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
                 WeddingHallId = values.WeddingHallId,
                 UserId = values.UserId,
                 BookingDate = values.BookingDate,
-                GuestCount = values.GuestCount,
-                Status = values.Status,
-
-
+                Price = values.Price,
+                Food = values.Food,
+                Cookie = values.Cookie,
+                Capacity = values.Capacity,
+                Alcohol=values.Alcohol,
+                Name = values.Name,
+                SurName = values.SurName,
             };
         }
     }

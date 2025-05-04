@@ -24,9 +24,13 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
                 WeddingHallId = command.WeddingHallId,
                 UserId = command.UserId,
                 BookingDate = command.BookingDate,
-                GuestCount = command.GuestCount,
-                Status = command.Status,
-
+                Alcohol= command.Alcohol,
+                Capacity= command.Capacity,
+                Cookie= command.Cookie,
+                Food= command.Food,
+                Price= command.Price,
+                Name= command.Name,
+                SurName= command.SurName,
             });
         }
     }
