@@ -1,25 +1,34 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-import useSearch from '../Search/useSearch';
-const Reservation = () => {
-  // Örnek tablo verileri
-  const [data, setData] = useState([
-    { id: 1, name: "Ahmet Yılmaz", email: "ahmet@example.com", role: "Admin" },
-    { id: 2, name: "Zeynep Demir", email: "zeynep@example.com", role: "User" },
-    { id: 3, name: "Mehmet Kaya", email: "mehmet@example.com", role: "Editor" },
-    { id: 4, name: "Elif Karaca", email: "elif@example.com", role: "User" },
-  ]);
 
+const Reservation = () => {
+  const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("name");
   const [sortOrder, setSortOrder] = useState("asc");
 
+  // API'den veri çekme
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://localhost:7072/api/Booking");
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error("API'den veri çekilirken hata oluştu:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   // Arama işlemi
-  const filteredData = data.filter((item) =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    item.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    item.role.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredData = data.filter(
+    (item) =>
+      item.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.surName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.food?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.price?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Sıralama işlemi
@@ -46,30 +55,37 @@ const Reservation = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
-      {/* Tablo */}
-
+      {/* Yeni Rezervasyon Ekleme Linki */}
       <Link to="/admin/Reservation/AddReservation" className="btn btn-primary btn-sm me-2">
         <i className="fa fa-plus"></i> Yeni Ekle
       </Link>
       <br />
+
+      {/* Tablo */}
       <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th onClick={() => setSortBy("id")} style={{ cursor: "pointer" }}>#</th>
-            <th onClick={() => setSortBy("name")} style={{ cursor: "pointer" }}>İsim</th>
-            <th onClick={() => setSortBy("email")} style={{ cursor: "pointer" }}>E-Posta</th>
-            <th onClick={() => setSortBy("role")} style={{ cursor: "pointer" }}>Rol</th>
+            <th onClick={() => setSortBy("name")} style={{ cursor: "pointer" }}>Ad</th>
+            <th onClick={() => setSortBy("surName")} style={{ cursor: "pointer" }}>Soyad</th>
+            <th onClick={() => setSortBy("food")} style={{ cursor: "pointer" }}>Yemek</th>
+            <th onClick={() => setSortBy("price")} style={{ cursor: "pointer" }}>Fiyat</th>
+            <th onClick={() => setSortBy("capacity")} style={{ cursor: "pointer" }}>Kapasite</th>
+            <th onClick={() => setSortBy("bookingDate")} style={{ cursor: "pointer" }}>Rezervasyon Tarihi</th>
             <th>İşlemler</th>
           </tr>
         </thead>
         <tbody>
           {sortedData.length > 0 ? (
-            sortedData.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.role}</td>
+            sortedData.map((reservation) => (
+              <tr key={reservation.id}>
+                <td>{reservation.id}</td>
+                <td>{reservation.name || "Belirtilmedi"}</td>
+                <td>{reservation.surName || "Belirtilmedi"}</td>
+                <td>{reservation.food || "Belirtilmedi"}</td>
+                <td>{reservation.price || "Belirtilmedi"}</td>
+                <td>{reservation.capacity}</td>
+                <td>{new Date(reservation.bookingDate).toLocaleDateString()}</td>
                 <td>
                   <button className="btn btn-primary btn-sm me-2">
                     <i className="fa fa-eye"></i>
@@ -85,7 +101,7 @@ const Reservation = () => {
             ))
           ) : (
             <tr>
-              <td colSpan="5" className="text-center">Sonuç bulunamadı</td>
+              <td colSpan="8" className="text-center">Sonuç bulunamadı</td>
             </tr>
           )}
         </tbody>
