@@ -551,21 +551,37 @@
             "type": "integer",
             "format": "int32"
           },
-          "bookingDate": {
+          "alcohol": {
             "type": "string",
-            "format": "date-time"
+            "nullable": true
           },
-          "guestCount": {
+          "cookie": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "surName": {
+            "type": "string",
+            "nullable": true
+          },
+          "food": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacity": {
             "type": "integer",
             "format": "int32"
           },
-          "totalPrice": {
-            "type": "number",
-            "format": "double"
-          },
-          "status": {
+          "bookingDate": {
             "type": "string",
-            "nullable": true
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -695,29 +711,41 @@
             "type": "integer",
             "format": "int32"
           },
-          "weddingHallId": {
+          "userId": {
             "type": "integer",
             "format": "int32"
           },
-          "userId": {
+          "alcohol": {
+            "type": "string",
+            "nullable": true
+          },
+          "cookie": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "surName": {
+            "type": "string",
+            "nullable": true
+          },
+          "food": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacity": {
             "type": "integer",
             "format": "int32"
           },
           "bookingDate": {
             "type": "string",
             "format": "date-time"
-          },
-          "guestCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalPrice": {
-            "type": "number",
-            "format": "double"
-          },
-          "status": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
