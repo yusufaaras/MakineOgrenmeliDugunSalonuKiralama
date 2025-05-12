@@ -180,6 +180,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DugunSalonuKiralama.API.Controllers.TestController",
+    "Method": "Predict",
+    "RelativePath": "api/Test/predict",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DugunSalonuKiralama.API.Controllers.UserController",
     "Method": "CarList",
     "RelativePath": "api/User",

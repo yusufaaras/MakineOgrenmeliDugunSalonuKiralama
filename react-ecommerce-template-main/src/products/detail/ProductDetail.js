@@ -60,7 +60,7 @@ function ProductDetail() {
     }
   };
 
- 
+
 
   const handleDateChange = (date) => {
     setSelectedDate(date);

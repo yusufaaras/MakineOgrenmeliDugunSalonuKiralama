@@ -294,6 +294,18 @@
         }
       }
     },
+    "/api/Test/predict": {
+      "post": {
+        "tags": [
+          "Test"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/User": {
       "get": {
         "tags": [

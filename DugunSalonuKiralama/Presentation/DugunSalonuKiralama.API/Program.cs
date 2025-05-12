@@ -67,6 +67,8 @@ namespace DugunSalonuKiralama.API
             builder.Services.AddScoped<UpdateUserCommandHandler>();
             builder.Services.AddScoped<RemoveUserCommandHandler>();
 
+            builder.Services.AddHttpClient<PredictionService>();
+
 
             builder.Services.AddApplicationService(builder.Configuration);
 
