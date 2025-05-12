@@ -77,12 +77,12 @@ function ProductDetail() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     if (!selectedDate) {
       alert("Lütfen bir rezervasyon tarihi seçiniz.");
       return;
     }
-
+  
     const bookingData = {
       weddingHallId: parseInt(slug), // slug'ı integer'a çeviriyoruz
       userId: 1, // Şu an statik, gerçek uygulamada kullanıcı bilgisini almalısınız
@@ -91,29 +91,31 @@ function ProductDetail() {
       name: name,
       surName: surName,
       food: foodPreference,
-      price: "Belirlenecek", // Fiyat bilgisi burada statik, gerçekte hesaplanmalı
-      capacity: product ? product.capacity : 0,
+      price: product ? product.price : "Belirlenecek", // Düğün salonu fiyat bilgisi
+      capacity: product ? product.capacity : 0, // Düğün salonu kapasite bilgisi
       bookingDate: new Date(selectedDate).toISOString(),
     };
-
+  
+    // Gönderilen veriyi console'a yazdır
+    console.log("Gönderilen Rezervasyon Verisi:", bookingData);
+  
     axios
       .post("https://localhost:7072/api/Booking", bookingData, {
         headers: {
-          'accept': '*/*',
-          'Content-Type': 'application/json',
+          accept: "*/*",
+          "Content-Type": "application/json",
         },
       })
       .then((response) => {
         console.log("Rezervasyon başarılı:", response.data);
         alert("Rezervasyonunuz başarıyla alınmıştır!");
-        // Başarılı rezervasyon sonrası yapılacak işlemler (örneğin, kullanıcıyı başka bir sayfaya yönlendirme)
         history.push("/reservation-success");
       })
       .catch((error) => {
         console.error("Rezervasyon sırasında hata oluştu:", error);
         alert("Rezervasyon sırasında bir hata oluştu. Lütfen tekrar deneyiniz.");
       });
-  };
+  }; 
 
   if (error) {
     return <p className="text-center text-danger">{error}</p>;
