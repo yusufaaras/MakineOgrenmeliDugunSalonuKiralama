@@ -186,7 +186,13 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DugunSalonuKiralama.Domain.Entities.PredictionResponse",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

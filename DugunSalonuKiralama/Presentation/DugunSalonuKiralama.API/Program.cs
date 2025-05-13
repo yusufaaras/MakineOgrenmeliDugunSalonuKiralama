@@ -40,6 +40,8 @@ namespace DugunSalonuKiralama.API
                 });
             });
 
+
+
             //Repos
             builder.Services.AddScoped<WeddingHallContext>();
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -69,6 +71,7 @@ namespace DugunSalonuKiralama.API
 
             builder.Services.AddHttpClient<PredictionService>();
 
+        
 
             builder.Services.AddApplicationService(builder.Configuration);
 

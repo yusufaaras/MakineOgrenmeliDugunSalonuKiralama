@@ -17,7 +17,7 @@ namespace DugunSalonuKiralama.Application.Services
         {
             _httpClient = httpClient;
         }
-
+       
         public async Task<double> PredictAsync(double[] features)
         {
             var request = new
