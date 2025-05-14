@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import ScrollToTopOnMount from "../../template/ScrollToTopOnMount";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { jwtDecode } from "jwt-decode";
 
 function ProductDetail() {
   const { slug } = useParams();
@@ -17,8 +16,8 @@ function ProductDetail() {
   const [showFoodInput, setShowFoodInput] = useState(false);
   const calendarRef = useRef(null);
   const [selectedDate, setSelectedDate] = useState(null);
-  // const [name, setName] = useState("");
-  // const [surName, setSurName] = useState("");
+  const [name, setName] = useState("");
+  const [surName, setSurName] = useState("");
   const [alcoholPreference, setAlcoholPreference] = useState("");
   const [cookiePreference, setCookiePreference] = useState("");
   const [foodPreference, setFoodPreference] = useState("");
@@ -31,7 +30,7 @@ function ProductDetail() {
         setProduct(response.data);
         // Simülasyon: Gerçek API'den müsait tarihleri almanız gerekecek.
         // Örneğin: response.data.availableBookingDates gibi bir alan olabilir.
-        setAvailableDates([response.data.availableDates]);
+        setAvailableDates(["2025-05-10", "2025-05-15", "2025-05-20"]);
       })
       .catch((error) => {
         console.error("Detay yüklenirken hata oluştu:", error);
@@ -60,7 +59,10 @@ function ProductDetail() {
     }
   };
 
-
+  const tileDisabled = ({ date }) => {
+    const formattedDate = formatDate(date);
+    return !availableDates.includes(formattedDate);
+  };
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -72,12 +74,36 @@ function ProductDetail() {
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
   };
-  const handleReservation = (bookingData) => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+    if (!selectedDate) {
+      alert("Lütfen bir rezervasyon tarihi seçiniz.");
+      return;
+    }
+  
+    const bookingData = {
+      weddingHallId: parseInt(slug), // slug'ı integer'a çeviriyoruz
+      userId: 1, // Şu an statik, gerçek uygulamada kullanıcı bilgisini almalısınız
+      alcohol: alcoholPreference,
+      cookie: cookiePreference,
+      name: name,
+      surName: surName,
+      food: foodPreference,
+      price: product ? product.price : "Belirlenecek", // Düğün salonu fiyat bilgisi
+      capacity: product ? product.capacity : 0, // Düğün salonu kapasite bilgisi
+      bookingDate: new Date(selectedDate).toISOString(),
+    };
+  
+    // Gönderilen veriyi console'a yazdır
+    console.log("Gönderilen Rezervasyon Verisi:", bookingData);
+  
     axios
       .post("https://localhost:7072/api/Booking", bookingData, {
         headers: {
-          'accept': '*/*',
-          'Content-Type': 'application/json',
+          accept: "*/*",
+          "Content-Type": "application/json",
         },
       })
       .then((response) => {
@@ -89,37 +115,7 @@ function ProductDetail() {
         console.error("Rezervasyon sırasında hata oluştu:", error);
         alert("Rezervasyon sırasında bir hata oluştu. Lütfen tekrar deneyiniz.");
       });
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!selectedDate) {
-      alert("Lütfen bir rezervasyon tarihi seçiniz.");
-      return;
-    }
-
-    const token = localStorage.getItem("token");
-    if (!token) {
-      alert("Lütfen giriş yapınız.");
-      return;
-    }
-
-    const decoded = jwtDecode(token);
-    const userId = decoded.sub;
-
-    const bookingData = {
-      weddingHallId: parseInt(slug),
-      userId: userId,
-      alcohol: alcoholPreference,
-      cookie: cookiePreference,
-      food: foodPreference,
-      price: product ? product.price : 0,
-      capacity: product ? product.capacity : 0,
-      bookingDate: new Date(selectedDate).toISOString(),
-    };
-
-    handleReservation(bookingData);
-  };
+  }; 
 
   if (error) {
     return <p className="text-center text-danger">{error}</p>;
@@ -170,7 +166,6 @@ function ProductDetail() {
           <h2 className="mb-1">{product.name}</h2>
           <p className="text-muted">{product.shortDescription}</p>
           <p><strong>Kapasite:</strong> {product.capacity} kişi</p>
-          <p><strong>Fiyat:</strong> {product.price} TL</p>
 
           <div className="row g-3 mb-4">
             <div className="col">
@@ -195,8 +190,13 @@ function ProductDetail() {
             <div className="me-4">
               <h4>Rezervasyon Tarihi Seçin</h4>
               <Calendar
+                ref={calendarRef}
+                tileDisabled={tileDisabled}
                 value={selectedDate}
                 onChange={handleDateChange}
+                tileClassName={({ date }) =>
+                  availableDates.includes(formatDate(date)) ? "bg-success text-white" : ""
+                }
               />
               {selectedDate && (
                 <p className="mt-2">Seçilen Tarih: {formatDate(selectedDate)}</p>
@@ -210,6 +210,28 @@ function ProductDetail() {
             <div className="flex-grow-1">
               <h4>Rezervasyon Bilgileri</h4>
               <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label className="form-label">İsim</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Adınızı girin"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Soyisim</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Soyadınızı girin"
+                    value={surName}
+                    onChange={(e) => setSurName(e.target.value)}
+                    required
+                  />
+                </div>
                 <div className="mb-3">
                   <label className="form-label">Düğünde Alkol olacak mı?</label>
                   <select className="form-select" onChange={handleAlcoholChange} defaultValue="">
@@ -281,6 +303,5 @@ function ProductDetail() {
     </div>
   );
 }
-
 
 export default ProductDetail;
