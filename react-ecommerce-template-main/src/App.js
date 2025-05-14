@@ -6,6 +6,7 @@ import Landing from "./landing/Landing";
 import ProductList from "./products/ProductList";
 import AuthPage from "./Login/AuthPage";
 import ProfilePage from "./Profile/ProfilePage";
+import AboutPage from "./About/about";
 import Dashboard from "./Admin/Dashboard/Dashboard";
 import HallList from "./Admin/Hall/HallList";
 import AddHall from "./Admin/Hall/AddHall";
@@ -19,15 +20,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function RoutesWithTemplate() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
-  const isAuthRoute = location.pathname === "/AuthPage"; // AuthPage için özel kontrol
+  const isAuthRoute = location.pathname === "/AuthPage"; 
 
-  return isAuthRoute ? (
-    // AuthPage için Template'ı kullanma
+  return isAuthRoute ? ( 
     <Switch>
       <Route exact path="/AuthPage" component={AuthPage} />
     </Switch>
-  ) : isAdminRoute ? (
-    // Admin sayfaları için AdminTemplate kullan
+  ) : isAdminRoute ? ( 
     <AdminTemplate>
       <Switch>
         <ProtectedAdminRoute exact path="/admin" component={Dashboard} />
@@ -40,15 +39,15 @@ function RoutesWithTemplate() {
         <ProtectedAdminRoute exact path="/admin/AdminProfile" component={AdminProfile} />
       </Switch>
     </AdminTemplate>
-  ) : (
-    // Diğer sayfalar için Template kullan
+  ) : ( 
     <Template>
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/products" component={ProductList} />
         <Route exact path="/products/:slug" component={ProductDetail} />
         <Route exact path="/AuthPage" component={AuthPage} />
-        <Route exact path="/Profile" component={ProfilePage} />
+        <Route exact path="/Profile" component={ProfilePage} /> 
+        <Route exact path="/about" component={AboutPage} />
       </Switch>
     </Template>
   );

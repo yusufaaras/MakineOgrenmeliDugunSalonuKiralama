@@ -12,7 +12,8 @@
     "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations",
     "\\Presentation",
-    "\\Presentation\\DugunSalonuKiralama.API"
+    "\\Presentation\\DugunSalonuKiralama.API",
+    "\\Presentation\\DugunSalonuKiralama.API\\Controllers"
   ],
   "SelectedNode": "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
   "PreviewInSolutionExplorer": false

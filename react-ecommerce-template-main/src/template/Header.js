@@ -48,12 +48,23 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link
+                  to="/about"
+                  className="nav-link text-dark fs-5 fst-italic px-3 py-1 rounded border border-danger bg-light shadow-sm"
+                  style={{ fontFamily: "cursive" }}
+                  replace
+                  onClick={changeNav}
+                >
+                  Hakkımızda
+                </Link>
+              </li>
+              <li className="nav-item">
                 <a
                   href="http://127.0.0.1:5000/"
                   className="nav-link text-dark fs-5 fst-italic px-3 py-1 rounded border border-danger bg-light shadow-sm"
                   style={{ fontFamily: "cursive" }}
                 >
-                  Makine Öğrenmesi ile Hesapla
+                  Ortalama Fiyat Bul
                 </a>
               </li>
             </ul>
