@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DugunSalonuKiralama.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class Authorsmigs : Migration
+    public partial class bugfixed : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -40,19 +40,6 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Categories",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Features",
                 columns: table => new
                 {
@@ -63,21 +50,6 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Features", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Locations",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Locations", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -119,23 +91,25 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     DetailImageUrl4 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ShortDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LongDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LocationId = table.Column<int>(type: "int", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PostalCode = table.Column<int>(type: "int", nullable: false),
+                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Alcohol = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Cookie = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Food = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Price = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_WeddingHalls", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_WeddingHalls_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_WeddingHalls_Locations_LocationId",
-                        column: x => x.LocationId,
-                        principalTable: "Locations",
-                        principalColumn: "Id",
+                        name: "FK_WeddingHalls_AppUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUsers",
+                        principalColumn: "AppUserID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -147,10 +121,15 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     WeddingHallId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
+                    Alcohol = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SurName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Cookie = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Food = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Price = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Capacity = table.Column<int>(type: "int", nullable: false),
                     BookingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    GuestCount = table.Column<int>(type: "int", nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    WeddingHallId1 = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -166,7 +145,12 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         column: x => x.WeddingHallId,
                         principalTable: "WeddingHalls",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Bookings_WeddingHalls_WeddingHallId1",
+                        column: x => x.WeddingHallId1,
+                        principalTable: "WeddingHalls",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -277,8 +261,14 @@ namespace DugunSalonuKiralama.Persistence.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Bookings_WeddingHallId",
                 table: "Bookings",
-                column: "WeddingHallId",
-                unique: true);
+                column: "WeddingHallId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Bookings_WeddingHallId1",
+                table: "Bookings",
+                column: "WeddingHallId1",
+                unique: true,
+                filter: "[WeddingHallId1] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Schedules_WeddingHallId",
@@ -301,14 +291,9 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                 column: "WeddingHallId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WeddingHalls_CategoryId",
+                name: "IX_WeddingHalls_UserId",
                 table: "WeddingHalls",
-                column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_WeddingHalls_LocationId",
-                table: "WeddingHalls",
-                column: "LocationId");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WeddingPricings_WeddingHallId",
@@ -338,22 +323,16 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                 name: "WeddingPricings");
 
             migrationBuilder.DropTable(
-                name: "AppUsers");
-
-            migrationBuilder.DropTable(
                 name: "Features");
 
             migrationBuilder.DropTable(
                 name: "WeddingHalls");
 
             migrationBuilder.DropTable(
+                name: "AppUsers");
+
+            migrationBuilder.DropTable(
                 name: "AppRoles");
-
-            migrationBuilder.DropTable(
-                name: "Categories");
-
-            migrationBuilder.DropTable(
-                name: "Locations");
         }
     }
 }

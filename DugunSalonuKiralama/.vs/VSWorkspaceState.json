@@ -3,17 +3,13 @@
     "",
     "\\Core",
     "\\Core\\DugunSalonuKiralama.Application",
+    "\\Core\\DugunSalonuKiralama.Application\\Enums",
     "\\Core\\DugunSalonuKiralama.Application\\Features",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Results\\Bookings",
-    "\\Infrastructure",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations",
-    "\\Presentation",
-    "\\Presentation\\DugunSalonuKiralama.API",
-    "\\Presentation\\DugunSalonuKiralama.API\\Controllers"
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers",
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\User",
+    "\\Core\\DugunSalonuKiralama.Domain",
+    "\\Core\\DugunSalonuKiralama.Domain\\Entities"
   ],
   "SelectedNode": "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
   "PreviewInSolutionExplorer": false

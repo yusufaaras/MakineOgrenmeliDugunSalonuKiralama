@@ -14,6 +14,22 @@ namespace DugunSalonuKiralama.Persistence.Context
             optionsBuilder.UseSqlServer("Server=DESKTOP-S1QPNRR;Database=WeddingHall;Integrated Security=True;TrustServerCertificate=True");
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.User)
+                .WithMany() // veya .WithMany(u => u.Bookings) varsa onu kullan
+                .HasForeignKey(b => b.UserId)
+                .OnDelete(DeleteBehavior.Cascade); // Bunu bırakıyoruz
+
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.WeddingHall)
+                .WithMany() // veya .WithMany(w => w.Bookings) varsa onu kullan
+                .HasForeignKey(b => b.WeddingHallId)
+                .OnDelete(DeleteBehavior.Restrict); // İşte burayı değiştiriyoruz
+        }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<Schedule> Schedules { get; set; }

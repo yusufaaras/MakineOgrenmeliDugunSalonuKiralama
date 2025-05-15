@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DugunSalonuKiralama.Persistence.Migrations
 {
     [DbContext(typeof(WeddingHallContext))]
-    [Migration("20250310130731_removeWeddingId")]
-    partial class removeWeddingId
+    [Migration("20250515091108_bugfixed")]
+    partial class bugfixed
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -113,18 +113,35 @@ namespace DugunSalonuKiralama.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("BookingDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("GuestCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Status")
+                    b.Property<string>("Alcohol")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<DateTime>("BookingDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Cookie")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Food")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Price")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SurName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -132,31 +149,20 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.Property<int>("WeddingHallId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("WeddingHallId1")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.HasIndex("WeddingHallId")
-                        .IsUnique();
+                    b.HasIndex("WeddingHallId");
+
+                    b.HasIndex("WeddingHallId1")
+                        .IsUnique()
+                        .HasFilter("[WeddingHallId1] IS NOT NULL");
 
                     b.ToTable("Bookings");
-                });
-
-            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Category", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Feature", b =>
@@ -174,31 +180,6 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Features");
-                });
-
-            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Location", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Locations");
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Schedule", b =>
@@ -297,11 +278,32 @@ namespace DugunSalonuKiralama.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Alcohol")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cookie")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DetailImageUrl1")
                         .HasColumnType("nvarchar(max)");
@@ -315,12 +317,13 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.Property<string>("DetailImageUrl4")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HomeImageUrl")
+                    b.Property<string>("Food")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LocationId")
-                        .HasColumnType("int");
+                    b.Property<string>("HomeImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LongDescription")
                         .IsRequired()
@@ -330,15 +333,23 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PostalCode")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Price")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ShortDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("LocationId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("WeddingHalls");
                 });
@@ -391,10 +402,14 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
-                        .WithOne("Booking")
-                        .HasForeignKey("DugunSalonuKiralama.Domain.Entities.Booking", "WeddingHallId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithMany()
+                        .HasForeignKey("WeddingHallId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", null)
+                        .WithOne("Booking")
+                        .HasForeignKey("DugunSalonuKiralama.Domain.Entities.Booking", "WeddingHallId1");
 
                     b.Navigation("User");
 
@@ -444,21 +459,13 @@ namespace DugunSalonuKiralama.Persistence.Migrations
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.WeddingHall", b =>
                 {
-                    b.HasOne("DugunSalonuKiralama.Domain.Entities.Category", "Category")
+                    b.HasOne("DugunSalonuKiralama.Domain.Entities.AppUser", "User")
                         .WithMany()
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DugunSalonuKiralama.Domain.Entities.Location", "Location")
-                        .WithMany("WeddingHalls")
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-
-                    b.Navigation("Location");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.WeddingPricing", b =>
@@ -480,11 +487,6 @@ namespace DugunSalonuKiralama.Persistence.Migrations
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Feature", b =>
                 {
                     b.Navigation("WeddingFeatures");
-                });
-
-            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Location", b =>
-                {
-                    b.Navigation("WeddingHalls");
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.WeddingHall", b =>

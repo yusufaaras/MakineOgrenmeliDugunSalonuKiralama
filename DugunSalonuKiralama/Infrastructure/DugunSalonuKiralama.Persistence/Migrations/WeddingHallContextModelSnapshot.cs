@@ -146,12 +146,18 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.Property<int>("WeddingHallId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("WeddingHallId1")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.HasIndex("WeddingHallId")
-                        .IsUnique();
+                    b.HasIndex("WeddingHallId");
+
+                    b.HasIndex("WeddingHallId1")
+                        .IsUnique()
+                        .HasFilter("[WeddingHallId1] IS NOT NULL");
 
                     b.ToTable("Bookings");
                 });
@@ -393,10 +399,14 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
-                        .WithOne("Booking")
-                        .HasForeignKey("DugunSalonuKiralama.Domain.Entities.Booking", "WeddingHallId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithMany()
+                        .HasForeignKey("WeddingHallId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", null)
+                        .WithOne("Booking")
+                        .HasForeignKey("DugunSalonuKiralama.Domain.Entities.Booking", "WeddingHallId1");
 
                     b.Navigation("User");
 
