@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DugunSalonuKiralama.Persistence.Migrations
 {
     [DbContext(typeof(WeddingHallContext))]
-    [Migration("20250515091108_bugfixed")]
-    partial class bugfixed
+    [Migration("20250517092502_allTables")]
+    partial class allTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,7 +39,7 @@ namespace DugunSalonuKiralama.Persistence.Migrations
 
                     b.HasKey("AppRoleID");
 
-                    b.ToTable("AppRoles");
+                    b.ToTable("AppRoles", (string)null);
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.AppUser", b =>
@@ -244,6 +244,31 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.ToTable("Testimonials");
                 });
 
+            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.ViewedHall", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ViewedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("WeddingHallId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WeddingHallId");
+
+                    b.ToTable("ViewedHalls");
+                });
+
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.WeddingFeature", b =>
                 {
                     b.Property<int>("Id")
@@ -428,6 +453,17 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                 });
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.Testimonial", b =>
+                {
+                    b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
+                        .WithMany()
+                        .HasForeignKey("WeddingHallId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("WeddingHall");
+                });
+
+            modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.ViewedHall", b =>
                 {
                     b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
                         .WithMany()

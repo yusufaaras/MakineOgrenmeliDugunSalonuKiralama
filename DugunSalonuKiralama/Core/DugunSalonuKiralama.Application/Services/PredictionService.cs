@@ -23,11 +23,11 @@ namespace DugunSalonuKiralama.Application.Services
             var request = new
             {
                 capacity = features[0],
-                location_index = features[1],
-                season = features[2],
-                food_service = features[3],
-                music_service = features[4],
-                extra_services = features[5]
+                location= features[1],
+                food_service = features[2],
+                Cookie_service = features[3],
+                Alcohol_services = features[4]
+            
             };
 
             var response = await _httpClient.PostAsJsonAsync("http://127.0.0.1:5000/predict", request);

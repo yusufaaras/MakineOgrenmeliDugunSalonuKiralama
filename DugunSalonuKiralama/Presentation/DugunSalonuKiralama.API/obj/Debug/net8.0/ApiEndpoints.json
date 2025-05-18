@@ -180,17 +180,17 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DugunSalonuKiralama.API.Controllers.TestController",
-    "Method": "Predict",
-    "RelativePath": "api/Test/predict",
+    "ContainingType": "DugunSalonuKiralama.API.Controllers.SuggestionController",
+    "Method": "GetSuggestionsAsync",
+    "RelativePath": "api/Suggestion/Predict",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "DugunSalonuKiralama.Domain.Entities.PredictionResponse",
-        "IsRequired": true
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

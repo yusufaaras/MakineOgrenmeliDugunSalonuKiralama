@@ -9,9 +9,9 @@ namespace DugunSalonuKiralama.Persistence.Context
         {
 
 
-           //optionsBuilder.UseSqlServer("Data Source=DESKTOP-K3V8TSN\\SQLEXPRESS;Initial Catalog=WeddingHall;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-K3V8TSN\\SQLEXPRESS;Initial Catalog=WeddingHall;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
-            optionsBuilder.UseSqlServer("Server=DESKTOP-S1QPNRR;Database=WeddingHall;Integrated Security=True;TrustServerCertificate=True");
+            //optionsBuilder.UseSqlServer("Server=DESKTOP-S1QPNRR;Database=WeddingHall;Integrated Security=True;TrustServerCertificate=True");
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,6 +29,8 @@ namespace DugunSalonuKiralama.Persistence.Context
                 .WithMany() // veya .WithMany(w => w.Bookings) varsa onu kullan
                 .HasForeignKey(b => b.WeddingHallId)
                 .OnDelete(DeleteBehavior.Restrict); // İşte burayı değiştiriyoruz
+
+            modelBuilder.Entity<AppRole>().ToTable("AppRoles");
         }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Feature> Features { get; set; }
@@ -40,5 +42,6 @@ namespace DugunSalonuKiralama.Persistence.Context
         public DbSet<AppRole> AppRoles { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Author> Authors { get; set; }
+        public DbSet<ViewedHall> ViewedHalls { get; set; }
     }
 }

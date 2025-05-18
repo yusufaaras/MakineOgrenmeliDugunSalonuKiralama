@@ -294,30 +294,20 @@
         }
       }
     },
-    "/api/Test/predict": {
+    "/api/Suggestion/Predict": {
       "post": {
         "tags": [
-          "Test"
+          "Suggestion"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PredictionResponse"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PredictionResponse"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PredictionResponse"
-              }
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -709,40 +699,6 @@
           "password": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PredictionResponse": {
-        "type": "object",
-        "properties": {
-          "capacity": {
-            "type": "number",
-            "format": "double"
-          },
-          "locationIndex": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "season": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "foodService": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "musicService": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "extraServices": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "predictedPrice": {
-            "type": "number",
-            "format": "double"
           }
         },
         "additionalProperties": false

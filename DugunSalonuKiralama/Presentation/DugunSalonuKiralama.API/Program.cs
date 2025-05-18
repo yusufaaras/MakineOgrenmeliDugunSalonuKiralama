@@ -13,6 +13,7 @@ using DugunSalonuKiralama.Persistence.Repositories.AppRoleRepositories;
 using DugunSalonuKiralama.Persistence.Repositories.AppUserRepositories;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.BrandHandlers;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.User;
+using DugunSalonuKiralama.Persistence.Services;
 
 namespace DugunSalonuKiralama.API
 {
@@ -70,8 +71,10 @@ namespace DugunSalonuKiralama.API
             builder.Services.AddScoped<RemoveUserCommandHandler>();
 
             builder.Services.AddHttpClient<PredictionService>();
+            builder.Services.AddScoped<ISuggestionService, SuggestionService>();
+            builder.Services.AddScoped<IUserActivityService, UserActivityService>();
 
-        
+
 
             builder.Services.AddApplicationService(builder.Configuration);
 
