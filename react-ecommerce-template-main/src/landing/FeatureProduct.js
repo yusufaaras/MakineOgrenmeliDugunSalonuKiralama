@@ -10,7 +10,7 @@ function FeatureProduct({ maxItems = 6 }) {
       .then(response => {
         console.log("Gelen Düğün Salonları:", response.data);
         const uniqueHalls = Array.from(new Map(response.data.map(hall => [hall.id, hall])).values());
-        setWeddingHalls(uniqueHalls.slice(0, maxItems)); // Maksimum 6 veri al
+        setWeddingHalls(uniqueHalls.slice(0, maxItems)); 
       })
       .catch(error => console.error("Düğün salonları yüklenirken hata oluştu:", error));
 

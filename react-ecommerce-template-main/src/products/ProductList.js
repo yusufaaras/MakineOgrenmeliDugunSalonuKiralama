@@ -25,8 +25,8 @@ function FilterMenuLeft({ filters, onFilterChange }) {
     const [endDate, setEndDate] = useState(filters.endDate || "");
     const [selectedCities, setSelectedCities] = useState(filters.cities || []);
     const [selectedCapacities, setSelectedCapacities] = useState(filters.capacities || []);
-    const [minPrice, setMinPrice] = useState(filters.minPrice );
-    const [maxPrice, setMaxPrice] = useState(filters.maxPrice );
+    const [minPrice, setMinPrice] = useState(filters.minPrice || ""); // null yerine "" olarak başlatıldı
+    const [maxPrice, setMaxPrice] = useState(filters.maxPrice || ""); // null yerine "" olarak başlatıldı
 
     const handleStartDateChange = (event) => {
         setStartDate(event.target.value);
@@ -200,19 +200,73 @@ function ProductList() {
         setFilters(newFilters);
     };
 
-    const filteredHalls = weddingHalls.filter((hall) => {
+    // Genetik algoritma için uygunluk fonksiyonu (fitness function)
+    // Bu fonksiyon, bir salonun kullanıcı beklentilerine ne kadar uygun olduğunu belirler.
+    const calculateFitness = (hall, userMinPrice, userMaxPrice, userMinCapacity, userMaxCapacity) => {
+        let fitness = 0;
+
+        // Fiyat uygunluğu: Kullanıcının belirlediği aralığa ne kadar yakınsa o kadar iyi.
+        if (userMinPrice !== null && hall.price < userMinPrice) {
+            fitness -= (userMinPrice - hall.price) * 0.1; // Çok ucuzsa biraz ceza
+        }
+        if (userMaxPrice !== null && hall.price > userMaxPrice) {
+            fitness -= (hall.price - userMaxPrice) * 1; // Çok pahalıysa büyük ceza
+        }
+        // Fiyat aralığındaysa bonus ver
+        if ((userMinPrice === null || hall.price >= userMinPrice) && (userMaxPrice === null || hall.price <= userMaxPrice)) {
+            fitness += 50; // Belirlenen aralıkta olması büyük avantaj
+        }
+
+
+        // Kapasite uygunluğu: Kullanıcının belirlediği minimum kapasiteye ne kadar yakınsa o kadar iyi.
+        // Genellikle minimum kapasite önemlidir, çok büyük salonlar gereksiz maliyet olabilir.
+        if (userMinCapacity !== null) {
+            if (hall.capacity >= userMinCapacity) {
+                fitness += 30; // Minimum kapasiteyi karşılıyorsa bonus
+                // Kapasite tam olarak istenen aralıktaysa daha da bonus
+                if (userMaxCapacity !== null && hall.capacity <= userMaxCapacity) {
+                    fitness += 20;
+                }
+            } else {
+                fitness -= (userMinCapacity - hall.capacity) * 0.5; // Yetersiz kapasite büyük ceza
+            }
+        } else {
+            // Minimum kapasite belirlenmemişse, daha büyük kapasiteler bir nebze iyi olabilir
+            fitness += hall.capacity * 0.01; // Kapasiteye göre hafif bonus
+        }
+
+        // Diğer faktörleri de ekleyebilirsiniz (konum, tarih uygunluğu vb.)
+        // Örneğin: fitness += hall.rating * 10; // Puanlama varsa
+        // Örneğin: if (hall.city === "Aranan Şehir") fitness += 100;
+
+        return fitness;
+    };
+
+    // Genetik algoritma ile sıralama işlemi (basitleştirilmiş)
+    const sortedHalls = [...weddingHalls].sort((a, b) => {
+        // Kullanıcı filtrelerinden gelen min/max kapasite ve fiyat değerlerini alıyoruz
+        const userMinCapacity = filters.capacities.length > 0 ? Math.min(...filters.capacities.map(Number)) : null;
+        const userMaxCapacity = filters.capacities.length > 0 ? Math.max(...filters.capacities.map(Number)) : null;
+
+        const fitnessA = calculateFitness(a, filters.minPrice, filters.maxPrice, userMinCapacity, userMaxCapacity);
+        const fitnessB = calculateFitness(b, filters.minPrice, filters.maxPrice, userMinCapacity, userMaxCapacity);
+
+        // Yüksek uygunluk puanına sahip salonlar başa gelecek şekilde sırala
+        return fitnessB - fitnessA;
+    });
+
+
+    const filteredAndSortedHalls = sortedHalls.filter((hall) => {
         const nameOrDescriptionMatch =
             hall.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
             hall.shortDescription.toLowerCase().includes(searchTerm.toLowerCase());
 
         const cityMatch = filters.cities.length === 0 || filters.cities.includes(hall.city);
         const capacityMatch =
-            filters.capacities.length === 0 || filters.capacities.some(cap => hall.capacity >= parseInt(cap, 10));
+            filters.capacities.length === 0 || filters.capacities.some(cap => hall.capacity >= parseInt(cap, 10)); // Kapasite filtrelemesini hala koru
         const priceMatch =
             (!filters.minPrice || hall.price >= filters.minPrice) &&
             (!filters.maxPrice || hall.price <= filters.maxPrice);
-
-        // Tarih filtrelemesi backend'e bırakılabilir, bu örnekte dahil edilmedi.
 
         return nameOrDescriptionMatch && cityMatch && capacityMatch && priceMatch;
     });
@@ -330,22 +384,22 @@ function ProductList() {
                                 </button>
                             </div>
                             <div className="d-flex align-items-center mt-auto">
-                            <span className="text-muted small d-none d-md-inline">
-                                {filteredHalls.length} Sonuç Gösteriliyor
-                            </span>
-                        </div>
+                                <span className="text-muted small d-none d-md-inline">
+                                    {filteredAndSortedHalls.length} Sonuç Gösteriliyor
+                                </span>
+                            </div>
                         </div>
                         <div
                             className={`row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 g-3 mb-4 flex-shrink-0 ${
                                 viewType.grid ? "" : "row-cols-1"
                             }`}
                         >
-                            {filteredHalls.map((hall) => (
+                            {filteredAndSortedHalls.map((hall) => (
                                 <div className="col" key={hall.id}>
                                     <Product hall={hall} isGrid={viewType.grid} />
                                 </div>
                             ))}
-                            {filteredHalls.length === 0 && !loading && (
+                            {filteredAndSortedHalls.length === 0 && !loading && (
                                 <div className="col-12 text-center">
                                     <p>Aradığınız kriterlere uygun salon bulunamadı.</p>
                                 </div>
