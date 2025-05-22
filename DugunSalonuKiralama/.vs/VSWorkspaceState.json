@@ -5,12 +5,11 @@
     "\\Core\\DugunSalonuKiralama.Application",
     "\\Core\\DugunSalonuKiralama.Application\\Features",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Commands\\Bookings",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings",
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Queries",
-    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Queries\\Bookings"
+    "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Queries\\Bookings",
+    "\\Presentation",
+    "\\Presentation\\DugunSalonuKiralama.API",
+    "\\Presentation\\DugunSalonuKiralama.API\\Controllers"
   ],
   "SelectedNode": "\\Presentation\\DugunSalonuKiralama.API\\Controllers\\BookingController.cs",
   "PreviewInSolutionExplorer": false

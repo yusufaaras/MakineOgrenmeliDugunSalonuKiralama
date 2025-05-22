@@ -7,10 +7,13 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
 function ProductDetail() {
-  const { slug } = useParams();
+  const { slug } = useParams(); // 'slug' burada weddingHallId olarak kullanılıyor
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
-  const [availableDates, setAvailableDates] = useState([]); // Müsait tarihler
+  // Bu artık hardcoded değil, dinamik olarak aktif tarihler buradan yönetilecek
+  const [availableDates, setAvailableDates] = useState([]);
+  // Rezerve edilmiş tarihleri tutacak ayrı bir state (görsel işaretleme için kullanılacak)
+  const [bookedDates, setBookedDates] = useState([]);
   const [showAlcoholInput, setShowAlcoholInput] = useState(false);
   const [showCookieInput, setShowCookieInput] = useState(false);
   const [showFoodInput, setShowFoodInput] = useState(false);
@@ -24,19 +27,57 @@ function ProductDetail() {
   const history = useHistory();
 
   useEffect(() => {
+    // Düğün salonu detaylarını çek
     axios
       .get(`https://localhost:7072/api/WeddingHall/${slug}`)
       .then((response) => {
         setProduct(response.data);
-        // Simülasyon: Gerçek API'den müsait tarihleri almanız gerekecek.
-        // Örneğin: response.data.availableBookingDates gibi bir alan olabilir.
-        setAvailableDates(["2025-05-10", "2025-05-15", "2025-05-20"]);
       })
       .catch((error) => {
         console.error("Detay yüklenirken hata oluştu:", error);
         setError("Ürün detayları yüklenirken bir hata oluştu.");
       });
-  }, [slug]);
+
+    // Tüm rezervasyonları çek ve ilgili düğün salonuna ait rezerve edilmiş tarihleri filtrele
+    axios
+      .get("https://localhost:7072/api/Booking")
+      .then((response) => {
+        const currentWeddingHallId = parseInt(slug);
+        const allBookings = response.data;
+
+        // Sadece mevcut düğün salonuna ait rezerve edilmiş tarihleri al
+        const hallBookedDates = allBookings
+          .filter((booking) => booking.weddingHallId === currentWeddingHallId)
+          .map((booking) => formatDate(new Date(booking.bookingDate)));
+
+        setBookedDates(hallBookedDates); // Rezerve edilmiş tarihleri ayır
+
+        // Takvimde seçilebilir olması istenen günler (gelecek 1 yıl için basit bir örnek)
+        const today = new Date();
+        const nextYear = new Date();
+        nextYear.setFullYear(today.getFullYear() + 1);
+
+        const allPotentialDates = [];
+        let currentDate = new Date(today);
+        while (currentDate <= nextYear) {
+          allPotentialDates.push(formatDate(currentDate));
+          currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+        // Tüm potansiyel tarihlerden rezerve edilmiş olanları çıkararak aktif tarihleri bul
+        const activeDates = allPotentialDates.filter(
+          (date) => !hallBookedDates.includes(date)
+        );
+
+        setAvailableDates(activeDates); // Aktif (seçilebilir) tarihleri ayarla
+      })
+      .catch((error) => {
+        console.error("Rezervasyon ve müsait tarihler yüklenirken hata oluştu:", error);
+        setError("Rezervasyon bilgileri yüklenirken bir hata oluştu.");
+        setAvailableDates([]); // Hata durumunda boş liste
+        setBookedDates([]);
+      });
+  }, [slug]); // slug değiştiğinde bu effect yeniden çalışır
 
   const handleAlcoholChange = (e) => {
     setShowAlcoholInput(e.target.value === "Evet");
@@ -59,8 +100,10 @@ function ProductDetail() {
     }
   };
 
+  // Bir tarihin pasif (seçilemez) olup olmadığını belirler
   const tileDisabled = ({ date }) => {
     const formattedDate = formatDate(date);
+    // Eğer tarih availableDates listesinde YOKSA pasif yap (yani rezerve edilmişse)
     return !availableDates.includes(formattedDate);
   };
 
@@ -70,35 +113,42 @@ function ProductDetail() {
 
   const formatDate = (date) => {
     const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Ay 0'dan başladığı için +1
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     if (!selectedDate) {
       alert("Lütfen bir rezervasyon tarihi seçiniz.");
       return;
     }
-  
+
+    const selectedDateFormatted = formatDate(selectedDate);
+    // Seçilen tarihin rezerve edilmiş tarihler arasında olup olmadığını kontrol et
+    // (tileDisabled zaten engelliyor ama ekstra bir kontrol iyidir)
+    if (bookedDates.includes(selectedDateFormatted)) {
+      alert("Seçtiğiniz tarih zaten rezerve edilmiştir. Lütfen başka bir tarih seçiniz.");
+      return;
+    }
+
     const bookingData = {
-      weddingHallId: parseInt(slug), // slug'ı integer'a çeviriyoruz
+      weddingHallId: parseInt(slug),
       userId: 1, // Şu an statik, gerçek uygulamada kullanıcı bilgisini almalısınız
       alcohol: alcoholPreference,
       cookie: cookiePreference,
       name: name,
       surName: surName,
       food: foodPreference,
-      price: product ? product.price : "Belirlenecek", // Düğün salonu fiyat bilgisi
-      capacity: product ? product.capacity : 0, // Düğün salonu kapasite bilgisi
-      bookingDate: new Date(selectedDate).toISOString(),
+      price: product ? product.price : "Belirlenecek",
+      capacity: product ? product.capacity : 0,
+      bookingDate: new Date(selectedDate).toISOString(), // ISO formatında gönder
     };
-  
-    // Gönderilen veriyi console'a yazdır
+
     console.log("Gönderilen Rezervasyon Verisi:", bookingData);
-  
+
     axios
       .post("https://localhost:7072/api/Booking", bookingData, {
         headers: {
@@ -110,12 +160,18 @@ function ProductDetail() {
         console.log("Rezervasyon başarılı:", response.data);
         alert("Rezervasyonunuz başarıyla alınmıştır!");
         history.push("/reservation-success");
+        // Başarılı rezervasyondan sonra, rezerve edilmiş tarihleri ve müsait tarihleri güncelle
+        setBookedDates((prevBooked) => [...prevBooked, selectedDateFormatted]);
+        setAvailableDates((prevAvailable) =>
+          prevAvailable.filter((date) => date !== selectedDateFormatted)
+        );
+        setSelectedDate(null); // Seçili tarihi temizle
       })
       .catch((error) => {
         console.error("Rezervasyon sırasında hata oluştu:", error);
-        alert("Rezervasyon Yapılmış bir günü Seçtiniz veye Bir hata Oluştu Tekrar Deneyiniz");
+        alert("Rezervasyon Yapılmış bir günü Seçtiniz veya Bir hata Oluştu. Tekrar Deneyiniz.");
       });
-  }; 
+  };
 
   if (error) {
     return <p className="text-center text-danger">{error}</p>;
@@ -191,11 +247,12 @@ function ProductDetail() {
               <h4>Rezervasyon Tarihi Seçin</h4>
               <Calendar
                 ref={calendarRef}
-                tileDisabled={tileDisabled}
+                tileDisabled={tileDisabled} // `availableDates` listesinde olmayanları pasif yapar
                 value={selectedDate}
                 onChange={handleDateChange}
+                // Rezerve edilmiş (bookedDates) tarihleri kırmızı yapar
                 tileClassName={({ date }) =>
-                  availableDates.includes(formatDate(date)) ? "bg-success text-white" : ""
+                  bookedDates.includes(formatDate(date)) ? "bg-danger text-white" : ""
                 }
               />
               {selectedDate && (
@@ -292,7 +349,11 @@ function ProductDetail() {
                     />
                   </div>
                 )}
-                <button type="submit" className="btn btn-primary" disabled={!selectedDate}>
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  disabled={!selectedDate || bookedDates.includes(formatDate(selectedDate))}
+                >
                   Rezervasyon Yap
                 </button>
               </form>
