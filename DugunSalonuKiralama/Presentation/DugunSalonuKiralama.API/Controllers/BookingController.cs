@@ -39,11 +39,20 @@ namespace DugunSalonuKiralama.API.Controllers
 
         }
         [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> CreateBooking(CreateBookingCommand command)
         {
-            await _createBookingCommandHandler.Handle(command);
-            return Ok();
+            try
+            {
+                await _createBookingCommandHandler.Handle(command);
+                return Ok("Rezervasyon başarılı.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveBooking(int id)
         {

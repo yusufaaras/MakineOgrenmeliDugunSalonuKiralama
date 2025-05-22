@@ -113,7 +113,7 @@ function ProductDetail() {
       })
       .catch((error) => {
         console.error("Rezervasyon sırasında hata oluştu:", error);
-        alert("Rezervasyon sırasında bir hata oluştu. Lütfen tekrar deneyiniz.");
+        alert("Rezervasyon Yapılmış bir günü Seçtiniz veye Bir hata Oluştu Tekrar Deneyiniz");
       });
   }; 
 
