@@ -146,18 +146,11 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.Property<int>("WeddingHallId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("WeddingHallId1")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
                     b.HasIndex("WeddingHallId");
-
-                    b.HasIndex("WeddingHallId1")
-                        .IsUnique()
-                        .HasFilter("[WeddingHallId1] IS NOT NULL");
 
                     b.ToTable("Bookings");
                 });
@@ -424,14 +417,10 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", "WeddingHall")
-                        .WithMany()
+                        .WithMany("Bookings")
                         .HasForeignKey("WeddingHallId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("DugunSalonuKiralama.Domain.Entities.WeddingHall", null)
-                        .WithOne("Booking")
-                        .HasForeignKey("DugunSalonuKiralama.Domain.Entities.Booking", "WeddingHallId1");
 
                     b.Navigation("User");
 
@@ -524,8 +513,7 @@ namespace DugunSalonuKiralama.Persistence.Migrations
 
             modelBuilder.Entity("DugunSalonuKiralama.Domain.Entities.WeddingHall", b =>
                 {
-                    b.Navigation("Booking")
-                        .IsRequired();
+                    b.Navigation("Bookings");
                 });
 #pragma warning restore 612, 618
         }

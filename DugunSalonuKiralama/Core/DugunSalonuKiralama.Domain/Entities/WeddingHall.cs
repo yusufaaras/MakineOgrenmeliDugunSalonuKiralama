@@ -29,7 +29,7 @@ namespace DugunSalonuKiralama.Domain.Entities
         public string Cookie { get; set; }
         public string Food { get; set; }
         public string Price { get; set; }
-        public Booking Booking { get; set; }
+        public ICollection<Booking> Bookings { get; set; }
         public AppUser User { get; set; }
         public int UserId { get; set; }
     }

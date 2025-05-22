@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DugunSalonuKiralama.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ca76edd4978c7d51f27464fbf02a3e2232be1e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10e3fa41d217e35d3e79e187d6884cbf06946d69")]
 [assembly: System.Reflection.AssemblyProductAttribute("DugunSalonuKiralama.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DugunSalonuKiralama.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

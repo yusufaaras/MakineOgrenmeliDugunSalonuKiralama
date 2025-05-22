@@ -22,16 +22,17 @@ namespace DugunSalonuKiralama.Persistence.Context
                 .HasOne(b => b.User)
                 .WithMany() // veya .WithMany(u => u.Bookings) varsa onu kullan
                 .HasForeignKey(b => b.UserId)
-                .OnDelete(DeleteBehavior.Cascade); // Bunu bırakıyoruz
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Booking>()
                 .HasOne(b => b.WeddingHall)
-                .WithMany() // veya .WithMany(w => w.Bookings) varsa onu kullan
+                .WithMany(w => w.Bookings)  // Dikkat burası koleksiyon
                 .HasForeignKey(b => b.WeddingHallId)
-                .OnDelete(DeleteBehavior.Restrict); // İşte burayı değiştiriyoruz
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<AppRole>().ToTable("AppRoles");
         }
+
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
