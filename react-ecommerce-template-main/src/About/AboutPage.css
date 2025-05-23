@@ -1,166 +1,542 @@
-.about-page-container {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* src/pages/AboutPage.css */
+
+/* Genel Sıfırlamalar ve Temel Stil */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  /* Varsayılan bir font */
+  color: #333;
+}
+
+.about-page-wrapper {
+  overflow-x: hidden;
+  /* Yatay kaydırmayı engelle */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Banner Section */
+.about-banner-section {
+  /* React komponentinden gelen backgroundImage stilini kullanacak */
+  background-size: cover;
+  /* Resmi tüm alanı kaplayacak şekilde ayarla */
+  background-position: center;
+  /* Resmi ortala */
+  background-repeat: no-repeat;
+  /* Resmin tekrarlanmasını engelle */
+  min-height: 500px;
+  /* Banner yüksekliğini ayarla */
+  display: flex;
+  justify-content: center;
+  /* Yatayda ortala */
+  align-items: center;
+  /* Dikeyde ortala */
+  text-align: center;
+  /* Metni ortala */
+  position: relative;
+  /* Pseudo-element için gerekli */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Arka plan resminin üzerine koyu bir katman ekleyerek metnin okunabilirliğini artırır */
+.about-banner-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Yarı şeffaf siyah katman */
+  z-index: 1;
+  /* Metnin arkasında kalmasını sağlar */
+}
+
+.banner-content {
+  position: relative;
+  /* Metnin katmanın üzerinde kalmasını sağlar */
+  z-index: 2;
+  padding: 20px;
+  /* İçerik için boşluk */
+}
+
+.banner-heading {
+  font-size: 5em;
+  /* Büyük başlık */
+  color: #ffffff;
+  /* Beyaz metin rengi */
+  margin: 0;
+  /* Varsayılan marginleri sıfırla */
+  padding: 0;
+  /* Varsayılan paddingleri sıfırla */
+  text-transform: uppercase;
+  /* Tüm harfleri büyük yap */
+  letter-spacing: 5px;
+  /* Harfler arası boşluk */
+}
+
+/* 3D Benzeri Metin Efekti ve Kenarlık */
+.hero-text-3d {
+  /* 3D efekti için birden fazla text-shadow katmanı */
+  text-shadow:
+    -2px -2px 0px #d91414,
+    /* Siyah kenarlık başlangıcı */
+    -4px -4px 0px #d91414,
+    -6px -6px 0px #d91414,
+    -8px -8px 0px #d91414,
+    -10px -10px 0px #d91414,
+    -12px -12px 0px #d91414,
+    -14px -14px 0px #d91414,
+    -16px -16px 0px #d91414,
+    -18px -18px 0px #d91414,
+    -20px -20px 0px #d91414,
+    /* Daha belirgin bir gölge için */
+    2px 2px 5px rgba(0, 0, 0, 0.8);
+  /* Genel bir gölge */
+  /* Kenarlık efekti için text-stroke da kullanılabilir ancak daha az uyumludur:
+    -webkit-text-stroke: 2px #000;
+    */
+  color: #fff;
+  /* Metin rengi */
+}
+
+
+/* Main About Us Content */
+.about-main-content {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.pitch-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pitch-text {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.credo-text {
+  font-size: 1.2em;
+  color: #777;
+  font-style: italic;
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  /* Küçük ekranlarda alta geçsin */
+}
+
+.brewer-image,
+.name-badge-sticker {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.brewer-image {
+  max-width: 400px;
+  /* Örnek boyut */
+}
+
+.name-badge-sticker {
+  max-width: 200px;
+  /* Örnek boyut */
+}
+
+.about-blurb {
+  font-size: 1.1em;
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.video-placeholder-image {
+  width: 100%;
+  max-width: 800px;
+  /* Video görseli için örnek maksimum genişlik */
+  display: block;
+  margin: 0 auto 40px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* How It Started Section */
+.how-it-started-section {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 2.8em;
+  color: #0056b3;
+  margin-bottom: 40px;
+}
+
+.beginning-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.beginning-blurb {
+  flex: 2;
+  min-width: 300px;
+  text-align: left;
+}
+
+.beginning-blurb p {
+  font-size: 1.05em;
+  line-height: 1.7;
+}
+
+.beginning-image-placeholder {
+  flex: 1;
+  min-width: 250px;
+  background-color: #eee;
+  /* Görsel için yer tutucu */
+  min-height: 250px;
+  border-radius: 8px;
+  /* Orijinal background-image örneği (assets'e taşıyın) */
+  background-image: url('https://sureshotbrew.com/wp-content/uploads/2024/08/video.jpg');
+  /* Örnek bir görsel */
+  background-size: cover;
+  background-position: center;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.capacity-facts,
+.beer-facts {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.facts-heading {
+  font-size: 1.8em;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.facts-blurb p {
+  margin-bottom: 8px;
+  font-size: 1em;
+}
+
+/* Brewery Carousel Section */
+.brewery-carousel-section {
+  padding: 60px 0;
+  background-color: #eef7ff;
+  text-align: center;
+}
+
+.carousel-placeholder {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  /* Gerçek bir slider kütüphanesi burada kendi stillerini uygulayacaktır */
+}
+
+.carousel-placeholder img {
+  max-width: 200px;
+  /* Örnek boyut */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* How It's Going Section */
+.how-its-going-section {
+  padding: 60px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.current-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-image-placeholder {
+  flex: 1;
+  min-width: 250px;
+  background-color: #eee;
+  min-height: 250px;
+  border-radius: 8px;
+  /* Orijinal background-image örneği (assets'e taşıyın) */
+  background-image: url('https://sureshotbrew.com/wp-content/uploads/2024/08/company-inside.jpg');
+  /* Örnek bir görsel */
+  background-size: cover;
+  background-position: center;
+}
+
+.current-blurb {
+  flex: 2;
+  min-width: 300px;
+  text-align: left;
+}
+
+.current-blurb p {
+  font-size: 1.05em;
+  line-height: 1.7;
+}
+
+/* Quote Banner Section */
+.quote-banner-section {
+  background-color: #007bff;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.quote-text {
+  font-size: 2.5em;
+  font-weight: bold;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.3;
+}
+
+/* The Future Section */
+.the-future-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.future-blurb {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  font-size: 1.1em;
+  line-height: 1.7;
+}
+
+.instagram-link {
+  display: inline-block;
+  margin-bottom: 40px;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.instagram-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.instagram-heading {
+  font-size: 2em;
+  margin: 0;
+}
+
+.instagram-feed-placeholder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  /* Orijinal feed'deki gap */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.instagram-feed-placeholder img {
+  width: 100%;
+  max-width: 250px;
+  /* Instagram gönderi boyutu */
+  height: auto;
+  aspect-ratio: 1 / 1;
+  /* Kare görseller için */
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Duplicated Banner/Slider Sections (Original HTML'den geldi, ihtiyaç durumunda sadeleştirilebilir) */
+.about-banner-alt,
+.about-head-section,
+.about-foot-section {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.banner-slideshow-alt,
+.head-slideshow-alt,
+.foot-slideshow-alt {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.slider-image {
+  max-width: 300px;
+  /* Slider görselleri için örnek boyut */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.banner-quote-alt,
+.about-head-text,
+.about-foot-text {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.gradient-quote-text {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.3;
+}
+
+.animated-gradient-section {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  /* Mavi gradient */
+  color: #fff;
+  padding: 80px 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  /* İsteğe bağlı animasyon */
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .hero-section {
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    border-radius: 8px;
-    margin-bottom: 30px;
+
+  50% {
+    background-position: 100% 50%;
   }
-  
-  .hero-title {
-    font-size: 36px;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+  100% {
+    background-position: 0% 50%;
   }
-  
-  .hero-subtitle {
-    font-size: 18px;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+  .banner-heading {
+    font-size: 2.5em;
   }
-  
-  .content-section {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+
+  .pitch-text {
+    font-size: 1.2em;
+  }
+
+  .section-heading,
+  .quote-text,
+  .gradient-quote-text {
+    font-size: 2em;
+  }
+
+  .beginning-content,
+  .current-content {
+    flex-direction: column;
+  }
+
+  .image-gallery {
+    flex-direction: column;
     gap: 20px;
   }
-  
-  .content-card {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(30% - 20px);
-    max-width: calc(30% - 20px);
-    text-align: center;
+
+  .hero-text-3d {
+    font-size: 3em;
+    /* Küçük ekranlarda font boyutunu küçült */
+    letter-spacing: 3px;
+    text-shadow:
+      -1px -1px 0px #000,
+      -2px -2px 0px #000,
+      -3px -3px 0px #000,
+      -4px -4px 0px #000,
+      -5px -5px 0px #000,
+      1px 1px 3px rgba(0, 0, 0, 0.8);
   }
-  
-  .card-title {
-    font-size: 22px;
-    color: #ff6f61;
-    margin-bottom: 10px;
+}
+
+@media (max-width: 480px) {
+
+  .about-banner-section,
+  .about-main-content,
+  .how-it-started-section,
+  .brewery-carousel-section,
+  .how-its-going-section,
+  .quote-banner-section,
+  .the-future-section,
+  .animated-gradient-section {
+    padding: 40px 0;
   }
-  
-  .card-text {
-    font-size: 16px;
-    color: #666;
+
+  .banner-heading {
+    font-size: 2em;
   }
-  
-  .content-card:hover {
-    transform: translateY(-5px);
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  .pitch-text {
+    font-size: 1em;
   }
-  
-  .gallery-section {
-    margin-top: 40px;
-    text-align: center;
+
+  .section-heading,
+  .quote-text,
+  .gradient-quote-text {
+    font-size: 1.5em;
   }
-  
-  .gallery-title {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 20px;
+
+  .facts-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
+
+  .carousel-placeholder img,
+  .slider-image {
+    max-width: 150px;
   }
-  
-  .gallery-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+
+  .hero-text-3d {
+    font-size: 2em;
+    /* Daha küçük ekranlarda daha da küçült */
+    letter-spacing: 2px;
+    text-shadow:
+      -1px -1px 0px #000,
+      -2px -2px 0px #000,
+      1px 1px 2px rgba(0, 0, 0, 0.8);
   }
-  
-  .gallery-image:hover {
-    transform: scale(1.05);
-  }
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .gallery-item {
-    text-align: center;
-  }
-  
-  .gallery-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .gallery-image:hover {
-    transform: scale(1.05);
-  }
-  
-  .gallery-text {
-    margin-top: 8px;
-    font-size: 16px;
-    color: #555;
-    font-weight: bold;
-  }
-  .footer-section {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .footer-text {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-  }
-  .footer-section {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .footer-content {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  
-  .footer-text {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 15px;
-  }
-  
-  .footer-image {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+}

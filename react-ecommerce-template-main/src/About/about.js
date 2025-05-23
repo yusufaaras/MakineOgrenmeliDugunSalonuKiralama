@@ -1,86 +1,171 @@
-import React from "react";
-import "./AboutPage.css";
-
-const AboutPage = () => {
+// src/pages/AboutPage.js
+import React from 'react';
+import './AboutPage.css'; // Stil dosyamızı import ediyoruz
+import heroBackground from './İmages/ekibimiz.jpg';
+import personelimage from "./İmages/garson-kiralama.jpg"
+import kırdugun from "./İmages/kır-düğün.jpeg";
+import denizdugun from "./İmages/deniz-dugun.jpg"
+import bogazdugun from "./İmages/boğaz-dugun.jpg"
+import atinadugun from "./İmages/atina-dugun.jpg"
+import oteldugun from "./İmages/otel-dugun.jpg"
+import saraydugun from "./İmages/saray-dugun.jpg"
+import sahildugun from "./İmages/sahildugun.jpg"
+import mekandugun from "./İmages/mekan-dugun.jpg"
+import dugunicecek from "./İmages/dugunicecek.jpg"
+const About = () => {
     return (
-        <div className="about-page-container">
-            <div className="hero-section">
-                <br />
-                <br />
-                <h1 className="hero-title">Hakkımızda</h1>
-                <p className="hero-subtitle">
-                    Hayallerinizdeki düğün için mükemmel mekanlar sunuyoruz.
-                </p>
-            </div>
-            <div className="content-section">
-                <div className="content-card">
-                    <h2 className="card-title">Misyonumuz</h2>
-                    <p className="card-text">
-                        En özel gününüzü unutulmaz kılmak için profesyonel hizmet sunuyoruz.
+        <div className="about-page-wrapper">
+            {/* About Us Banner Section */}
+            <section
+                className="about-banner-section"
+                style={{ backgroundImage: `url(${heroBackground})` }} // Arka plan resmini inline style ile ekle
+            >
+                <div className="container banner-content"> {/* Yeni bir sınıf ekledik */}
+                    <h1 className="banner-heading hero-text-3d">About Us</h1> {/* 3D efekt için yeni sınıf */}
+                </div>
+            </section>
+
+            {/* Main About Us Content (Kalan kod aynı kalıyor) */}
+            <section className="about-main-content">
+                <div className="container">
+                    <div className="pitch-section">
+                        <p className="pitch-text">
+                            Başladığımızdan beri insanlara en iyi düğünü yaptırabilmekle ilgiliyiz.
+                            En yüksek performans ve çalışma azmiyle sizlerin mutluluğunu elde ediyoruz.
+                        </p>
+                        <p className="credo-text">Merak etmeyin. En iyi düğün sizin ki olacak</p>
+                    </div>
+
+                    <div className="image-gallery">
+                        {/* Not: Bu görsellerin projenizin assets klasörüne taşınması ve import edilmesi önerilir.
+                            Şimdilik orijinal URL'leri korundu. */}
+                        <img
+                            src={personelimage}
+                            alt=""
+                            className="brewer-image"
+                        />
+                        <img
+                            src={kırdugun}
+                            alt=""
+                            className="name-badge-sticker"
+                        />
+                    </div>
+                    <h2>Biz Kimiz?</h2>
+                    <p className="about-blurb">
+                        Biz,Çalışma ofisi istanbul üsküdarda olan tek hedefi insanlara en iyi hizmeti vererek onları hayal ettikleri düğünlere
+                        kavuşmasını sağlayan bir ekipiz. Bu ekip varını yoğunu siz müşterilerimiz için veriyoruz. Sizin bu ücretsiz sitemizi
+                        ziyaret ederek mutlu ayrılcağınızın garantisini bile verebiliriz. Hadi ne duruyorsunuz. Sizde biran önce giriş yapın ve
+                        hayalinizdeki düğüne bir adım daha yaklşın.
                     </p>
+
+                    <img
+                        src={denizdugun}
+                        alt="A ream of labels on the Sureshot canning line"
+                        className="video-placeholder-image"
+                    />
                 </div>
-                <div className="content-card">
-                    <h2 className="card-title">Vizyonumuz</h2>
-                    <p className="card-text">
-                        Düğün sektöründe kalite ve müşteri memnuniyetiyle lider olmak.
-                    </p>
+            </section>
+
+            {/* How It Started Section */}
+            <section className="how-it-started-section">
+                <div className="container">
+                    <h1 className="section-heading">Nasıl Başladı?</h1>
+                    <div className="beginning-content">
+                        <div className="beginning-blurb">
+                            <p>
+                                2007 yılında her şeye sıfırdan başladık. Başından beri de yarattığımız hikayeyi ve
+                                çiftlerin en mutlu gününe dokunabilmeyi çok sevdik.
+                                Kurucularımız Anıl Enes Torun ve Yusuf Aras uzun yıllar Amerika’da düğün planlama alanında çalıştıktan
+                                sonra Türkiye’ye gelip Düğün.com’u yarattı. O gün bu gündür düğün sektörü bizden soruluyor.
+                                Sektörü domine ederek çok büyük bir market yarattık.
+                            </p>
+                        </div>
+                        <div ><img src={dugunicecek}></img></div>
+                    </div>
+
+                    <div className="facts-grid">
+                        <div className="capacity-facts">
+                            <h3 className="facts-heading">Çiftler Neden Düğün.com’u Kullanmalı?</h3>
+                            <div className="facts-blurb">
+                                <p>Düğüne hazırlık sürecini, düğün kadar keyifli hale dönüştürdüğü için</p>
+                                <p> Firma firma gezmek yerine binlerce seçeneği çiftlerin ayağına getirdiği için</p>
+                                <p>Firmalardan ücretsiz fiyat teklifleri alınabildiği için</p>
+                                <p>Bütçem, Ajandam, Oturma Planım gibi araçlarla düğün planlamaya destek olduğu için</p>
+                                <p>Çiftlere Düğün.com’a özel kampanya ve indirimler sunduğu için</p>
+                                <p>Düğün modasını yakından takip edebilmek için</p>
+                            </div>
+                        </div>
+                        <div className="beer-facts">
+                            <h3 className="facts-heading">Firmalar Neden Düğün.com İş Ortağı Olmalı?</h3>
+                            <div className="facts-blurb">
+                                <p>Arayan değil, aranan firma olmak için</p>
+                                <p>Hedef kitleye uygun en doğru çiftlerle eşleşebilmek için</p>
+                                <p>Teklifleri çiftlere zahmetsiz ve hızlı bir şekilde iletmek için</p>
+                                <p> Düğün.com ayrıcalıklarından yararlanmak için</p>
+                                <p> Düğün.com çatısı altında yer alarak, çiftlerin güvenini kazanmak için</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="content-card">
-                    <h2 className="card-title">Değerlerimiz</h2>
-                    <p className="card-text">
-                        Güven, kalite ve zarafetle müşterilerimize eşsiz bir deneyim sunmak.
-                    </p>
+            </section>
+
+
+
+            {/* Quote Banner */}
+            <section className="quote-banner-section">
+                <div className="container">
+                    <h1 className="quote-text">
+                        Hayalinizdeki Düğüne Sadece Bir Adım Uzaktasınız.
+                    </h1>
                 </div>
-            </div>
-            <div className="gallery-section">
-                <h2 className="card-title">Sponsorlarımız</h2>
-                <div className="gallery">
-                    <div className="gallery-item">
-                        <img src="https://media.istockphoto.com/id/1190043570/tr/foto%C4%9Fraf/d%C3%BC%C4%9F%C3%BCn-t%C3%B6reninde-gelin-ve-damad%C4%B1n-mutlu-d%C3%BC%C4%9F%C3%BCn-foto%C4%9Fraflar%C4%B1-d%C3%BC%C4%9F%C3%BCn-gelene%C4%9Fi-pirin%C3%A7-ve-tah%C4%B1l.jpg?s=2048x2048&w=is&k=20&c=8EZ2xEHjj13qm2n1MIKMstn5HQQkOl7SqhxRnQ3d21E="
-                            alt="Düğün Salonu 1" className="gallery-image" />
-                        <p className="gallery-text">Sponsor 1</p>
+            </section>
+
+
+
+            {/* Another About Banner - Duplicate content from original, keeping for structure */}
+            {/* Bu bölümdeki unslider scriptleri temizlendi. */}
+            <header className="about-banner-alt">
+                <div className="container">
+                    {/* React Slider Component Placeholder */}
+                    <div className="banner-slideshow-alt">
+                        {/* Bu bölümde de bir React slider kütüphanesi kullanılmalı */}
+                        <img src={bogazdugun} className="slider-image" />
+                        <img src={oteldugun} className="slider-image" />
+                        <img src={atinadugun} className="slider-image" />
                     </div>
-                    <div className="gallery-item">
-                        <img src="https://media.istockphoto.com/id/1190043570/tr/foto%C4%9Fraf/d%C3%BC%C4%9F%C3%BCn-t%C3%B6reninde-gelin-ve-damad%C4%B1n-mutlu-d%C3%BC%C4%9F%C3%BCn-foto%C4%9Fraflar%C4%B1-d%C3%BC%C4%9F%C3%BCn-gelene%C4%9Fi-pirin%C3%A7-ve-tah%C4%B1l.jpg?s=2048x2048&w=is&k=20&c=8EZ2xEHjj13qm2n1MIKMstn5HQQkOl7SqhxRnQ3d21E="
-                            alt="Düğün Salonu 2" className="gallery-image" />
-                        <p className="gallery-text">Sponsor 2</p>
-                    </div>
-                    <div className="gallery-item">
-                        <img src="https://media.istockphoto.com/id/1190043570/tr/foto%C4%9Fraf/d%C3%BC%C4%9F%C3%BCn-t%C3%B6reninde-gelin-ve-damad%C4%B1n-mutlu-d%C3%BC%C4%9F%C3%BCn-foto%C4%9Fraflar%C4%B1-d%C3%BC%C4%9F%C3%BCn-gelene%C4%9Fi-pirin%C3%A7-ve-tah%C4%B1l.jpg?s=2048x2048&w=is&k=20&c=8EZ2xEHjj13qm2n1MIKMstn5HQQkOl7SqhxRnQ3d21E="
-                            alt="Düğün Salonu 3" className="gallery-image" />
-                        <p className="gallery-text">Sponsor 3</p>
-                    </div>
-                    <div className="gallery-item">
-                        <img src="https://media.istockphoto.com/id/1190043570/tr/foto%C4%9Fraf/d%C3%BC%C4%9F%C3%BCn-t%C3%B6reninde-gelin-ve-damad%C4%B1n-mutlu-d%C3%BC%C4%9F%C3%BCn-foto%C4%9Fraflar%C4%B1-d%C3%BC%C4%9F%C3%BCn-gelene%C4%9Fi-pirin%C3%A7-ve-tah%C4%B1l.jpg?s=2048x2048&w=is&k=20&c=8EZ2xEHjj13qm2n1MIKMstn5HQQkOl7SqhxRnQ3d21E="
-                            alt="Düğün Salonu 4" className="gallery-image" />
-                        <p className="gallery-text">Sponsor 4</p>
+                    <div className="banner-quote-alt">
+                        <h3 className="quote-text-alt">
+                            Bunlardan biri sizin düğün Salonunuz olabilir.
+                        </h3>
                     </div>
                 </div>
-            </div>
-            <div className="footer-section">
-    <div className="footer-content">
-        <p className="footer-text">
-            Web sitemiz, düğün mekanları kiralamak isteyen çiftler için mükemmel çözümler sunar. 
-            Yıllardır sektörde edindiğimiz tecrübeyle, hayatınızdaki en özel günü unutulmaz anılara dönüştürmek için çalışıyoruz. 
-            Geniş mekan seçeneklerimiz, profesyonel hizmet anlayışımız ve müşteri memnuniyetine verdiğimiz önem ile sizlere hayalinizi gerçeğe dönüştürme fırsatı sunuyoruz.
-        </p>
-        <p className="footer-text">
-            Düğün mekanlarımız, modern tasarımları ve zarif dekorasyonlarıyla çiftlere ve misafirlerine eşsiz bir deneyim yaşatır. 
-            Farklı konseptlere uygun mekanlarımız, geniş kapasitesi ve teknik donanımı sayesinde her türlü düğün organizasyonuna ev sahipliği yapabilir. 
-            Ayrıca, uzman ekibimiz tüm süreç boyunca sizlere rehberlik ederek hayalinizdeki düğünü gerçeğe dönüştürmek için yanınızda olacaktır.
-        </p>
-        <p className="footer-text">
-            Detaylı bilgi almak, mekanlarımızı yerinde ziyaret etmek ve rezervasyon yaptırmak için bizimle iletişime geçebilirsiniz. 
-            Size en iyi hizmeti sağlamak için sabırsızlanıyoruz! Unutmayın, hayatınızdaki en özel anları planlamak için buradayız.
-        </p>
-        <img 
-            src="https://media.istockphoto.com/id/1435794871/tr/foto%C4%9Fraf/bride-and-grooms-hands.jpg?s=2048x2048&w=is&k=20&c=Y6Ju2fooOuqQx3JtTFwrgvyy3-nseFxiHzDAJHnsY-E=" 
-            alt="Düğün Mekanı" 
-            className="footer-image" />
-    </div>
-    </div>
+            </header>
+            <section className="animated-gradient-section">
+                <div className="container">
+                    <h3 className="gradient-quote-text">Ya Da</h3>
+                </div>
+            </section>
+
+            {/* About Head Section (Text and Slider) */}
+            <section className="about-head-section">
+                <div className="container">
+
+                    {/* React Slider Component Placeholder */}
+                    <div className="head-slideshow-alt">
+                        {/* Bu bölümde de bir React slider kütüphanesi kullanılmalı */}
+                        <img src={saraydugun} className="slider-image" />
+                        <img src={mekandugun} className="slider-image" />
+                        <img src={sahildugun} className="slider-image" />
+                    </div>
+                </div>
+            </section>
+            <section className="animated-gradient-section">
+                <div className="container">
+                    <h3 className="gradient-quote-text">Bunlardan Biri Olabilir</h3>
+                </div>
+            </section>
         </div>
     );
 };
 
-export default AboutPage;
+export default About;
