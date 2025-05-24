@@ -59,6 +59,17 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link
+                  to="/ContactUs"
+                  className="nav-link text-dark fs-5 fst-italic px-3 py-1 rounded border border-danger bg-light shadow-sm"
+                  style={{ fontFamily: "cursive" }}
+                  replace
+                  onClick={changeNav}
+                >
+                  İletişim
+                </Link>
+              </li>
+              <li className="nav-item">
                 <a
                   href="http://127.0.0.1:5000/"
                   className="nav-link text-dark fs-5 fst-italic px-3 py-1 rounded border border-danger bg-light shadow-sm"
@@ -72,7 +83,7 @@ function Header() {
             {isAuthenticated ? (
               userRole === "1" ? (
                 <Link
-                  to="/admin/dashboard" 
+                  to="/admin/dashboard"
                   className="btn btn-danger btn-sm me-2 fs-4"
                   style={{ fontFamily: "cursive" }}
                   replace

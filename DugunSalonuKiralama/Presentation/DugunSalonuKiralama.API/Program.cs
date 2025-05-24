@@ -14,6 +14,7 @@ using DugunSalonuKiralama.Persistence.Repositories.AppUserRepositories;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.BrandHandlers;
 using DugunSalonuKiralama.Application.Features.CQRS.Handlers.User;
 using DugunSalonuKiralama.Persistence.Services;
+using DugunSalonuKiralama.Application.Features.CQRS.Handlers.Email;
 
 namespace DugunSalonuKiralama.API
 {
@@ -69,6 +70,8 @@ namespace DugunSalonuKiralama.API
             builder.Services.AddScoped<GetUserByIdQueryHandler>();
             builder.Services.AddScoped<UpdateUserCommandHandler>();
             builder.Services.AddScoped<RemoveUserCommandHandler>();
+
+            builder.Services.AddScoped<CreateMailCommandHandler>();
 
             builder.Services.AddHttpClient<PredictionService>();
             builder.Services.AddScoped<ISuggestionService, SuggestionService>();

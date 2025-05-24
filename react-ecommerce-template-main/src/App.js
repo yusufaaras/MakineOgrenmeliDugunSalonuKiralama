@@ -15,6 +15,7 @@ import Reservation from "./Admin/Reservation/Reservation";
 import AddReservation from "./Admin/Reservation/AddReservation";
 import ProtectedAdminRoute from "./routes/ProtectedAdminRoute";
 import AdminProfile from './Admin/Profile/AdminProfile';
+import ContactUs from "./ContactUs/Contact"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function RoutesWithTemplate() {
@@ -48,6 +49,7 @@ function RoutesWithTemplate() {
         <Route exact path="/AuthPage" component={AuthPage} />
         <Route exact path="/Profile" component={ProfilePage} /> 
         <Route exact path="/about" component={AboutPage} />
+        <Route exact path="/ContactUs" component={ContactUs}/>
       </Switch>
     </Template>
   );

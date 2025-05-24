@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\presentation\\dugunsalonukiralama.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|solutionrelative:presentation\\dugunsalonukiralama.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30D51E70-130E-485B-97FD-8CFF8ED5ED50}|Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\infrastructure\\dugunsalonukiralama.persistence\\migrations\\20250524191909_addmailentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30D51E70-130E-485B-97FD-8CFF8ED5ED50}|Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj|solutionrelative:infrastructure\\dugunsalonukiralama.persistence\\migrations\\20250524191909_addmailentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{30D51E70-130E-485B-97FD-8CFF8ED5ED50}|Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\infrastructure\\dugunsalonukiralama.persistence\\context\\weddinghallcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30D51E70-130E-485B-97FD-8CFF8ED5ED50}|Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj|solutionrelative:infrastructure\\dugunsalonukiralama.persistence\\context\\weddinghallcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30D51E70-130E-485B-97FD-8CFF8ED5ED50}|Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\infrastructure\\dugunsalonukiralama.persistence\\services\\suggestionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30D51E70-130E-485B-97FD-8CFF8ED5ED50}|Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj|solutionrelative:infrastructure\\dugunsalonukiralama.persistence\\services\\suggestionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\presentation\\dugunsalonukiralama.api\\controllers\\mailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|solutionrelative:presentation\\dugunsalonukiralama.api\\controllers\\mailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\services\\predictionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\services\\predictionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\bookings\\createbookingcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\bookings\\createbookingcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.domain\\entities\\viewedhall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|solutionrelative:core\\dugunsalonukiralama.domain\\entities\\viewedhall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.domain\\entities\\predictionresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{382634BB-75C0-4D6A-9F0B-33CFB352323F}|Core\\DugunSalonuKiralama.Domain\\DugunSalonuKiralama.Domain.csproj|solutionrelative:core\\dugunsalonukiralama.domain\\entities\\predictionresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\presentation\\dugunsalonukiralama.api\\controllers\\suggestioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C54FB8AA-B290-40FF-B768-84B35A782D73}|Presentation\\DugunSalonuKiralama.API\\DugunSalonuKiralama.API.csproj|solutionrelative:presentation\\dugunsalonukiralama.api\\controllers\\suggestioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\email\\createmailcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9562F85-A11C-43CC-BCE7-576B3FBD9A8D}|Core\\DugunSalonuKiralama.Application\\DugunSalonuKiralama.Application.csproj|solutionrelative:core\\dugunsalonukiralama.application\\features\\cqrs\\handlers\\email\\createmailcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -83,76 +83,80 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WeddingHallContext.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
-              "RelativeToolTip": "Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAQAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Program.cs",
+              "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Program.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Program.cs",
+              "RelativeToolTip": "Presentation\\DugunSalonuKiralama.API\\Program.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAQwEkAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T18:22:25.375Z",
+              "WhenOpened": "2025-05-24T19:24:11.258Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PredictionResponse.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\PredictionResponse.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Domain\\Entities\\PredictionResponse.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\PredictionResponse.cs",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Domain\\Entities\\PredictionResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T15:55:55.938Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PredictionService.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Services\\PredictionService.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Services\\PredictionService.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Services\\PredictionService.cs",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Services\\PredictionService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T15:55:03.645Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SuggestionService.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Services\\SuggestionService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\DugunSalonuKiralama.Persistence\\Services\\SuggestionService.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Services\\SuggestionService.cs",
-              "RelativeToolTip": "Infrastructure\\DugunSalonuKiralama.Persistence\\Services\\SuggestionService.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAkwEoAAAAVAAAAAAAAAA==",
+              "Title": "20250524191909_addMailEntity.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations\\20250524191909_addMailEntity.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations\\20250524191909_addMailEntity.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations\\20250524191909_addMailEntity.cs",
+              "RelativeToolTip": "Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations\\20250524191909_addMailEntity.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T15:13:15.477Z",
+              "WhenOpened": "2025-05-24T19:19:09.106Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ViewedHall.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\ViewedHall.cs",
-              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Domain\\Entities\\ViewedHall.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Domain\\Entities\\ViewedHall.cs",
-              "RelativeToolTip": "Core\\DugunSalonuKiralama.Domain\\Entities\\ViewedHall.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Title": "MailController.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\MailController.cs",
+              "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Controllers\\MailController.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\MailController.cs",
+              "RelativeToolTip": "Presentation\\DugunSalonuKiralama.API\\Controllers\\MailController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T15:18:47.424Z"
+              "WhenOpened": "2025-05-24T19:14:29.658Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "SuggestionController.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\SuggestionController.cs",
-              "RelativeDocumentMoniker": "Presentation\\DugunSalonuKiralama.API\\Controllers\\SuggestionController.cs",
-              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Presentation\\DugunSalonuKiralama.API\\Controllers\\SuggestionController.cs",
-              "RelativeToolTip": "Presentation\\DugunSalonuKiralama.API\\Controllers\\SuggestionController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA9AAAAAAAAAA==",
+              "Title": "CreateMailCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Email\\CreateMailCommandHandler.cs",
+              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Email\\CreateMailCommandHandler.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Email\\CreateMailCommandHandler.cs",
+              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Email\\CreateMailCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T09:04:10.456Z"
+              "WhenOpened": "2025-05-24T19:06:43.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateBookingCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\CreateBookingCommandHandler.cs",
+              "RelativeDocumentMoniker": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\CreateBookingCommandHandler.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\CreateBookingCommandHandler.cs",
+              "RelativeToolTip": "Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\Bookings\\CreateBookingCommandHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T19:06:07.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeddingHallContext.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
+              "RelativeToolTip": "Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:22:25.375Z",
+              "EditorCaption": ""
             }
           ]
         },

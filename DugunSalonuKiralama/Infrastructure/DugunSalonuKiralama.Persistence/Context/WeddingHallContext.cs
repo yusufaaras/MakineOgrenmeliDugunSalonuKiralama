@@ -44,5 +44,6 @@ namespace DugunSalonuKiralama.Persistence.Context
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<ViewedHall> ViewedHalls { get; set; }
+        public DbSet<Mail> Mails { get; set; }
     }
 }

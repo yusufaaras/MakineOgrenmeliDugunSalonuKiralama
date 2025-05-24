@@ -164,6 +164,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DugunSalonuKiralama.API.Controllers.MailController",
+    "Method": "CreateMail",
+    "RelativePath": "api/Mail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createMailCommand",
+        "Type": "DugunSalonuKiralama.Application.Features.CQRS.Commands.Mail.CreateMailCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DugunSalonuKiralama.WebApi.Controllers.RegistersController",
     "Method": "CreateUser",
     "RelativePath": "api/Registers",
