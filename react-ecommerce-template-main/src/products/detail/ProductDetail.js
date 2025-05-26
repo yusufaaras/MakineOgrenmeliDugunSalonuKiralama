@@ -306,7 +306,7 @@ function ProductDetail() {
                       placeholder="Alkol Türü Giriniz"
                       value={alcoholPreference}
                       onChange={(e) => setAlcoholPreference(e.target.value)}
-                    />
+                    />{/**/}
                   </div>
                 )}
                 <div className="mb-3">
