@@ -9,9 +9,9 @@ namespace DugunSalonuKiralama.Persistence.Context
         {
 
 
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-K3V8TSN\\SQLEXPRESS;Initial Catalog=WeddingHall;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            //optionsBuilder.UseSqlServer("Data Source=DESKTOP-K3V8TSN\\SQLEXPRESS;Initial Catalog=WeddingHall;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
-            //optionsBuilder.UseSqlServer("Server=DESKTOP-S1QPNRR;Database=WeddingHall;Integrated Security=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-S1QPNRR;Database=WeddingHall;Integrated Security=True;TrustServerCertificate=True");
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

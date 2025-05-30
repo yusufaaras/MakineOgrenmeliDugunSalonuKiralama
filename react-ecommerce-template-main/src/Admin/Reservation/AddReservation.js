@@ -1,31 +1,48 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
-const AddReservation= () => {
+const AddReservation = () => {
   const [formData, setFormData] = useState({
+    weddingHallId: 1,         // Sabit veya dinamik değer verilebilir
+    userId: 1,                // Kullanıcı sisteminize göre değiştirilebilir
+    alcohol: "",
+    cookie: "",
     name: "",
-    capacity: "",
-    description: "",
+    surName: "",
+    food: "",
+    price: "",
+    capacity: 0,
+    bookingDate: new Date().toISOString(), // Güncel tarih
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: name === "capacity" ? parseInt(value) : value,
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Salon Eklendi:", formData);
-    alert("Salon başarıyla eklendi!");
+    try {
+      const response = await axios.post("https://localhost:7072/api/Booking", formData);
+      alert("Rezervasyon başarıyla eklendi!");
+      console.log("Yanıt:", response.data);
+    } catch (error) {
+      console.error("Hata:", error);
+      alert("Rezervasyon eklenirken bir hata oluştu.");
+    }
   };
 
   return (
     <div className="container mt-5">
       <div className="card p-4 shadow">
-        <h2 className="text-center mb-4">Salon Ekle</h2>
+        <h2 className="text-center mb-4">Rezervasyon Ekle</h2>
         <form onSubmit={handleSubmit}>
-          {/* Salon Adı */}
           <div className="mb-3">
-            <label className="form-label">Salon Adı</label>
+            <label className="form-label">Ad</label>
             <input
               type="text"
               className="form-control"
@@ -36,7 +53,18 @@ const AddReservation= () => {
             />
           </div>
 
-          {/* Kapasite */}
+          <div className="mb-3">
+            <label className="form-label">Soyad</label>
+            <input
+              type="text"
+              className="form-control"
+              name="surName"
+              value={formData.surName}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
           <div className="mb-3">
             <label className="form-label">Kapasite</label>
             <input
@@ -49,21 +77,69 @@ const AddReservation= () => {
             />
           </div>
 
-          {/* Açıklama */}
           <div className="mb-3">
-            <label className="form-label">Açıklama</label>
-            <textarea
+            <label className="form-label">Yemek</label>
+            <input
+              type="text"
               className="form-control"
-              name="description"
-              value={formData.description}
+              name="food"
+              value={formData.food}
               onChange={handleChange}
-              rows="3"
             />
           </div>
 
-          {/* Kaydet Butonu */}
+          <div className="mb-3">
+            <label className="form-label">Alkol</label>
+            <input
+              type="text"
+              className="form-control"
+              name="alcohol"
+              value={formData.alcohol}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Kurabiye</label>
+            <input
+              type="text"
+              className="form-control"
+              name="cookie"
+              value={formData.cookie}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Fiyat</label>
+            <input
+              type="text"
+              className="form-control"
+              name="price"
+              value={formData.price}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Tarih</label>
+            <input
+              type="datetime-local"
+              className="form-control"
+              name="bookingDate"
+              value={formData.bookingDate.slice(0, 16)}
+              onChange={(e) =>
+                setFormData((prev) => ({
+                  ...prev,
+                  bookingDate: new Date(e.target.value).toISOString(),
+                }))
+              }
+              required
+            />
+          </div>
+
           <button type="submit" className="btn btn-primary w-100">
-            Salon Ekle
+            Rezervasyon Ekle
           </button>
         </form>
       </div>

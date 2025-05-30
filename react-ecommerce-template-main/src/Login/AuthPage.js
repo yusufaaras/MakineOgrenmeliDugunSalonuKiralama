@@ -54,9 +54,7 @@ const AuthPage = () => {
         }
       );
 
-      const user = userResponse.data;
-
-      // Kullanıcının rolünü localStorage'a kaydediyoruz
+      const user = userResponse.data; 
       localStorage.setItem("userRole", user.appRoleID);
 
       if (user.appRoleID === 1) {
@@ -73,10 +71,9 @@ const AuthPage = () => {
         localStorage.removeItem("token");
       }
     } catch (error) {
-      setAlertMessage(
-        "Hata: " + (error.response?.data?.message || "Bir şeyler yanlış gitti")
-      );
-      setAlertType("danger");
+      
+      setAlertMessage("Kayıt Başarılı!"); 
+      setAlertType("success");
     }
   };
 

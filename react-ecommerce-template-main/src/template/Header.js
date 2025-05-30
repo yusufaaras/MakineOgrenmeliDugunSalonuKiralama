@@ -104,7 +104,7 @@ function Header() {
               )
             ) : (
               <Link
-                to="/login"
+                to="/AuthPage"
                 className="btn btn-outline-danger btn-sm me-2 fs-4"
                 style={{ fontFamily: "cursive" }}
                 onClick={changeNav}

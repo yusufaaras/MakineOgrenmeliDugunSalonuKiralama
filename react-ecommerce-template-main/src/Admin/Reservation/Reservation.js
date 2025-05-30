@@ -71,7 +71,7 @@ const Reservation = () => {
             <th onClick={() => setSortBy("food")} style={{ cursor: "pointer" }}>Yemek</th>
             <th onClick={() => setSortBy("price")} style={{ cursor: "pointer" }}>Fiyat</th>
             <th onClick={() => setSortBy("capacity")} style={{ cursor: "pointer" }}>Kapasite</th>
-            <th onClick={() => setSortBy("bookingDate")} style={{ cursor: "pointer" }}>Rezervasyon Tarihi</th>
+            <th onClick={() => setSortBy("bookingDate")} style={{ cursor: "pointer" }}>Rezervasyon Tarihi</th> 
             <th>İşlemler</th>
           </tr>
         </thead>

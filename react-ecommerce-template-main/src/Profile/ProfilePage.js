@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
+import { Link } from 'react-router-dom';
+
 
 
 const ProfilePage = () => {
@@ -34,10 +36,6 @@ const ProfilePage = () => {
       console.error("Error decoding token:", error);
     }
   }, []);
-
-  if (!user) {
-    return <p className="text-center mt-5">Loading...</p>;
-  }
 
   return (
     <div className="container mt-5">
