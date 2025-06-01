@@ -16,6 +16,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Commands.Booking
         public string Name { get; set; }
         public string SurName { get; set; }
         public string Food { get; set; }
+        public string Session { get; set; }
         public string Price { get; set; }
         public int Capacity { get; set; }
         public DateTime BookingDate { get; set; }

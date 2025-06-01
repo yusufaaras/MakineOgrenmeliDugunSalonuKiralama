@@ -16,7 +16,6 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Commands.Wedding
         public string City { get; set; }
         public string Country { get; set; }
         public int PostalCode { get; set; }
-        public string CategoryName { get; set; }
         public string Alcohol { get; set; }
         public string Cookie { get; set; }
         public string Food { get; set; }

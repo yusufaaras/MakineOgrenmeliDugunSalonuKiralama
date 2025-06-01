@@ -26,6 +26,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
             values.Food = command.Food;
             values.Capacity = command.Capacity;
             values.Cookie = command.Cookie;
+            values.Session = command.Session;
             values.Name = command.Name;
             values.SurName = command.SurName;
             await _repository.UpdateAsync(values);

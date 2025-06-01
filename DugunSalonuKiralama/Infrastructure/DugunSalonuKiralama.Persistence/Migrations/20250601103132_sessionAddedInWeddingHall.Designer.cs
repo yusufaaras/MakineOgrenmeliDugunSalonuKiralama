@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DugunSalonuKiralama.Persistence.Migrations
 {
     [DbContext(typeof(WeddingHallContext))]
-    [Migration("20250524191909_addMailEntity")]
-    partial class addMailEntity
+    [Migration("20250601103132_sessionAddedInWeddingHall")]
+    partial class sessionAddedInWeddingHall
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -336,10 +336,6 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<string>("CategoryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -380,10 +376,11 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PostalCode")
-                        .HasColumnType("int");
-
                     b.Property<string>("Price")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Session")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

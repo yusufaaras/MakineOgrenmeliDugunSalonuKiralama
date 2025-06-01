@@ -6,6 +6,7 @@ import ScrollToTopOnMount from "../../template/ScrollToTopOnMount";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
+
 function ProductDetail() {
   const { slug } = useParams(); // 'slug' burada weddingHallId olarak kullanılıyor
   const [product, setProduct] = useState(null);
@@ -24,6 +25,9 @@ function ProductDetail() {
   const [alcoholPreference, setAlcoholPreference] = useState("");
   const [cookiePreference, setCookiePreference] = useState("");
   const [foodPreference, setFoodPreference] = useState("");
+  const [sessionPrefence, setSessionPreference] = useState("")
+
+
   const history = useHistory();
 
   useEffect(() => {
@@ -95,10 +99,16 @@ function ProductDetail() {
   };
 
   const handleClick = () => {
-    if (calendarRef.current) {
-      calendarRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    const yOffset = -100; // İstenilen kaydırma mesafesi (negatif yukarı çeker)
+    const y = calendarRef.current.getBoundingClientRect().top + window.scrollY + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
+  const handleSelectionChange = (event) => {
+    const selectedValue = event.target.value;
+    setSessionPreference(selectedValue);
+  };
+
 
   // Bir tarihin pasif (seçilemez) olup olmadığını belirler
   const tileDisabled = ({ date }) => {
@@ -144,6 +154,7 @@ function ProductDetail() {
       food: foodPreference,
       price: product ? product.price : "Belirlenecek",
       capacity: product ? product.capacity : 0,
+      session: sessionPrefence,
       bookingDate: new Date(selectedDate).toISOString(), // ISO formatında gönder
     };
 
@@ -222,6 +233,7 @@ function ProductDetail() {
           <h2 className="mb-1">{product.name}</h2>
           <p className="text-muted">{product.shortDescription}</p>
           <p><strong>Kapasite:</strong> {product.capacity} kişi</p>
+          <p><strong>Fiyat:</strong> {product.price} TL</p>
 
           <div className="row g-3 mb-4">
             <div className="col">
@@ -239,14 +251,13 @@ function ProductDetail() {
       </div>
 
       {/* Takvim ve Form Alanı */}
-      <div ref={calendarRef} className="row mt-5">
+      <div className="row mt-5">
         <div className="col-lg-12">
           <div className="border rounded p-4 d-flex align-items-start" style={{ backgroundColor: "#f8f9fa" }}>
             {/* Takvim */}
-            <div className="me-4">
+            <div ref={calendarRef} className="me-4">
               <h4>Rezervasyon Tarihi Seçin</h4>
               <Calendar
-                ref={calendarRef}
                 tileDisabled={tileDisabled} // `availableDates` listesinde olmayanları pasif yapar
                 value={selectedDate}
                 onChange={handleDateChange}
@@ -289,6 +300,13 @@ function ProductDetail() {
                     required
                   />
                 </div>
+                <select onChange={handleSelectionChange} className="form-select">
+                  <option value="">Hangi seansı istiyorsunuz?</option>
+                  <option value="Öğle Seansı">Öğle Seansı(12.00-16.00)</option>
+                  <option value="Akşam Seansı">Akşam Seansı(16.00-20.00)</option>
+                  <option value="Gece Seansı">Gece Seansı(20.00-24.00)</option>
+                </select>
+
                 <div className="mb-3">
                   <label className="form-label">Düğünde Alkol olacak mı?</label>
                   <select className="form-select" onChange={handleAlcoholChange} defaultValue="">

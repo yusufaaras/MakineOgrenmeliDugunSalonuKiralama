@@ -136,6 +136,10 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Session")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SurName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -333,10 +337,6 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<string>("CategoryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -376,9 +376,6 @@ namespace DugunSalonuKiralama.Persistence.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PostalCode")
-                        .HasColumnType("int");
 
                     b.Property<string>("Price")
                         .IsRequired()
