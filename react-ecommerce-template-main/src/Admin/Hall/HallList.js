@@ -43,7 +43,7 @@ const HallList = () => {
   };
 
   // Kullanıcının kendi salonlarını filtrele
-  const filteredHalls = userId ? halls.filter((hall) => hall.userId == userId) : [];
+  const filteredHalls = userId ? halls.filter((hall) => hall.userId === userId) : [];
 
   // Arama işlemi
   const searchHalls = filteredHalls.filter(

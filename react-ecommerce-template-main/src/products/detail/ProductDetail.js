@@ -5,14 +5,13 @@ import { Link } from "react-router-dom";
 import ScrollToTopOnMount from "../../template/ScrollToTopOnMount";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { jwtDecode } from "jwt-decode";
 
 function ProductDetail() {
   const { slug } = useParams(); // 'slug' burada weddingHallId olarak kullanılıyor
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
-  // Bu artık hardcoded değil, dinamik olarak aktif tarihler buradan yönetilecek
   const [availableDates, setAvailableDates] = useState([]);
-  // Rezerve edilmiş tarihleri tutacak ayrı bir state (görsel işaretleme için kullanılacak)
   const [bookedDates, setBookedDates] = useState([]);
   const [showAlcoholInput, setShowAlcoholInput] = useState(false);
   const [showCookieInput, setShowCookieInput] = useState(false);
@@ -24,7 +23,29 @@ function ProductDetail() {
   const [alcoholPreference, setAlcoholPreference] = useState("");
   const [cookiePreference, setCookiePreference] = useState("");
   const [foodPreference, setFoodPreference] = useState("");
+  const [sessionPrefence, setSessionPreference] = useState("");
+  const [userId, setUserId] = useState(null);
+
   const history = useHistory();
+
+  useEffect(() => {
+    // Kullanıcı id'yi localStorage'daki token'dan alıyoruz
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        const id =
+          decoded[
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
+          ];
+        setUserId(id);
+      } catch (e) {
+        setUserId(null);
+      }
+    } else {
+      setUserId(null);
+    }
+  }, []);
 
   useEffect(() => {
     // Düğün salonu detaylarını çek
@@ -50,7 +71,7 @@ function ProductDetail() {
           .filter((booking) => booking.weddingHallId === currentWeddingHallId)
           .map((booking) => formatDate(new Date(booking.bookingDate)));
 
-        setBookedDates(hallBookedDates); // Rezerve edilmiş tarihleri ayır
+        setBookedDates(hallBookedDates);
 
         // Takvimde seçilebilir olması istenen günler (gelecek 1 yıl için basit bir örnek)
         const today = new Date();
@@ -69,15 +90,15 @@ function ProductDetail() {
           (date) => !hallBookedDates.includes(date)
         );
 
-        setAvailableDates(activeDates); // Aktif (seçilebilir) tarihleri ayarla
+        setAvailableDates(activeDates);
       })
       .catch((error) => {
         console.error("Rezervasyon ve müsait tarihler yüklenirken hata oluştu:", error);
         setError("Rezervasyon bilgileri yüklenirken bir hata oluştu.");
-        setAvailableDates([]); // Hata durumunda boş liste
+        setAvailableDates([]);
         setBookedDates([]);
       });
-  }, [slug]); // slug değiştiğinde bu effect yeniden çalışır
+  }, [slug]);
 
   const handleAlcoholChange = (e) => {
     setShowAlcoholInput(e.target.value === "Evet");
@@ -95,15 +116,17 @@ function ProductDetail() {
   };
 
   const handleClick = () => {
-    if (calendarRef.current) {
-      calendarRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    const yOffset = -100; // İstenilen kaydırma mesafesi (negatif yukarı çeker)
+    const y = calendarRef.current.getBoundingClientRect().top + window.scrollY + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+  const handleSelectionChange = (event) => {
+    const selectedValue = event.target.value;
+    setSessionPreference(selectedValue);
   };
 
-  // Bir tarihin pasif (seçilemez) olup olmadığını belirler
   const tileDisabled = ({ date }) => {
     const formattedDate = formatDate(date);
-    // Eğer tarih availableDates listesinde YOKSA pasif yap (yani rezerve edilmişse)
     return !availableDates.includes(formattedDate);
   };
 
@@ -113,7 +136,7 @@ function ProductDetail() {
 
   const formatDate = (date) => {
     const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Ay 0'dan başladığı için +1
+    const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
   };
@@ -121,14 +144,18 @@ function ProductDetail() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!userId) {
+      // Giriş yapılmamışsa yönlendir
+      history.push("/authpage");
+      return;
+    }
+
     if (!selectedDate) {
       alert("Lütfen bir rezervasyon tarihi seçiniz.");
       return;
     }
 
     const selectedDateFormatted = formatDate(selectedDate);
-    // Seçilen tarihin rezerve edilmiş tarihler arasında olup olmadığını kontrol et
-    // (tileDisabled zaten engelliyor ama ekstra bir kontrol iyidir)
     if (bookedDates.includes(selectedDateFormatted)) {
       alert("Seçtiğiniz tarih zaten rezerve edilmiştir. Lütfen başka bir tarih seçiniz.");
       return;
@@ -136,7 +163,7 @@ function ProductDetail() {
 
     const bookingData = {
       weddingHallId: parseInt(slug),
-      userId: 1, // Şu an statik, gerçek uygulamada kullanıcı bilgisini almalısınız
+      userId: parseInt(userId), // Artık güncel kullanıcı id
       alcohol: alcoholPreference,
       cookie: cookiePreference,
       name: name,
@@ -144,7 +171,8 @@ function ProductDetail() {
       food: foodPreference,
       price: product ? product.price : "Belirlenecek",
       capacity: product ? product.capacity : 0,
-      bookingDate: new Date(selectedDate).toISOString(), // ISO formatında gönder
+      session: sessionPrefence,
+      bookingDate: new Date(selectedDate).toISOString(),
     };
 
     console.log("Gönderilen Rezervasyon Verisi:", bookingData);
@@ -160,12 +188,11 @@ function ProductDetail() {
         console.log("Rezervasyon başarılı:", response.data);
         alert("Rezervasyonunuz başarıyla alınmıştır!");
         history.push("/reservation-success");
-        // Başarılı rezervasyondan sonra, rezerve edilmiş tarihleri ve müsait tarihleri güncelle
         setBookedDates((prevBooked) => [...prevBooked, selectedDateFormatted]);
         setAvailableDates((prevAvailable) =>
           prevAvailable.filter((date) => date !== selectedDateFormatted)
         );
-        setSelectedDate(null); // Seçili tarihi temizle
+        setSelectedDate(null);
       })
       .catch((error) => {
         console.error("Rezervasyon sırasında hata oluştu:", error);
@@ -222,6 +249,7 @@ function ProductDetail() {
           <h2 className="mb-1">{product.name}</h2>
           <p className="text-muted">{product.shortDescription}</p>
           <p><strong>Kapasite:</strong> {product.capacity} kişi</p>
+          <p><strong>Fiyat:</strong> {product.price} TL</p>
 
           <div className="row g-3 mb-4">
             <div className="col">
@@ -239,18 +267,16 @@ function ProductDetail() {
       </div>
 
       {/* Takvim ve Form Alanı */}
-      <div ref={calendarRef} className="row mt-5">
+      <div className="row mt-5">
         <div className="col-lg-12">
           <div className="border rounded p-4 d-flex align-items-start" style={{ backgroundColor: "#f8f9fa" }}>
             {/* Takvim */}
-            <div className="me-4">
+            <div ref={calendarRef} className="me-4">
               <h4>Rezervasyon Tarihi Seçin</h4>
               <Calendar
-                ref={calendarRef}
-                tileDisabled={tileDisabled} // `availableDates` listesinde olmayanları pasif yapar
+                tileDisabled={tileDisabled}
                 value={selectedDate}
                 onChange={handleDateChange}
-                // Rezerve edilmiş (bookedDates) tarihleri kırmızı yapar
                 tileClassName={({ date }) =>
                   bookedDates.includes(formatDate(date)) ? "bg-danger text-white" : ""
                 }
@@ -289,6 +315,13 @@ function ProductDetail() {
                     required
                   />
                 </div>
+                <select onChange={handleSelectionChange} className="form-select">
+                  <option value="">Hangi seansı istiyorsunuz?</option>
+                  <option value="Öğle Seansı">Öğle Seansı(12.00-16.00)</option>
+                  <option value="Akşam Seansı">Akşam Seansı(16.00-20.00)</option>
+                  <option value="Gece Seansı">Gece Seansı(20.00-24.00)</option>
+                </select>
+
                 <div className="mb-3">
                   <label className="form-label">Düğünde Alkol olacak mı?</label>
                   <select className="form-select" onChange={handleAlcoholChange} defaultValue="">
@@ -306,7 +339,7 @@ function ProductDetail() {
                       placeholder="Alkol Türü Giriniz"
                       value={alcoholPreference}
                       onChange={(e) => setAlcoholPreference(e.target.value)}
-                    />{/**/}
+                    />
                   </div>
                 )}
                 <div className="mb-3">

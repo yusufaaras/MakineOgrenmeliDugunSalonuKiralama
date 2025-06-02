@@ -80,7 +80,7 @@ const About = () => {
                                 Sektörü domine ederek çok büyük bir market yarattık.
                             </p>
                         </div>
-                        <div ><img src={dugunicecek}></img></div>
+                        <div ><img src={dugunicecek} alt=''></img></div>
                     </div>
 
                     <div className="facts-grid">
@@ -129,9 +129,9 @@ const About = () => {
                     {/* React Slider Component Placeholder */}
                     <div className="banner-slideshow-alt">
                         {/* Bu bölümde de bir React slider kütüphanesi kullanılmalı */}
-                        <img src={bogazdugun} className="slider-image" />
-                        <img src={oteldugun} className="slider-image" />
-                        <img src={atinadugun} className="slider-image" />
+                        <img src={bogazdugun} alt='' className="slider-image" />
+                        <img src={oteldugun} alt='' className="slider-image" />
+                        <img src={atinadugun} alt='' className="slider-image" />
                     </div>
                     <div className="banner-quote-alt">
                         <h3 className="quote-text-alt">
@@ -153,9 +153,9 @@ const About = () => {
                     {/* React Slider Component Placeholder */}
                     <div className="head-slideshow-alt">
                         {/* Bu bölümde de bir React slider kütüphanesi kullanılmalı */}
-                        <img src={saraydugun} className="slider-image" />
-                        <img src={mekandugun} className="slider-image" />
-                        <img src={sahildugun} className="slider-image" />
+                        <img src={saraydugun} alt='' className="slider-image" />
+                        <img src={mekandugun} alt='' className="slider-image" />
+                        <img src={sahildugun} alt='' className="slider-image" />
                     </div>
                 </div>
             </section>
