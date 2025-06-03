@@ -1,29 +1,73 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 const Reservation = () => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("name");
   const [sortOrder, setSortOrder] = useState("asc");
+  const [userId, setUserId] = useState(null);
+
+  // JWT'den userId çek
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        const tokenUserId =
+          decoded[
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
+          ];
+        setUserId(tokenUserId ? String(tokenUserId) : null);
+      } catch (error) {
+        console.error("Token çözme hatası:", error);
+      }
+    }
+  }, []);
 
   // API'den veri çekme
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://localhost:7072/api/Booking");
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        console.error("API'den veri çekilirken hata oluştu:", error);
-      }
-    };
     fetchData();
   }, []);
 
+  const fetchData = async () => {
+    try {
+      const response = await fetch("https://localhost:7072/api/Booking");
+      const result = await response.json();
+      setData(result);
+    } catch (error) {
+      console.error("API'den veri çekilirken hata oluştu:", error);
+    }
+  };
+
+  // Silme fonksiyonu
+  const handleDelete = async (id) => {
+    if (window.confirm("Bu rezervasyonu silmek istediğinize emin misiniz?")) {
+      try {
+        const response = await fetch(`https://localhost:7072/api/Booking/${id}`, {
+          method: "DELETE",
+        });
+        if (response.ok) {
+          setData((prevData) => prevData.filter((item) => item.id !== id));
+        } else {
+          alert("Silme işlemi başarısız oldu!");
+        }
+      } catch (error) {
+        alert("Silme işlemi sırasında hata oluştu!");
+        console.error(error);
+      }
+    }
+  };
+
+  // Sadece giriş yapan kullanıcıya ait rezervasyonlar
+  const userBookings = data.filter(
+    (item) => userId && String(item.userId) === String(userId)
+  );
+
   // Arama işlemi
-  const filteredData = data.filter(
+  const filteredData = userBookings.filter(
     (item) =>
       item.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.surName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -71,7 +115,7 @@ const Reservation = () => {
             <th onClick={() => setSortBy("food")} style={{ cursor: "pointer" }}>Yemek</th>
             <th onClick={() => setSortBy("price")} style={{ cursor: "pointer" }}>Fiyat</th>
             <th onClick={() => setSortBy("capacity")} style={{ cursor: "pointer" }}>Kapasite</th>
-            <th onClick={() => setSortBy("bookingDate")} style={{ cursor: "pointer" }}>Rezervasyon Tarihi</th> 
+            <th onClick={() => setSortBy("bookingDate")} style={{ cursor: "pointer" }}>Rezervasyon Tarihi</th>
             <th>İşlemler</th>
           </tr>
         </thead>
@@ -89,11 +133,11 @@ const Reservation = () => {
                 <td>
                   <button className="btn btn-primary btn-sm me-2">
                     <i className="fa fa-eye"></i>
-                  </button>
-                  <button className="btn btn-warning btn-sm me-2">
-                    <i className="fa fa-pencil"></i>
-                  </button>
-                  <button className="btn btn-danger btn-sm me-2">
+                  </button> 
+                  <button
+                    className="btn btn-danger btn-sm me-2"
+                    onClick={() => handleDelete(reservation.id)}
+                  >
                     <i className="fa fa-trash"></i>
                   </button>
                 </td>

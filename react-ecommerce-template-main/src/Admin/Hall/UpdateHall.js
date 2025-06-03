@@ -110,8 +110,7 @@ const UpdateHall = () => {
         
 
         <div className="mb-3">
-            <label className="form-label">Fiyat</label>
-            <textarea className="form-control" type="number" name="Price" value={hall.Price} onChange={handleChange}></textarea>
+            <label className="form-label">Fiyat</label> 
             <input
               type="number"
               className="form-control"

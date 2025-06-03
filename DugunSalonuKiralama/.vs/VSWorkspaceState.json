@@ -9,8 +9,11 @@
     "\\Core\\DugunSalonuKiralama.Application\\Features\\CQRS\\Handlers\\User",
     "\\Infrastructure",
     "\\Infrastructure\\DugunSalonuKiralama.Persistence",
-    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations"
+    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context",
+    "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Migrations",
+    "\\Presentation",
+    "\\Presentation\\DugunSalonuKiralama.API"
   ],
-  "SelectedNode": "\\Presentation\\DugunSalonuKiralama.API\\Controllers\\UserController.cs",
+  "SelectedNode": "\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
   "PreviewInSolutionExplorer": false
 }
