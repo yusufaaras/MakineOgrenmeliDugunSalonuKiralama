@@ -623,6 +623,10 @@
             "type": "string",
             "nullable": true
           },
+          "session": {
+            "type": "string",
+            "nullable": true
+          },
           "price": {
             "type": "string",
             "nullable": true
@@ -682,10 +686,6 @@
           "postalCode": {
             "type": "integer",
             "format": "int32"
-          },
-          "categoryName": {
-            "type": "string",
-            "nullable": true
           },
           "alcohol": {
             "type": "string",
@@ -805,6 +805,10 @@
             "type": "string",
             "nullable": true
           },
+          "session": {
+            "type": "string",
+            "nullable": true
+          },
           "food": {
             "type": "string",
             "nullable": true
@@ -888,10 +892,6 @@
           "postalCode": {
             "type": "integer",
             "format": "int32"
-          },
-          "categoryName": {
-            "type": "string",
-            "nullable": true
           },
           "alcohol": {
             "type": "string",

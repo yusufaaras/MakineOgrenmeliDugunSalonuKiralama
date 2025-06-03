@@ -26,11 +26,9 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Wedding
             values.Address = command.Address;
             values.Food = command.Food;
             values.Alcohol = command.Alcohol;
-            values.CategoryName = command.CategoryName;
             values.City = command.City;
             values.Country = command.Country;
             values.Cookie = command.Cookie;
-            values.PostalCode = command.PostalCode;
             values.Price=command.Price;
             values.HomeImageUrl = command.HomeImageUrl;
             values.DetailImageUrl1 = command.DetailImageUrl1;

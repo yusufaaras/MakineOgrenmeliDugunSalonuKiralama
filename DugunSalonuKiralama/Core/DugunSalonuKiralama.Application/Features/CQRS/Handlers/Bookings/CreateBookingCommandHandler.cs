@@ -40,6 +40,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
                 Capacity = command.Capacity,
                 Cookie = command.Cookie,
                 Food = command.Food,
+                Session = command.Session,
                 Price = command.Price,
                 Name = command.Name,
                 SurName = command.SurName,

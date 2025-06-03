@@ -21,6 +21,7 @@ namespace DugunSalonuKiralama.Domain.Entities
         public string SurName { get; set; }
         public string Cookie { get; set; }
         public string Food { get; set; }
+        public string Session { get; set; }
         public string Price { get; set; }
         public int Capacity { get; set; }
         public DateTime BookingDate { get; set; }

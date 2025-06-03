@@ -176,13 +176,6 @@ C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.pdb
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.genruntimeconfig.cache
 C:\Users\Yusuf ARAS\OneDrive\Belgeler\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\ref\DugunSalonuKiralama.API.dll
-C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.csproj.AssemblyReference.cache
-C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.AssemblyInfoInputs.cache
-C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.AssemblyInfo.cs
-C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.csproj.CoreCompileInputs.cache
-C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.sourcelink.json
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\appsettings.json
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\DugunSalonuKiralama.API.staticwebassets.endpoints.json
@@ -340,6 +333,13 @@ C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\Du
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\DugunSalonuKiralama.Application.pdb
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\DugunSalonuKiralama.Persistence.pdb
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\bin\Debug\net8.0\DugunSalonuKiralama.Domain.pdb
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.csproj.AssemblyReference.cache
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.AssemblyInfoInputs.cache
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.AssemblyInfo.cs
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.csproj.CoreCompileInputs.cache
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.sourcelink.json
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\scopedcss\bundle\DugunSalonuKiralama.API.styles.css
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\staticwebassets.development.json
@@ -357,4 +357,3 @@ C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\Du
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.pdb
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.genruntimeconfig.cache
 C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\ref\DugunSalonuKiralama.API.dll
-C:\Users\Anıl Enes torun\Documents\GitHub\MakineOgrenmeliDugunSalonuKiralama\DugunSalonuKiralama\Presentation\DugunSalonuKiralama.API\obj\Debug\net8.0\DugunSalonuKiralama.API.MvcApplicationPartsAssemblyInfo.cs

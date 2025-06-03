@@ -31,6 +31,7 @@ namespace DugunSalonuKiralama.Application.Features.CQRS.Handlers.Bookings
                 Price = values.Price,
                 Food = values.Food,
                 Cookie = values.Cookie,
+                Session = values.Session,
                 Capacity = values.Capacity,
                 Alcohol=values.Alcohol,
                 Name = values.Name,
