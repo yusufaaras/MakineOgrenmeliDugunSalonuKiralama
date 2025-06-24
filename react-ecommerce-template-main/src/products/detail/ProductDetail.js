@@ -28,6 +28,9 @@ function ProductDetail() {
 
   const history = useHistory();
 
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   useEffect(() => {
     // Kullanıcı id'yi localStorage'daki token'dan alıyoruz
     const token = localStorage.getItem("token");
@@ -36,7 +39,7 @@ function ProductDetail() {
         const decoded = jwtDecode(token);
         const id =
           decoded[
-            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
+          "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
           ];
         setUserId(id);
       } catch (e) {
@@ -228,19 +231,45 @@ function ProductDetail() {
         <div className="col-lg-6">
           <div className="row">
             <div className="col-12 mb-4">
-              <img className="border rounded w-100" alt={product.name} src={product.homeImageUrl} />
+              <img
+                className="border rounded w-100"
+                alt={product.name}
+                src={
+                  activeIndex === 0
+                    ? product.homeImageUrl
+                    : [product.detailImageUrl1, product.detailImageUrl2, product.detailImageUrl3, product.detailImageUrl4][activeIndex - 1]
+                }
+              />
             </div>
           </div>
           <div className="row mt-2">
             <div className="col-12">
-              <div className="d-flex flex-nowrap overflow-auto">
-                {[product.detailImageUrl1, product.detailImageUrl2, product.detailImageUrl3, product.detailImageUrl4].map(
-                  (image, index) =>
-                    image && (
-                      <img key={index} className="cover rounded mb-2 me-2" width="70" height="70" alt={product.name} src={image} />
-                    )
-                )}
-              </div>
+            <div className="d-flex flex-nowrap overflow-auto">
+  <img
+    className={`cover rounded mb-2 me-2 ${activeIndex === 0 ? "border border-primary" : ""}`}
+    width="70"
+    height="70"
+    alt={product.name}
+    src={product.homeImageUrl}
+    onClick={() => setActiveIndex(0)}
+    style={{ cursor: "pointer" }}
+  />
+  {[product.detailImageUrl1, product.detailImageUrl2, product.detailImageUrl3, product.detailImageUrl4].map(
+    (image, index) =>
+      image && (
+        <img
+          key={index}
+          className={`cover rounded mb-2 me-2 ${activeIndex === index + 1 ? "border border-primary" : ""}`}
+          width="70"
+          height="70"
+          alt={product.name}
+          src={image}
+          onClick={() => setActiveIndex(index + 1)}
+          style={{ cursor: "pointer" }}
+        />
+      )
+  )}
+</div>
             </div>
           </div>
         </div>
@@ -254,10 +283,7 @@ function ProductDetail() {
           <div className="row g-3 mb-4">
             <div className="col">
               <button onClick={handleClick} className="btn btn-outline-dark py-2 w-100">Rezervasyon Yap</button>
-            </div>
-            <div className="col">
-              <button className="btn btn-dark py-2 w-100">Satın Al</button>
-            </div>
+            </div> 
           </div>
 
           <h4 className="mb-0">Açıklama</h4>

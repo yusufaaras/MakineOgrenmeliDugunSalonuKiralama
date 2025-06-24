@@ -72,8 +72,8 @@ const AuthPage = () => {
       }
     } catch (error) {
       
-      setAlertMessage("Kayıt Başarılı!"); 
-      setAlertType("success");
+      setAlertMessage("Hatalı Kullanıcı Adı veya Şifre"); 
+      setAlertType("danger");
     }
   };
 
