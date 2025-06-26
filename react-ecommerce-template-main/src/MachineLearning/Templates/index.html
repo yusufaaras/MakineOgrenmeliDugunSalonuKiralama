@@ -6,6 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Düğün Salonu Fiyat Tahmini</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #ikinciButon {
+            margin-top: 5px;
+            background-color: green;
+            opacity: 0;
+            transition: opacity 1s;
+            display: inline-block;
+            pointer-events: none;
+        }
+
+        #ikinciButon.goster {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #ikinciButon.gizli {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="bg-light">
@@ -13,6 +32,7 @@
         <div class="card shadow p-4">
             <h2 class="text-center mb-4">Düğün Salonu Fiyat Tahmini</h2>
             <form id="predictionForm">
+                <!-- ...form alanların aynı kalsın... -->
                 <div class="mb-3">
                     <label class="form-label">Kapasite</label>
                     <input type="number" class="form-control" id="capacity" required>
@@ -22,10 +42,10 @@
                     <input type="number" class="form-control" id="location_index" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Sezon</label>
+                    <label class="form-label">Seans</label>
                     <select class="form-select" id="season">
-                        <option value="0">Düşük Sezon</option>
-                        <option value="1">Yüksek Sezon</option>
+                        <option value="0">19.00' dan Önce</option>
+                        <option value="1">19.00' dan Sonra</option>
                     </select>
                 </div>
                 <div class="mb-3 form-check">
@@ -34,19 +54,23 @@
                 </div>
                 <div class="mb-3 form-check">
                     <input class="form-check-input" type="checkbox" id="music_service">
-                    <label class="form-check-label">Çerez Hizmeti Var</label>
+                    <label class="form-check-label">İçecek & Çerez Hizmeti Var</label>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Ekstra Hizmet Sayısı</label>
                     <input type="number" class="form-control" id="extra_services" required>
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Tahmin Et</button>
+                <button id="ilkButon" type="submit" class="btn btn-primary w-100">Tahmin Et</button>
+                <button id="ikinciButon" type="button" class="btn btn-success w-100 gizli">Tahmin edilen fiyata uygun
+                    salonları listele</button>
             </form>
             <div class="alert alert-info mt-3 d-none" id="resultBox"></div>
         </div>
     </div>
 
     <script>
+        let lastPredictedPrice = null;
+
         document.getElementById("predictionForm").addEventListener("submit", async function (event) {
             event.preventDefault();
 
@@ -70,9 +94,18 @@
                 const resultBox = document.getElementById("resultBox");
 
                 if (result.predicted_price) {
-                    resultBox.textContent = `Tahmini Fiyat: ${result.predicted_price} $`;
+                    lastPredictedPrice = result.predicted_price * 5; // Tahmini fiyatı sakla
+                    resultBox.textContent = `Tahmini Fiyat: ${lastPredictedPrice} TL`;
                     resultBox.classList.remove("d-none", "alert-danger");
                     resultBox.classList.add("alert-success");
+
+                    // İkinci butonu göster
+                    var btn = document.getElementById('ikinciButon');
+                    btn.classList.remove('gizli');
+                    setTimeout(function () {
+                        btn.classList.add('goster');
+                    }, 1000);
+
                 } else {
                     resultBox.textContent = "Hata oluştu!";
                     resultBox.classList.remove("d-none", "alert-success");
@@ -83,6 +116,15 @@
                 resultBox.textContent = "Bağlantı hatası!";
                 resultBox.classList.remove("d-none", "alert-success");
                 resultBox.classList.add("alert-danger");
+            }
+        });
+
+        document.getElementById('ikinciButon').addEventListener('click', function () {
+            if (lastPredictedPrice) {
+                // React projesinin çalıştığı port ve path'e göre güncelle!
+                window.location.href = "http://localhost:3000/ProductList?fiyat=" + encodeURIComponent(lastPredictedPrice);
+            } else {
+                alert("Önce tahmini fiyat alın!");
             }
         });
     </script>

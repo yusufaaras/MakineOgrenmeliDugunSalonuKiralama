@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{30D51E70-130E-485B-97FD-8CFF8ED5ED50}|Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj|c:\\users\\an\u0131l enes torun\\documents\\github\\makineogrenmelidugunsalonukiralama\\dugunsalonukiralama\\infrastructure\\dugunsalonukiralama.persistence\\context\\weddinghallcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30D51E70-130E-485B-97FD-8CFF8ED5ED50}|Infrastructure\\DugunSalonuKiralama.Persistence\\DugunSalonuKiralama.Persistence.csproj|solutionrelative:infrastructure\\dugunsalonukiralama.persistence\\context\\weddinghallcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,6 +59,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeddingHallContext.cs",
+              "DocumentMoniker": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
+              "ToolTip": "C:\\Users\\An\u0131l Enes torun\\Documents\\GitHub\\MakineOgrenmeliDugunSalonuKiralama\\DugunSalonuKiralama\\Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
+              "RelativeToolTip": "Infrastructure\\DugunSalonuKiralama.Persistence\\Context\\WeddingHallContext.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAA0wDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T08:55:08.798Z",
+              "EditorCaption": ""
             }
           ]
         },

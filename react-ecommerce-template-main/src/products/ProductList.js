@@ -390,9 +390,8 @@ function ProductList() {
                             </div>
                         </div>
                         <div
-                            className={`row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 g-3 mb-4 flex-shrink-0 ${
-                                viewType.grid ? "" : "row-cols-1"
-                            }`}
+                            className={`row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 g-3 mb-4 flex-shrink-0 ${viewType.grid ? "" : "row-cols-1"
+                                }`}
                         >
                             {filteredAndSortedHalls.map((hall) => (
                                 <div className="col" key={hall.id}>

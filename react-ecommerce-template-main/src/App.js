@@ -17,17 +17,18 @@ import ProtectedAdminRoute from "./routes/ProtectedAdminRoute";
 import AdminProfile from './Admin/Profile/AdminProfile';
 import ContactUs from "./ContactUs/Contact"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ProductListByGuess from "./products/ProductListByGuess";
 
 function RoutesWithTemplate() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
-  const isAuthRoute = location.pathname === "/AuthPage"; 
+  const isAuthRoute = location.pathname === "/AuthPage";
 
-  return isAuthRoute ? ( 
+  return isAuthRoute ? (
     <Switch>
       <Route exact path="/AuthPage" component={AuthPage} />
     </Switch>
-  ) : isAdminRoute ? ( 
+  ) : isAdminRoute ? (
     <AdminTemplate>
       <Switch>
         <ProtectedAdminRoute exact path="/admin" component={Dashboard} />
@@ -40,16 +41,17 @@ function RoutesWithTemplate() {
         <ProtectedAdminRoute exact path="/admin/AdminProfile" component={AdminProfile} />
       </Switch>
     </AdminTemplate>
-  ) : ( 
+  ) : (
     <Template>
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/products" component={ProductList} />
         <Route exact path="/products/:slug" component={ProductDetail} />
         <Route exact path="/AuthPage" component={AuthPage} />
-        <Route exact path="/Profile" component={ProfilePage} /> 
+        <Route exact path="/Profile" component={ProfilePage} />
         <Route exact path="/about" component={AboutPage} />
-        <Route exact path="/ContactUs" component={ContactUs}/>
+        <Route exact path="/ContactUs" component={ContactUs} />
+        <Route exact path="/ProductList" component={ProductListByGuess} />
       </Switch>
     </Template>
   );
